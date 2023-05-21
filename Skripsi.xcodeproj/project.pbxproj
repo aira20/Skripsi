@@ -16,6 +16,7 @@
 		02E90DCA2A0DEF6700706F80 /* SkripsiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DC92A0DEF6700706F80 /* SkripsiTests.swift */; };
 		02E90DD42A0DEF6700706F80 /* SkripsiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DD32A0DEF6700706F80 /* SkripsiUITests.swift */; };
 		02E90DD62A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DD52A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift */; };
+		8E115FBF2A1A2C6D0052C16A /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FBE2A1A2C6D0052C16A /* MealView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		02E90DCF2A0DEF6700706F80 /* SkripsiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkripsiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02E90DD32A0DEF6700706F80 /* SkripsiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkripsiUITests.swift; sourceTree = "<group>"; };
 		02E90DD52A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkripsiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8E115FBE2A1A2C6D0052C16A /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		02E90DB22A0DEF6500706F80 /* Skripsi */ = {
 			isa = PBXGroup;
 			children = (
+				8E115FBD2A1A2C540052C16A /* Meal */,
 				02E90DB32A0DEF6500706F80 /* SkripsiApp.swift */,
 				02E90DB52A0DEF6500706F80 /* ContentView.swift */,
 				02E90DB72A0DEF6700706F80 /* Assets.xcassets */,
@@ -131,6 +134,14 @@
 				02E90DD52A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift */,
 			);
 			path = SkripsiUITests;
+			sourceTree = "<group>";
+		};
+		8E115FBD2A1A2C540052C16A /* Meal */ = {
+			isa = PBXGroup;
+			children = (
+				8E115FBE2A1A2C6D0052C16A /* MealView.swift */,
+			);
+			path = Meal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +278,7 @@
 				02E90DC02A0DEF6700706F80 /* Skripsi.xcdatamodeld in Sources */,
 				02E90DB62A0DEF6500706F80 /* ContentView.swift in Sources */,
 				02E90DB42A0DEF6500706F80 /* SkripsiApp.swift in Sources */,
+				8E115FBF2A1A2C6D0052C16A /* MealView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
