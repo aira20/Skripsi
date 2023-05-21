@@ -12,14 +12,21 @@ struct MealView: View {
         GeometryReader { geo in
             VStack(alignment: .leading, spacing: 16.0){
                 Group{
-                    randomShape(geo: geo)
+                    welcomeSection(geo: geo)
                 }
                 Group{
                     Text("Get Meal Plan").font(.headline)
                     mealPlan(geo: geo)
                 }
                 Group{
-                    Text("Choosen Meal Plan").font(.headline)
+                    HStack{
+                        Text("Choosen Meal Plan").font(.headline)
+                        Spacer()
+                        Text("See more")
+                            .font(.subheadline)
+                            .foregroundColor(Color(hex: "#519259"))
+                    }
+                    choosenMealPlanSection(geo: geo)
                 }
                 Spacer()
                 
@@ -31,9 +38,9 @@ struct MealView: View {
     
     func mealPlan(geo: GeometryProxy) -> some View{
         HStack{
-            mealPlanItem(backgroundColor: Color.blue, image: "", description: "Generate your Personalized Healthy meal plan", titleItem: "Personalized", geo: geo)
+            mealPlanItem(backgroundColor: Color(hex: "#91B898"), image: "", description: "Generate your Personalized Healthy meal plan", titleItem: "Personalized", geo: geo)
             Spacer()
-            mealPlanItem(backgroundColor: Color(hex: "#F0BB62"), image: "", description: "Get Meal Reccomendation based on your available time", titleItem: "Automated", geo: geo)
+            mealPlanItem(backgroundColor: Color(hex: "#F0D19D"), image: "", description: "Get Meal Reccomendation based on your available time", titleItem: "Automated", geo: geo)
         }
     }
     
@@ -50,24 +57,40 @@ struct MealView: View {
         }.frame(width: geo.size.width * 0.47, height: geo.size.width * 0.45)
     }
     
-    func randomShape(geo: GeometryProxy) -> some View{
+    func choosenMealPlanSection(geo: GeometryProxy) -> some View{
         ZStack{
             Rectangle()
-                .foregroundColor(Color.red)
-            
-            Image("M-Logo")
-                .resizable()
-                .frame(width: 50, height: 50)
-                .foregroundColor(.white)
-                .position(x: geo.size.width - 25, y: geo.size.height - 25)
-            
+                .fill(.pink)
+                .cornerRadius(16)
+            VStack(spacing: 12){
+                Text("You haven't chosen any meal plan yet")
+                    .multilineTextAlignment(.center)
+                Text("Browser Meal")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color(hex: "#519259"))
+            }.frame(width: geo.size.width * 0.5)
+        }
+    }
+    
+    func welcomeSection(geo: GeometryProxy) -> some View{
+        ZStack{
+            Rectangle()
+                .foregroundColor(Color.clear)
+                .background(LinearGradient(gradient: Gradient(colors: [Color(hex: "CCFFD2"), Color(hex: "FFE3B3")]), startPoint: .trailing, endPoint: .leading))
+                .cornerRadius(16)
+//                .clipShape(CustomShape())
             
             HStack{
                 VStack(alignment: .leading){
-                    Text("Hi, Name")
+                    Text("Welcome")
+                        .font(.title2)
+                        .foregroundColor(Color(hex: "#1D4536"))
                     // TODO: Get User.name
-                    Text("Lets Eat Healthy")
+                    Text("Lets Eat Healthy with us!")
+                        .foregroundColor(Color(hex: "#1D4536"))
                 }
+                .padding(16)
                 Spacer()
                 
             }
@@ -76,10 +99,30 @@ struct MealView: View {
     }
 }
 
+struct CustomShape: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        
+        path.addRoundedRect(in: rect, cornerSize: CGSize(width: 20, height: 20))
+        
+        let bottomRightCorner = CGRect(
+            x: rect.width - 40,
+            y: rect.height - 40,
+            width: 40,
+            height: 40
+        )
+        
+        path.addRect(bottomRightCorner)
+        
+        return path
+    }
+}
 
 
 struct MealView_Previews: PreviewProvider {
     static var previews: some View {
         MealView()
+//            .previewDevice(PreviewDevice(rawValue: "iPhone SE(3rd generation"))
+//            .previewDisplayName("iPhone SE")
     }
 }
