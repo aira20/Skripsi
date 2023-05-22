@@ -10,9 +10,19 @@ import SwiftUI
 
 class MealViewModel: ObservableObject{
     @Published var meals: [Meal]?
+    @Published var choosenMealsPlan: [Meal] = []
+    
+    var view: MealView?
     
     init() {
         
     }
     
+    func choosenMealPlanSection(geo: GeometryProxy) {
+        if choosenMealsPlan == nil {
+            view?.choosenMealPlanSectionNull(geo: geo)
+        } else {
+            EmptyView()
+        }
+    }
 }

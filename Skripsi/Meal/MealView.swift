@@ -8,31 +8,50 @@
 import SwiftUI
 
 struct MealView: View {
+    @StateObject private var viewModel = MealViewModel()
+    
     var body: some View {
-        GeometryReader { geo in
-            VStack(alignment: .leading, spacing: 16.0){
-                Group{
-                    welcomeSection(geo: geo)
-                }
-                Group{
-                    Text("Get Meal Plan").font(.headline)
-                    mealPlan(geo: geo)
-                }
-                Group{
-                    HStack{
-                        Text("Choosen Meal Plan").font(.headline)
-                        Spacer()
-                        Text("See more")
-                            .font(.subheadline)
-                            .foregroundColor(Color(hex: "#519259"))
+        NavigationView{
+            GeometryReader { geo in
+                VStack(alignment: .leading, spacing: 16.0){
+                    Group{
+                        welcomeSection(geo: geo)
                     }
-                    choosenMealPlanSection(geo: geo)
+                    Group{
+                        Text("Get Meal Plan").font(.headline)
+                        mealPlan(geo: geo)
+                    }
+                    Group{
+                        HStack{
+                            Text("Choosen Meal Plan").font(.headline)
+                            Spacer()
+                            NavigationLink(destination: SeeMoreMealCurrentView()){
+                                Text("See more")
+                                    .font(.subheadline)
+                                    .foregroundColor(Color(hex: "#519259"))
+                            }
+                        }
+    //                    viewModel.choosenMealPlanSection(geo: geo)
+                    }
+                    Spacer()
+                    
                 }
-                Spacer()
-                
-            }
-            .frame(width: geo.size.width, height: geo.size.height)
-        }.padding(16)
+                .frame(width: geo.size.width, height: geo.size.height)
+            }.padding(16)
+                .navigationTitle("Meal")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: {
+                            // Tindakan yang ingin dilakukan saat tombol ditekan
+                        }) {
+                            Image(systemName: "plus")
+                                .foregroundColor(Color(hex: "#1D4536"))
+                        }
+                    }
+                }
+        }
+        
     }
     // TODO: navigation bar title kalo udah di pasing dari depan
     
@@ -46,9 +65,11 @@ struct MealView: View {
     
     func mealPlanItem(backgroundColor: Color, image: String, description: String, titleItem: String, geo: GeometryProxy) -> some View{
         ZStack{
-            Rectangle()
-                .foregroundColor(backgroundColor)
-                .cornerRadius(16)
+            NavigationLink(destination: EmptyView()){
+                Rectangle()
+                    .foregroundColor(backgroundColor)
+                    .cornerRadius(16)
+            }
             VStack(alignment: .center, spacing: 8){
                 
                 Text(titleItem).font(.headline)
@@ -57,7 +78,7 @@ struct MealView: View {
         }.frame(width: geo.size.width * 0.47, height: geo.size.width * 0.45)
     }
     
-    func choosenMealPlanSection(geo: GeometryProxy) -> some View{
+    func choosenMealPlanSectionNull(geo: GeometryProxy) -> some View{
         ZStack{
             Rectangle()
                 .fill(.pink)

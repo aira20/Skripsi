@@ -13,7 +13,7 @@ struct SkripsiApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MealView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
