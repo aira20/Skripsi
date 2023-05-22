@@ -16,11 +16,12 @@
 		02E90DCA2A0DEF6700706F80 /* SkripsiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DC92A0DEF6700706F80 /* SkripsiTests.swift */; };
 		02E90DD42A0DEF6700706F80 /* SkripsiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DD32A0DEF6700706F80 /* SkripsiUITests.swift */; };
 		02E90DD62A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DD52A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift */; };
-		8E115FBF2A1A2C6D0052C16A /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FBE2A1A2C6D0052C16A /* MealView.swift */; };
+		8E115FBF2A1A2C6D0052C16A /* MealTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FBE2A1A2C6D0052C16A /* MealTabItemView.swift */; };
 		8E115FC52A1A57F50052C16A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FC42A1A57F50052C16A /* Color.swift */; };
-		8E115FC72A1A6CFE0052C16A /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FC62A1A6CFE0052C16A /* MealViewModel.swift */; };
+		8E115FC72A1A6CFE0052C16A /* MealTabItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FC62A1A6CFE0052C16A /* MealTabItemViewModel.swift */; };
 		8E115FCA2A1A6D5D0052C16A /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FC92A1A6D5D0052C16A /* Meal.swift */; };
 		8E115FCF2A1BACE60052C16A /* SeeMoreMealCurrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FCE2A1BACE60052C16A /* SeeMoreMealCurrentView.swift */; };
+		8EDED53F2A1BBA1800DC8C6A /* MainTabConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDED53E2A1BBA1800DC8C6A /* MainTabConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,11 +54,12 @@
 		02E90DCF2A0DEF6700706F80 /* SkripsiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkripsiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02E90DD32A0DEF6700706F80 /* SkripsiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkripsiUITests.swift; sourceTree = "<group>"; };
 		02E90DD52A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkripsiUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8E115FBE2A1A2C6D0052C16A /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
+		8E115FBE2A1A2C6D0052C16A /* MealTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTabItemView.swift; sourceTree = "<group>"; };
 		8E115FC42A1A57F50052C16A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Skripsi/Color.swift; sourceTree = SOURCE_ROOT; };
-		8E115FC62A1A6CFE0052C16A /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
+		8E115FC62A1A6CFE0052C16A /* MealTabItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTabItemViewModel.swift; sourceTree = "<group>"; };
 		8E115FC92A1A6D5D0052C16A /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		8E115FCE2A1BACE60052C16A /* SeeMoreMealCurrentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreMealCurrentView.swift; sourceTree = "<group>"; };
+		8EDED53E2A1BBA1800DC8C6A /* MainTabConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				02E90DBC2A0DEF6700706F80 /* Persistence.swift */,
 				02E90DBE2A0DEF6700706F80 /* Skripsi.xcdatamodeld */,
 				02E90DB92A0DEF6700706F80 /* Preview Content */,
+				8EDED53E2A1BBA1800DC8C6A /* MainTabConfig.swift */,
 			);
 			path = Skripsi;
 			sourceTree = "<group>";
@@ -149,8 +152,8 @@
 		8E115FBD2A1A2C540052C16A /* Meal */ = {
 			isa = PBXGroup;
 			children = (
-				8E115FBE2A1A2C6D0052C16A /* MealView.swift */,
-				8E115FC62A1A6CFE0052C16A /* MealViewModel.swift */,
+				8E115FBE2A1A2C6D0052C16A /* MealTabItemView.swift */,
+				8E115FC62A1A6CFE0052C16A /* MealTabItemViewModel.swift */,
 				8E115FCE2A1BACE60052C16A /* SeeMoreMealCurrentView.swift */,
 			);
 			path = Meal;
@@ -303,13 +306,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				02E90DBD2A0DEF6700706F80 /* Persistence.swift in Sources */,
-				8E115FC72A1A6CFE0052C16A /* MealViewModel.swift in Sources */,
+				8E115FC72A1A6CFE0052C16A /* MealTabItemViewModel.swift in Sources */,
 				8E115FCF2A1BACE60052C16A /* SeeMoreMealCurrentView.swift in Sources */,
 				02E90DC02A0DEF6700706F80 /* Skripsi.xcdatamodeld in Sources */,
 				02E90DB62A0DEF6500706F80 /* ContentView.swift in Sources */,
 				8E115FCA2A1A6D5D0052C16A /* Meal.swift in Sources */,
 				02E90DB42A0DEF6500706F80 /* SkripsiApp.swift in Sources */,
-				8E115FBF2A1A2C6D0052C16A /* MealView.swift in Sources */,
+				8E115FBF2A1A2C6D0052C16A /* MealTabItemView.swift in Sources */,
+				8EDED53F2A1BBA1800DC8C6A /* MainTabConfig.swift in Sources */,
 				8E115FC52A1A57F50052C16A /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
