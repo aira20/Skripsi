@@ -21,6 +21,7 @@
 		8E115FC72A1A6CFE0052C16A /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FC62A1A6CFE0052C16A /* MealViewModel.swift */; };
 		8E115FCA2A1A6D5D0052C16A /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FC92A1A6D5D0052C16A /* Meal.swift */; };
 		8E115FCF2A1BACE60052C16A /* SeeMoreMealCurrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FCE2A1BACE60052C16A /* SeeMoreMealCurrentView.swift */; };
+		8EDED53C2A1BB37400DC8C6A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDED53B2A1BB37400DC8C6A /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		8E115FC62A1A6CFE0052C16A /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
 		8E115FC92A1A6D5D0052C16A /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		8E115FCE2A1BACE60052C16A /* SeeMoreMealCurrentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreMealCurrentView.swift; sourceTree = "<group>"; };
+		8EDED53B2A1BB37400DC8C6A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		02E90DB22A0DEF6500706F80 /* Skripsi */ = {
 			isa = PBXGroup;
 			children = (
+				8EDED53A2A1BB36600DC8C6A /* Profile */,
 				8E115FC82A1A6D500052C16A /* Models */,
 				8E115FC32A1A57EA0052C16A /* Helper */,
 				8E115FBD2A1A2C540052C16A /* Meal */,
@@ -170,6 +173,14 @@
 				8E115FC92A1A6D5D0052C16A /* Meal.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8EDED53A2A1BB36600DC8C6A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8EDED53B2A1BB37400DC8C6A /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +315,7 @@
 			files = (
 				02E90DBD2A0DEF6700706F80 /* Persistence.swift in Sources */,
 				8E115FC72A1A6CFE0052C16A /* MealViewModel.swift in Sources */,
+				8EDED53C2A1BB37400DC8C6A /* ProfileView.swift in Sources */,
 				8E115FCF2A1BACE60052C16A /* SeeMoreMealCurrentView.swift in Sources */,
 				02E90DC02A0DEF6700706F80 /* Skripsi.xcdatamodeld in Sources */,
 				02E90DB62A0DEF6500706F80 /* ContentView.swift in Sources */,
