@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MealView: View {
+struct MealTabItemView: View {
     @StateObject private var viewModel = MealViewModel()
     
     var body: some View {
@@ -142,7 +142,7 @@ struct CustomShape: Shape {
 
 struct MealView_Previews: PreviewProvider {
     static var previews: some View {
-        MealView()
+        MealTabItemView()
 //            .previewDevice(PreviewDevice(rawValue: "iPhone SE(3rd generation"))
 //            .previewDisplayName("iPhone SE")
     }

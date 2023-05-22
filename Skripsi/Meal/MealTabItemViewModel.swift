@@ -12,7 +12,7 @@ class MealViewModel: ObservableObject{
     @Published var meals: [Meal]?
     @Published var choosenMealsPlan: [Meal] = []
     
-    var view: MealView?
+    var view: MealTabItemView?
     
     init() {
         
