@@ -16,6 +16,7 @@
 		02E90DCA2A0DEF6700706F80 /* SkripsiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DC92A0DEF6700706F80 /* SkripsiTests.swift */; };
 		02E90DD42A0DEF6700706F80 /* SkripsiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DD32A0DEF6700706F80 /* SkripsiUITests.swift */; };
 		02E90DD62A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DD52A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift */; };
+		8E110B132A1CAA1600411ED9 /* ProfileTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E110B122A1CAA1600411ED9 /* ProfileTabView.swift */; };
 		8E115FBF2A1A2C6D0052C16A /* MealTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FBE2A1A2C6D0052C16A /* MealTabItemView.swift */; };
 		8E115FC52A1A57F50052C16A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FC42A1A57F50052C16A /* Color.swift */; };
 		8E115FC72A1A6CFE0052C16A /* MealTabItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FC62A1A6CFE0052C16A /* MealTabItemViewModel.swift */; };
@@ -54,6 +55,7 @@
 		02E90DCF2A0DEF6700706F80 /* SkripsiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkripsiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02E90DD32A0DEF6700706F80 /* SkripsiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkripsiUITests.swift; sourceTree = "<group>"; };
 		02E90DD52A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkripsiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8E110B122A1CAA1600411ED9 /* ProfileTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabView.swift; sourceTree = "<group>"; };
 		8E115FBE2A1A2C6D0052C16A /* MealTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTabItemView.swift; sourceTree = "<group>"; };
 		8E115FC42A1A57F50052C16A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Skripsi/Color.swift; sourceTree = SOURCE_ROOT; };
 		8E115FC62A1A6CFE0052C16A /* MealTabItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTabItemViewModel.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		02E90DB22A0DEF6500706F80 /* Skripsi */ = {
 			isa = PBXGroup;
 			children = (
+				8E110B112A1CA9A100411ED9 /* Profile */,
 				8E115FC82A1A6D500052C16A /* Models */,
 				8E115FC32A1A57EA0052C16A /* Helper */,
 				8E115FBD2A1A2C540052C16A /* Meal */,
@@ -147,6 +150,14 @@
 				02E90DD52A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift */,
 			);
 			path = SkripsiUITests;
+			sourceTree = "<group>";
+		};
+		8E110B112A1CA9A100411ED9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8E110B122A1CAA1600411ED9 /* ProfileTabView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		8E115FBD2A1A2C540052C16A /* Meal */ = {
@@ -312,6 +323,7 @@
 				02E90DB62A0DEF6500706F80 /* ContentView.swift in Sources */,
 				8E115FCA2A1A6D5D0052C16A /* Meal.swift in Sources */,
 				02E90DB42A0DEF6500706F80 /* SkripsiApp.swift in Sources */,
+				8E110B132A1CAA1600411ED9 /* ProfileTabView.swift in Sources */,
 				8E115FBF2A1A2C6D0052C16A /* MealTabItemView.swift in Sources */,
 				8EDED53F2A1BBA1800DC8C6A /* MainTabConfig.swift in Sources */,
 				8E115FC52A1A57F50052C16A /* Color.swift in Sources */,
