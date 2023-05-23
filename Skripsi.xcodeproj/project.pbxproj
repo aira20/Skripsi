@@ -21,6 +21,10 @@
 		8E115FC72A1A6CFE0052C16A /* MealTabItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FC62A1A6CFE0052C16A /* MealTabItemViewModel.swift */; };
 		8E115FCA2A1A6D5D0052C16A /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FC92A1A6D5D0052C16A /* Meal.swift */; };
 		8E115FCF2A1BACE60052C16A /* SeeMoreMealCurrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FCE2A1BACE60052C16A /* SeeMoreMealCurrentView.swift */; };
+		8E4A738E2A1CB39D009BB040 /* SearchTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4A738D2A1CB39D009BB040 /* SearchTabItemView.swift */; };
+		8E4A73902A1D146A009BB040 /* SearchTabItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4A738F2A1D146A009BB040 /* SearchTabItemViewModel.swift */; };
+		8E4A73922A1D1F13009BB040 /* AutomatedOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4A73912A1D1F13009BB040 /* AutomatedOverlayView.swift */; };
+		8E4A73942A1D2A55009BB040 /* MealPlanItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4A73932A1D2A55009BB040 /* MealPlanItem.swift */; };
 		8EDED53F2A1BBA1800DC8C6A /* MainTabConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDED53E2A1BBA1800DC8C6A /* MainTabConfig.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +63,10 @@
 		8E115FC62A1A6CFE0052C16A /* MealTabItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTabItemViewModel.swift; sourceTree = "<group>"; };
 		8E115FC92A1A6D5D0052C16A /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		8E115FCE2A1BACE60052C16A /* SeeMoreMealCurrentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreMealCurrentView.swift; sourceTree = "<group>"; };
+		8E4A738D2A1CB39D009BB040 /* SearchTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabItemView.swift; sourceTree = "<group>"; };
+		8E4A738F2A1D146A009BB040 /* SearchTabItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabItemViewModel.swift; sourceTree = "<group>"; };
+		8E4A73912A1D1F13009BB040 /* AutomatedOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatedOverlayView.swift; sourceTree = "<group>"; };
+		8E4A73932A1D2A55009BB040 /* MealPlanItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanItem.swift; sourceTree = "<group>"; };
 		8EDED53E2A1BBA1800DC8C6A /* MainTabConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +118,7 @@
 		02E90DB22A0DEF6500706F80 /* Skripsi */ = {
 			isa = PBXGroup;
 			children = (
+				8E4A738C2A1CB385009BB040 /* Search */,
 				8E115FC82A1A6D500052C16A /* Models */,
 				8E115FC32A1A57EA0052C16A /* Helper */,
 				8E115FBD2A1A2C540052C16A /* Meal */,
@@ -155,6 +164,8 @@
 				8E115FBE2A1A2C6D0052C16A /* MealTabItemView.swift */,
 				8E115FC62A1A6CFE0052C16A /* MealTabItemViewModel.swift */,
 				8E115FCE2A1BACE60052C16A /* SeeMoreMealCurrentView.swift */,
+				8E4A73912A1D1F13009BB040 /* AutomatedOverlayView.swift */,
+				8E4A73932A1D2A55009BB040 /* MealPlanItem.swift */,
 			);
 			path = Meal;
 			sourceTree = "<group>";
@@ -173,6 +184,15 @@
 				8E115FC92A1A6D5D0052C16A /* Meal.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8E4A738C2A1CB385009BB040 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				8E4A738D2A1CB39D009BB040 /* SearchTabItemView.swift */,
+				8E4A738F2A1D146A009BB040 /* SearchTabItemViewModel.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,7 +326,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				02E90DBD2A0DEF6700706F80 /* Persistence.swift in Sources */,
+				8E4A73922A1D1F13009BB040 /* AutomatedOverlayView.swift in Sources */,
 				8E115FC72A1A6CFE0052C16A /* MealTabItemViewModel.swift in Sources */,
+				8E4A738E2A1CB39D009BB040 /* SearchTabItemView.swift in Sources */,
+				8E4A73902A1D146A009BB040 /* SearchTabItemViewModel.swift in Sources */,
 				8E115FCF2A1BACE60052C16A /* SeeMoreMealCurrentView.swift in Sources */,
 				02E90DC02A0DEF6700706F80 /* Skripsi.xcdatamodeld in Sources */,
 				02E90DB62A0DEF6500706F80 /* ContentView.swift in Sources */,
@@ -314,6 +337,7 @@
 				02E90DB42A0DEF6500706F80 /* SkripsiApp.swift in Sources */,
 				8E115FBF2A1A2C6D0052C16A /* MealTabItemView.swift in Sources */,
 				8EDED53F2A1BBA1800DC8C6A /* MainTabConfig.swift in Sources */,
+				8E4A73942A1D2A55009BB040 /* MealPlanItem.swift in Sources */,
 				8E115FC52A1A57F50052C16A /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

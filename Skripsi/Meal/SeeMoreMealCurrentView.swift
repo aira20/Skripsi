@@ -11,7 +11,7 @@ struct SeeMoreMealCurrentView: View {
     var body: some View {
         VStack{
             ScrollView{
-                VStack{
+                VStack(spacing: 16){
                     repetitiveDay()
                     repetitiveDay()
                     repetitiveDay()
@@ -44,20 +44,29 @@ struct SeeMoreMealCurrentView: View {
                 .foregroundColor(Color.clear)
             
             HStack{
-                mealItem()
-                mealItem()
-                mealItem()
+                mealItem(bestTimeConsume: .breakfast, image: "heart.fill", mealName: "Roti Lapis", mealDescription: "Roti dengan Sayur-sayuran")
+                    .frame(maxWidth: .infinity, alignment: .center)
+                mealItem(bestTimeConsume: .lunch, image: "sparkles.square.filled.on.square", mealName: "Roti Lapis", mealDescription: "Roti dengan Sayur-sayuran")
+                    .frame(maxWidth: .infinity, alignment: .center)
+                mealItem(bestTimeConsume: .dinner, image: "figure.walk.circle", mealName: "Roti Lapis", mealDescription: "Roti dengan Sayur-sayuran")
+                    .frame(maxWidth: .infinity, alignment: .center)
             }
             .frame(width: .infinity)
         }
     }
     
-    func mealItem() -> some View {
-        VStack{
-            Text("Breakfast")
-            Image(systemName: "heart.fill")
-            Text("Roti Lapis")
-            Text("Roti dengan Alpukat dan Telur")
+    func mealItem(bestTimeConsume: Meal.Status, image: String, mealName: String, mealDescription: String) -> some View {
+        VStack(alignment: .center){
+            Text(bestTimeConsume.rawValue)
+                .font(.headline)
+            Image(systemName: image)
+                .resizable()
+                .frame(width: 75, height: 75)
+            Text(mealName)
+                .font(.subheadline)
+            Text(mealDescription)
+                .font(.caption)
+                .lineLimit(2)
         }
     }
 }
