@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Meal: Decodable{
+class Meal: Codable{
     var mealName: String
     var mealDescription: String
     var mealDay: Status
@@ -17,17 +17,17 @@ class Meal: Decodable{
     var steps: [String]
 }
 
-class Ingredient: Decodable{
+class Ingredient: Codable{
     var ingredientsName: String
     var ingredientsQuantity: String
 }
 
-class Utensil: Decodable {
+class Utensil: Codable {
     var untensilName: String
 }
 
 extension Meal{
-    enum Status: String, Decodable{
+    enum Status: String, Codable{
         case breakfast = "Breakfast"
         case lunch = "Lunch"
         case dinner = "Dinner"

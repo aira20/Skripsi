@@ -8,45 +8,50 @@
 import SwiftUI
 
 struct SeeMoreMealCurrentView: View {
-    var body: some View {
-        VStack{
-            ScrollView{
-                VStack{
-                    repetitiveDay()
-                    repetitiveDay()
-                    repetitiveDay()
-                    repetitiveDay()
-                    repetitiveDay()
-                    repetitiveDay()
-                }
-            }
+    @StateObject var viewModel = SeeMoreMealCurrentViewModel()
+    
+    var sectionHeader: some View {
+        HStack {
+            Text("Day 1")
+                .fontWeight(.bold)
+                .foregroundColor(.black)
+                .font(.title3)
+                .textCase(.none) // Menonaktifkan gaya huruf kapital
+            Spacer()
+            Text("Edit Meal")
+                .foregroundColor(Color(hex: "#519259"))
+                .font(.subheadline)
+                .textCase(.none) // Menonaktifkan gaya huruf kapital
         }
-        .padding(16)
     }
     
-    func repetitiveDay() -> some View{
-        VStack{
-            HStack{
-                Text("Day 1")
-                    .font(.headline)
-                Spacer()
-                Text("Edit Meal")
-                    .font(.subheadline)
-                    .foregroundColor(Color(hex: "#519259"))
+    var body: some View {
+        Form{
+//            ForEach(viewModel.currentMeals, id: \.self) { meal in
+//                
+//            }
+            Section(header: sectionHeader){
+                dayMealItem()
             }
-            dayMealItem()
+            
         }
     }
+    
+//    func repetitiveDay() -> some View{
+//
+//    }
     
     func dayMealItem() -> some View {
         ZStack{
             Rectangle()
                 .foregroundColor(Color.clear)
-            
             HStack{
                 mealItem()
+                    .frame(maxWidth: .infinity, alignment: .center)
                 mealItem()
+                    .frame(maxWidth: .infinity, alignment: .center)
                 mealItem()
+                    .frame(maxWidth: .infinity, alignment: .center)
             }
             .frame(width: .infinity)
         }
@@ -55,9 +60,14 @@ struct SeeMoreMealCurrentView: View {
     func mealItem() -> some View {
         VStack{
             Text("Breakfast")
+                .font(.headline)
             Image(systemName: "heart.fill")
+                .resizable()
+                .frame(width: 75, height: 75)
             Text("Roti Lapis")
+                .font(.headline)
             Text("Roti dengan Alpukat dan Telur")
+                .font(.subheadline)
         }
     }
 }
