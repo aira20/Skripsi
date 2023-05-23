@@ -45,15 +45,15 @@ struct ProfileTabView: View {
                         Section{
                             Text("Password")
                         }
-                        Section{
-                            Button(action: {
-                                // Action
-                            }) {
-                                Text("Save Changes")
-                            }
+                        ButtonView(title: "Save Changes"){
+                            print("button pressed")
                         }
+                        .listRowBackground(Color.clear)
                     }
+                    
+                    
                 }
+                
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)

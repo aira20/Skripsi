@@ -22,6 +22,7 @@
 		8E115FC72A1A6CFE0052C16A /* MealTabItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FC62A1A6CFE0052C16A /* MealTabItemViewModel.swift */; };
 		8E115FCA2A1A6D5D0052C16A /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FC92A1A6D5D0052C16A /* Meal.swift */; };
 		8E115FCF2A1BACE60052C16A /* SeeMoreMealCurrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FCE2A1BACE60052C16A /* SeeMoreMealCurrentView.swift */; };
+		8E4A738B2A1CAEB2009BB040 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4A738A2A1CAEB2009BB040 /* ButtonView.swift */; };
 		8EDED53F2A1BBA1800DC8C6A /* MainTabConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDED53E2A1BBA1800DC8C6A /* MainTabConfig.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		8E115FC62A1A6CFE0052C16A /* MealTabItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTabItemViewModel.swift; sourceTree = "<group>"; };
 		8E115FC92A1A6D5D0052C16A /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		8E115FCE2A1BACE60052C16A /* SeeMoreMealCurrentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreMealCurrentView.swift; sourceTree = "<group>"; };
+		8E4A738A2A1CAEB2009BB040 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		8EDED53E2A1BBA1800DC8C6A /* MainTabConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 		02E90DB22A0DEF6500706F80 /* Skripsi */ = {
 			isa = PBXGroup;
 			children = (
+				8E4A73892A1CAE4B009BB040 /* ReusableComponent */,
 				8E110B112A1CA9A100411ED9 /* Profile */,
 				8E115FC82A1A6D500052C16A /* Models */,
 				8E115FC32A1A57EA0052C16A /* Helper */,
@@ -184,6 +187,14 @@
 				8E115FC92A1A6D5D0052C16A /* Meal.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8E4A73892A1CAE4B009BB040 /* ReusableComponent */ = {
+			isa = PBXGroup;
+			children = (
+				8E4A738A2A1CAEB2009BB040 /* ButtonView.swift */,
+			);
+			path = ReusableComponent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +329,7 @@
 			files = (
 				02E90DBD2A0DEF6700706F80 /* Persistence.swift in Sources */,
 				8E115FC72A1A6CFE0052C16A /* MealTabItemViewModel.swift in Sources */,
+				8E4A738B2A1CAEB2009BB040 /* ButtonView.swift in Sources */,
 				8E115FCF2A1BACE60052C16A /* SeeMoreMealCurrentView.swift in Sources */,
 				02E90DC02A0DEF6700706F80 /* Skripsi.xcdatamodeld in Sources */,
 				02E90DB62A0DEF6500706F80 /* ContentView.swift in Sources */,
