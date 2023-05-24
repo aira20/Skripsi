@@ -41,15 +41,44 @@ struct ProfileTabView: View {
                                     .multilineTextAlignment(.trailing)
                             }
                         }
-
                         Section{
                             Text("Password")
                         }
-                        ButtonView(title: "Save Changes"){
-                            print("button pressed")
+                        Section(header: Text("Others").font(.headline).textCase(.none)) {
+                            HStack{
+                                Text("Recipe's Name")
+                                    .padding(.leading, 32)
+                                    .overlay(
+                                        Image(systemName: "magnifyingglass")
+                                            .foregroundColor(.gray)
+                                            
+                                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading),
+                                        alignment: .leading
+                                        )
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                            }
+                            HStack{
+                                Text("Grocery List")
+                                    .padding(.leading, 32)
+                                    .overlay(
+                                        Image(systemName: "cart")
+                                            .foregroundColor(Color(hex: "#F0BB62"))
+                                            
+                                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading),
+                                        alignment: .leading
+                                        )
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                            }
+
                         }
-                        .listRowBackground(Color.clear)
                     }
+                    ButtonView(title: "Log Out"){
+                        print("button pressed")
+                    }
+                    .padding(16)
+                    
                     
                     
                 }
@@ -62,8 +91,8 @@ struct ProfileTabView: View {
                     Button(action: {
                         // Action
                     }) {
-                        Text("Log Out")
-                            .foregroundColor(Color.red)
+                        Text("Save")
+                            .foregroundColor(Color.green)
                     }
                 }
             }
