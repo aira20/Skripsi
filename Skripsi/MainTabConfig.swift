@@ -18,8 +18,7 @@ struct MainTabConfig: View {
                 Text("Meal")
             }
             .tag(0)
-            
-            Text("Tab 2")
+            SearchTabItemView(isModal: false)
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")

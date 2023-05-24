@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct MealTabItemView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @State private var isOverlayView = false
+    @State private var isModalMealPlan = false
+    @State private var isModalTimes = false
+    
     @StateObject private var viewModel = MealViewModel()
     
     var body: some View {
@@ -50,28 +55,43 @@ struct MealTabItemView: View {
                         }
                     }
                 }
+                .sheet(isPresented: $isOverlayView) {
+                    AutomatedOverlayView(isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan, isModalTimes: $isModalTimes)
+                }
         }
-        
     }
-    // TODO: navigation bar title kalo udah di pasing dari depan
     
     func mealPlan(geo: GeometryProxy) -> some View{
         HStack{
-            mealPlanItem(backgroundColor: Color(hex: "#91B898"), image: "", description: "Generate your Personalized Healthy meal plan", titleItem: "Personalized", geo: geo)
+            mealPlanItem(backgroundColor: Color(hex: "#91B898"), image: "person.circle.fill", description: "Generate your Personalized Healthy meal plan", titleItem: "Personalized", geo: geo)
             Spacer()
-            mealPlanItem(backgroundColor: Color(hex: "#F0D19D"), image: "", description: "Get Meal Reccomendation based on your available time", titleItem: "Automated", geo: geo)
+            mealPlanItem(backgroundColor: Color(hex: "#F0D19D"), image: "sparkles", description: "Get Meal Recommendation based on your available time", titleItem: "Automated", geo: geo)
         }
     }
     
     func mealPlanItem(backgroundColor: Color, image: String, description: String, titleItem: String, geo: GeometryProxy) -> some View{
+        // TODO: need refactor this shit
         ZStack{
-            NavigationLink(destination: EmptyView()){
-                Rectangle()
-                    .foregroundColor(backgroundColor)
-                    .cornerRadius(16)
+            if titleItem == "Personalized"{
+                NavigationLink(destination: SeeMoreMealCurrentView()){
+                    Rectangle()
+                        .foregroundColor(backgroundColor)
+                        .cornerRadius(16)
+                }
+            } else if titleItem == "Automated"{
+                Button {
+                    isOverlayView = true
+                } label: {
+                    Rectangle()
+                        .foregroundColor(backgroundColor)
+                        .cornerRadius(16)
+                }
             }
             VStack(alignment: .center, spacing: 8){
-                
+                Image(systemName: image)
+                    .resizable()
+                    .frame(width: geo.size.width * 0.15, height: geo.size.width * 0.15)
+                    .foregroundColor(Color.white)
                 Text(titleItem).font(.headline)
                 Text(description).font(.caption).multilineTextAlignment(.center)
             }
@@ -97,11 +117,9 @@ struct MealTabItemView: View {
     func welcomeSection(geo: GeometryProxy) -> some View{
         ZStack{
             Rectangle()
+                .frame(width: geo.size.width + 32)
                 .foregroundColor(Color.clear)
-                .background(LinearGradient(gradient: Gradient(colors: [Color(hex: "CCFFD2"), Color(hex: "FFE3B3")]), startPoint: .trailing, endPoint: .leading))
-                .cornerRadius(16)
-//                .clipShape(CustomShape())
-            
+                .background(LinearGradient(gradient: Gradient(colors: [Color(hex: "CCFFD2"), Color(hex: "FFE3B3")]), startPoint: .trailing, endPoint: .leading))            
             HStack{
                 VStack(alignment: .leading){
                     Text("Welcome")
@@ -119,26 +137,6 @@ struct MealTabItemView: View {
         
     }
 }
-
-struct CustomShape: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        
-        path.addRoundedRect(in: rect, cornerSize: CGSize(width: 20, height: 20))
-        
-        let bottomRightCorner = CGRect(
-            x: rect.width - 40,
-            y: rect.height - 40,
-            width: 40,
-            height: 40
-        )
-        
-        path.addRect(bottomRightCorner)
-        
-        return path
-    }
-}
-
 
 struct MealView_Previews: PreviewProvider {
     static var previews: some View {
