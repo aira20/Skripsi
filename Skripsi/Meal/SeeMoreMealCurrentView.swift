@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SeeMoreMealCurrentView: View {
+    @State var isEditMealSeelcted: Bool = false
+    
     var body: some View {
         VStack{
             ScrollView{
@@ -21,6 +23,10 @@ struct SeeMoreMealCurrentView: View {
                 }
             }
         }
+        .sheet(isPresented: $isEditMealSeelcted){
+            SearchTabItemView()
+                .navigationBarTitle("", displayMode: .inline)
+        }
         .padding(16)
     }
     
@@ -30,11 +36,18 @@ struct SeeMoreMealCurrentView: View {
                 Text("Day 1")
                     .font(.headline)
                 Spacer()
-                Text("Edit Meal")
-                    .font(.subheadline)
-                    .foregroundColor(Color(hex: "#519259"))
+                Button {
+                    isEditMealSeelcted = true
+                } label: {
+                    Text("Edit Meal")
+                        .font(.subheadline)
+                        .foregroundColor(Color(hex: "#519259"))
+                }
+
             }
             dayMealItem()
+                .background(Color(hex: "#FFE3B3"))
+                .cornerRadius(12)
         }
     }
     
@@ -44,29 +57,15 @@ struct SeeMoreMealCurrentView: View {
                 .foregroundColor(Color.clear)
             
             HStack{
-                mealItem(bestTimeConsume: .breakfast, image: "heart.fill", mealName: "Roti Lapis", mealDescription: "Roti dengan Sayur-sayuran")
+                MealItemView(bestTimeConsume: .breakfast, image: "heart.fill", mealName: "Roti Lapis", mealDescription: "Roti dengan Sayur-sayuran")
                     .frame(maxWidth: .infinity, alignment: .center)
-                mealItem(bestTimeConsume: .lunch, image: "sparkles.square.filled.on.square", mealName: "Roti Lapis", mealDescription: "Roti dengan Sayur-sayuran")
+                MealItemView(bestTimeConsume: .lunch, image: "sparkles.square.filled.on.square", mealName: "Roti Lapis", mealDescription: "Roti dengan Sayur-sayuran")
                     .frame(maxWidth: .infinity, alignment: .center)
-                mealItem(bestTimeConsume: .dinner, image: "figure.walk.circle", mealName: "Roti Lapis", mealDescription: "Roti dengan Sayur-sayuran")
+                MealItemView(bestTimeConsume: .dinner, image: "figure.walk.circle", mealName: "Roti Lapis", mealDescription: "Roti dengan Sayur-sayuran")
                     .frame(maxWidth: .infinity, alignment: .center)
             }
+            .padding(4)
             .frame(width: .infinity)
-        }
-    }
-    
-    func mealItem(bestTimeConsume: Meal.Status, image: String, mealName: String, mealDescription: String) -> some View {
-        VStack(alignment: .center){
-            Text(bestTimeConsume.rawValue)
-                .font(.headline)
-            Image(systemName: image)
-                .resizable()
-                .frame(width: 75, height: 75)
-            Text(mealName)
-                .font(.subheadline)
-            Text(mealDescription)
-                .font(.caption)
-                .lineLimit(2)
         }
     }
 }

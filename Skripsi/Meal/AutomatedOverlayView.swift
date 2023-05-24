@@ -10,13 +10,9 @@ import SwiftUI
 struct AutomatedOverlayView: View {
     @State private var selectedHour = 0
     @State private var selectedMinute = 0
-    @State private var isModalPresented = false
-    
-    var timer: Timer {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            // No action needed here, just used to trigger the onReceive event
-        }
-    }
+    @Binding var isOverlayView: Bool
+    @Binding var isModalMealPlan: Bool
+    @Binding var isModalTimes: Bool
     
     var body: some View {
         VStack(alignment: .center, spacing: 16){
@@ -57,17 +53,18 @@ struct AutomatedOverlayView: View {
             HStack{
                 Spacer()
                 Button {
-                    isModalPresented = true
+                    isModalMealPlan = true
                 } label: {
                     HStack{
                         Text("Generate")
                         Image(systemName: "chevron.right")
                     }
                 }
+                .foregroundColor(Color(hex: "#519259"))
             }
         }
-        .sheet(isPresented: $isModalPresented) {
-            AutomatedOverlayView()
+        .sheet(isPresented: $isModalMealPlan) {
+            AutomatedOverlayMealPlanView(isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan, isModalTimes: $isModalTimes)
         }
         .foregroundColor(Color(hex: "#1D4536"))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -75,8 +72,8 @@ struct AutomatedOverlayView: View {
     }
 }
 
-struct AutomatedOverlayView_Previews: PreviewProvider {
-    static var previews: some View {
-        AutomatedOverlayView()
-    }
-}
+//struct AutomatedOverlayView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AutomatedOverlayView()
+//    }
+//}

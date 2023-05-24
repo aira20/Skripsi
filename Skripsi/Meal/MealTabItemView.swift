@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct MealTabItemView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @State private var isOverlayView = false
+    @State private var isModalMealPlan = false
+    @State private var isModalTimes = false
+    
     @StateObject private var viewModel = MealViewModel()
-    @State private var isModalPresented = false
     
     var body: some View {
         NavigationView{
@@ -51,8 +55,8 @@ struct MealTabItemView: View {
                         }
                     }
                 }
-                .sheet(isPresented: $isModalPresented) {
-                    AutomatedOverlayView()
+                .sheet(isPresented: $isOverlayView) {
+                    AutomatedOverlayView(isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan, isModalTimes: $isModalTimes)
                 }
         }
     }
@@ -69,14 +73,14 @@ struct MealTabItemView: View {
         // TODO: need refactor this shit
         ZStack{
             if titleItem == "Personalized"{
-                NavigationLink(destination: EmptyView()){
+                NavigationLink(destination: SeeMoreMealCurrentView()){
                     Rectangle()
                         .foregroundColor(backgroundColor)
                         .cornerRadius(16)
                 }
             } else if titleItem == "Automated"{
                 Button {
-                    isModalPresented = true
+                    isOverlayView = true
                 } label: {
                     Rectangle()
                         .foregroundColor(backgroundColor)
