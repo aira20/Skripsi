@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ProfileTabItemView: View {
     @State private var name: String = ""
+    @State private var password = "password"
+    @State private var isPasswordSecure: Bool = true
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -42,36 +45,55 @@ struct ProfileTabItemView: View {
                             }
                         }
                         Section{
-                            Text("Password")
+                            HStack{
+                                Text("Password")
+                                Spacer()
+                                Button(action: {
+                                    isPasswordSecure.toggle()
+                                }, label: {
+                                    if isPasswordSecure {
+                                        SecureField("Password", text: $password)
+                                            .disabled(isPasswordSecure ? true : false)
+                                            .multilineTextAlignment(.trailing)
+                                            
+                                    } else {
+                                        TextField("Enter Password", text: $password)
+                                            .multilineTextAlignment(.trailing)
+                                            .onSubmit {
+                                                isPasswordSecure = true
+                                            }
+                                    }
+                                })
+                                
+                            }
                         }
                         Section(header: Text("Others").font(.headline).textCase(.none)) {
-                            HStack{
-                                Text("Recipe's Name")
-                                    .padding(.leading, 32)
-                                    .overlay(
-                                        Image(systemName: "magnifyingglass")
-                                            .foregroundColor(.gray)
+                            NavigationLink(destination: EmptyView()){
+                                HStack{
+                                    Text("Recipe's Name")
+                                        .padding(.leading, 32)
+                                        .overlay(
+                                            Image(systemName: "magnifyingglass")
+                                                .foregroundColor(.gray)
 
-                                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading),
-                                        alignment: .leading
-                                        )
-                                Spacer()
-                                Image(systemName: "chevron.right")
+                                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading),
+                                            alignment: .leading
+                                            )
+                                }
                             }
-                            HStack{
-                                Text("Grocery List")
-                                    .padding(.leading, 32)
-                                    .overlay(
-                                        Image(systemName: "cart")
-                                            .foregroundColor(Color(hex: "#F0BB62"))
+                            NavigationLink(destination: EmptyView()){
+                                HStack{
+                                    Text("Grocery List")
+                                        .padding(.leading, 32)
+                                        .overlay(
+                                            Image(systemName: "cart")
+                                                .foregroundColor(Color(hex: "#F0BB62"))
 
-                                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading),
-                                        alignment: .leading
-                                        )
-                                Spacer()
-                                Image(systemName: "chevron.right")
+                                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading),
+                                            alignment: .leading
+                                            )
+                                }
                             }
-
                         }
                     }
                     ButtonView(title: "Log Out"){
