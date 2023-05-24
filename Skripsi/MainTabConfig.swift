@@ -25,7 +25,7 @@ struct MainTabConfig: View {
                 }
                 .tag(1)
             
-            Text("Tab 3")
+            ProfileTabItemView()
                 .tabItem {
                     Image(systemName: "person.circle")
                     Text("Profile")
