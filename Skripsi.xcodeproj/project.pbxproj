@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		026C87AE2A1F30FE00B6E8B1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C87AD2A1F30FE00B6E8B1 /* LoginView.swift */; };
+		026C87B12A1F312F00B6E8B1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C87B02A1F312F00B6E8B1 /* RegisterView.swift */; };
+		026C87B42A1F33B900B6E8B1 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C87B32A1F33B900B6E8B1 /* WelcomeView.swift */; };
+		026C87B82A1F341500B6E8B1 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C87B72A1F341500B6E8B1 /* WelcomeViewModel.swift */; };
 		02E90DB42A0DEF6500706F80 /* SkripsiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DB32A0DEF6500706F80 /* SkripsiApp.swift */; };
 		02E90DB62A0DEF6500706F80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DB52A0DEF6500706F80 /* ContentView.swift */; };
 		02E90DB82A0DEF6700706F80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02E90DB72A0DEF6700706F80 /* Assets.xcassets */; };
@@ -51,6 +55,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		026C87AD2A1F30FE00B6E8B1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		026C87B02A1F312F00B6E8B1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		026C87B32A1F33B900B6E8B1 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		026C87B72A1F341500B6E8B1 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		02E90DB02A0DEF6500706F80 /* Skripsi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skripsi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02E90DB32A0DEF6500706F80 /* SkripsiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkripsiApp.swift; sourceTree = "<group>"; };
 		02E90DB52A0DEF6500706F80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +113,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		026C87AC2A1F30EA00B6E8B1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				026C87AD2A1F30FE00B6E8B1 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		026C87AF2A1F312000B6E8B1 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				026C87B02A1F312F00B6E8B1 /* RegisterView.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		026C87B22A1F33AE00B6E8B1 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				026C87B32A1F33B900B6E8B1 /* WelcomeView.swift */,
+				026C87B72A1F341500B6E8B1 /* WelcomeViewModel.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 		02E90DA72A0DEF6500706F80 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +161,9 @@
 		02E90DB22A0DEF6500706F80 /* Skripsi */ = {
 			isa = PBXGroup;
 			children = (
+				026C87B22A1F33AE00B6E8B1 /* Welcome */,
+				026C87AF2A1F312000B6E8B1 /* Register */,
+				026C87AC2A1F30EA00B6E8B1 /* Login */,
 				8E932EEB2A1E3D9500DCA67C /* ReusableComponent */,
 				8E932EE82A1E3D5200DCA67C /* Profile */,
 				8E4A738C2A1CB385009BB040 /* Search */,
@@ -359,7 +395,9 @@
 				02E90DBD2A0DEF6700706F80 /* Persistence.swift in Sources */,
 				8E4A73922A1D1F13009BB040 /* AutomatedOverlayView.swift in Sources */,
 				8E115FC72A1A6CFE0052C16A /* MealTabItemViewModel.swift in Sources */,
+				026C87B12A1F312F00B6E8B1 /* RegisterView.swift in Sources */,
 				8E4A738E2A1CB39D009BB040 /* SearchTabItemView.swift in Sources */,
+				026C87B82A1F341500B6E8B1 /* WelcomeViewModel.swift in Sources */,
 				8E4A73902A1D146A009BB040 /* SearchTabItemViewModel.swift in Sources */,
 				8E115FCF2A1BACE60052C16A /* SeeMoreMealCurrentView.swift in Sources */,
 				8E932EE32A1DB01500DCA67C /* MealItemView.swift in Sources */,
@@ -370,7 +408,9 @@
 				8E932EE52A1DB2E300DCA67C /* AutomatedOverlayTimesView.swift in Sources */,
 				8E932EE12A1DAE7100DCA67C /* AutomatedOverlayMealPlanView.swift in Sources */,
 				8E115FBF2A1A2C6D0052C16A /* MealTabItemView.swift in Sources */,
+				026C87AE2A1F30FE00B6E8B1 /* LoginView.swift in Sources */,
 				8EDED53F2A1BBA1800DC8C6A /* MainTabConfig.swift in Sources */,
+				026C87B42A1F33B900B6E8B1 /* WelcomeView.swift in Sources */,
 				8E4A73942A1D2A55009BB040 /* MealPlanItem.swift in Sources */,
 				8E932EED2A1E3DAB00DCA67C /* ButtonView.swift in Sources */,
 				8E115FC52A1A57F50052C16A /* Color.swift in Sources */,
