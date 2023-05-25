@@ -58,18 +58,20 @@ struct ProfileTabItemView: View {
                                 Spacer()
                                 Image(systemName: "chevron.right")
                             }
-                            HStack{
-                                Text("Grocery List")
-                                    .padding(.leading, 32)
-                                    .overlay(
-                                        Image(systemName: "cart")
-                                            .foregroundColor(Color(hex: "#F0BB62"))
+                            NavigationLink(destination: GroceryListView()) {
+                                HStack{
+                                    Text("Grocery List")
+                                        .padding(.leading, 32)
+                                        .overlay(
+                                            Image(systemName: "cart")
+                                                .foregroundColor(Color(hex: "#F0BB62"))
 
-                                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading),
-                                        alignment: .leading
-                                        )
-                                Spacer()
-                                Image(systemName: "chevron.right")
+                                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading),
+                                            alignment: .leading
+                                            )
+                                    Spacer()
+//                                    Image(systemName: "chevron.right")
+                                }
                             }
 
                         }

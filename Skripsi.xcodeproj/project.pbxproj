@@ -30,6 +30,7 @@
 		8E932EE52A1DB2E300DCA67C /* AutomatedOverlayTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E932EE42A1DB2E300DCA67C /* AutomatedOverlayTimesView.swift */; };
 		8E932EEA2A1E3D6200DCA67C /* ProfileTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E932EE92A1E3D6200DCA67C /* ProfileTabItemView.swift */; };
 		8E932EED2A1E3DAB00DCA67C /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E932EEC2A1E3DAB00DCA67C /* ButtonView.swift */; };
+		8E932EEF2A1FA64700DCA67C /* GroceryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E932EEE2A1FA64700DCA67C /* GroceryListView.swift */; };
 		8EDED53F2A1BBA1800DC8C6A /* MainTabConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDED53E2A1BBA1800DC8C6A /* MainTabConfig.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		8E932EE42A1DB2E300DCA67C /* AutomatedOverlayTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatedOverlayTimesView.swift; sourceTree = "<group>"; };
 		8E932EE92A1E3D6200DCA67C /* ProfileTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabItemView.swift; sourceTree = "<group>"; };
 		8E932EEC2A1E3DAB00DCA67C /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		8E932EEE2A1FA64700DCA67C /* GroceryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListView.swift; sourceTree = "<group>"; };
 		8EDED53E2A1BBA1800DC8C6A /* MainTabConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				8E932EE92A1E3D6200DCA67C /* ProfileTabItemView.swift */,
+				8E932EEE2A1FA64700DCA67C /* GroceryListView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				8E932EE52A1DB2E300DCA67C /* AutomatedOverlayTimesView.swift in Sources */,
 				8E932EE12A1DAE7100DCA67C /* AutomatedOverlayMealPlanView.swift in Sources */,
 				8E115FBF2A1A2C6D0052C16A /* MealTabItemView.swift in Sources */,
+				8E932EEF2A1FA64700DCA67C /* GroceryListView.swift in Sources */,
 				8EDED53F2A1BBA1800DC8C6A /* MainTabConfig.swift in Sources */,
 				8E4A73942A1D2A55009BB040 /* MealPlanItem.swift in Sources */,
 				8E932EED2A1E3DAB00DCA67C /* ButtonView.swift in Sources */,
