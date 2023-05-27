@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Meal: Decodable{
+class Meal: Decodable, Identifiable{
     var mealName: String
     var mealDescription: String
     var mealDay: Status
