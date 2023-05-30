@@ -11,35 +11,58 @@ struct LoginView: View {
     
     @State private var email = ""
     @State private var password = ""
+    @State var visible = false
+    @State private var isSecured : Bool=true
+    
     
     var body: some View {
         ZStack
         {
             Color(hex: "FFF9F0").edgesIgnoringSafeArea(.all)
             VStack() {
-//                Text("Login")
-//                    .padding(.bottom, 30)
+
                 VStack(alignment: .leading, spacing: 15) {
                     
-                    Text("Username")
+                    Text("Email")
                         .font(.system(size: 16))
                     
                     TextField("", text: self.$email)
                         .padding()
                         .border(Color(hex: "F0BB62"))
                         .cornerRadius(50.0)
-                        
-//                        .background(.white)
                     
                     Text("Password")
                         .font(.system(size: 16))
                     
-                    SecureField("", text: self.$password)
-                        .padding()
-                        .border(Color(hex: "F0BB62"))
-                        .cornerRadius(50.0)
-//                        .background(.white)
-                    
+                    ZStack(alignment: .trailing)
+                    {
+                        Group{
+                            
+                            if isSecured
+                            {
+                                SecureField("", text: self.$password)
+                                    .padding()
+                                    .border(Color(hex: "F0BB62"))
+                                    .cornerRadius(50.0)
+                            }
+                            else
+                            {
+                                TextField("", text: self.$password)
+                                    .padding()
+                                    .border(Color(hex: "F0BB62"))
+                                    .cornerRadius(50.0)
+                            }
+                            
+                        }
+                        Button(action: {
+                                        isSecured.toggle()
+                                    }) {
+                                        Image(systemName: self.isSecured ? "eye.slash" : "eye")
+                                            .accentColor(.gray)
+                                    }
+                       
+                    }
+                
                     HStack
                     {
                         Spacer()
@@ -54,8 +77,9 @@ struct LoginView: View {
                     
                     
                     
-                    Button(action: { }) {
-                        Text("Sign in").padding()
+                    Button(action: {}) {
+                        Text("Sign in")
+                            .padding()
                     }
                     .frame(maxWidth: .infinity)
                     .background(Color(hex: "519259"))
@@ -74,18 +98,13 @@ struct LoginView: View {
                     }
                     
                     Spacer()
-                    
-                  
-                        
-                    
-                }.padding([.leading, .trailing], 27.5)
-                
-               
-                
-                
+                }
+                .padding([.leading, .trailing], 27.5)
             }
         }
     }
+    
+    
 }
 
 struct LoginView_Previews: PreviewProvider {
