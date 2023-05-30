@@ -45,20 +45,22 @@ struct SearchTabItemView: View {
                     ScrollView {
                         LazyVGrid(columns: viewModel.gridLayout, spacing: 16) {
                             ForEach(viewModel.items, id: \.name) { item in
-                                VStack(spacing: 4){
-                                    Image(systemName: "square")
-                                        .resizable()
-                                        .frame(width: 75, height: 75)
-                                    Text(item.name)
-                                        .font(/*@START_MENU_TOKEN@*/.headline/*@END_MENU_TOKEN@*/)
-                                    Text(item.description)
-                                        .font(.caption)
-                                        .lineLimit(2)
+                                NavigationLink(destination: DetailRecipeView()) {
+                                    VStack(spacing: 4){
+                                        Image(systemName: "square")
+                                            .resizable()
+                                            .frame(width: 75, height: 75)
+                                        Text(item.name)
+                                            .font(/*@START_MENU_TOKEN@*/.headline/*@END_MENU_TOKEN@*/)
+                                        Text(item.description)
+                                            .font(.caption)
+                                            .lineLimit(2)
+                                    }
+                                    .foregroundColor(Color(hex: "#1D4536"))
+                                    .padding(8)
+                                    .background(Color.clear)
+                                    .cornerRadius(8)
                                 }
-                                .foregroundColor(Color(hex: "#1D4536"))
-                                .padding(8)
-                                .background(Color.clear)
-                                .cornerRadius(8)
                             }
                         }
                     }
