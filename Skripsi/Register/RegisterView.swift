@@ -11,6 +11,7 @@ import FirebaseAuth
 
 struct RegisterView: View {
     private let firebaseManager = FirebaseManager()
+    let authManager = AuthManager()
     
     //====== For Credentials ======//
     @State private var FullName = ""
@@ -173,16 +174,27 @@ struct RegisterView: View {
     
     //Function Register Email Fullname and Password
     
-    private func register() {
-        firebaseManager.register(email: email, FullName: FullName, password: password) { result in
-            switch result {
-            case .success:
-                // Registration successful
-                print("Registration successful")
-                // Perform additional actions or navigate to the next view
-            case .failure(let error):
-                // Registration failed
+//    private func register() {
+//        authManager.registerUser(email: email, FullName: FullName, password: password)() { result in
+//            switch result {
+//            case .success:
+//                // Registration successful
+//                print("Registration successful")
+//                // Perform additional actions or navigate to the next view
+//            case .failure(let error):
+//                // Registration failed
+//                print("Registration failed: \(error.localizedDescription)")
+//            }
+//        }
+//    }
+    
+//    TODO: GABOLE ADA FUNCTION LOGIC DI VIEW, PINDAHIN KE VIEW MODEL 
+    func register() {
+        authManager.registerUser(email: email, password: password, fullName: FullName) { (result, error) in
+            if let error = error {
                 print("Registration failed: \(error.localizedDescription)")
+            } else {
+                print("Registration successful!")
             }
         }
     }

@@ -12,6 +12,7 @@ import Firebase
 struct SkripsiApp: App {
     let persistenceController = PersistenceController.shared
 
+//    TODO: NGAPAIN BIKIN INIT CONFIGURE DISINI, BIKIN INITIATE KEK GINI DI WORKER / MANAGER FITUR TERSEBUT (MISAL: AUTHMANAGER) ITU JUGA BELOM TENTU KEPAKE
     
     init()
     {

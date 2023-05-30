@@ -14,6 +14,7 @@ struct LoginView: View {
     @State var visible = false
     @State private var isSecured : Bool=true
     
+    var authManager = AuthManager()
     
     var body: some View {
         ZStack
@@ -77,7 +78,9 @@ struct LoginView: View {
                     
                     
                     
-                    Button(action: {}) {
+                    Button(action: {
+                        signIn()
+                    }) {
                         Text("Sign in")
                             .padding()
                     }
@@ -103,7 +106,16 @@ struct LoginView: View {
             }
         }
     }
-    
+//    TODO: GABOLE ADA FUNCTION LOGIC DI VIEW, PINDAHIN KE VIEW MODEL 
+    func signIn() {
+        authManager.signIn(email: email, password: password) { (result, error) in
+            if let error = error {
+                print("Sign in failed: \(error.localizedDescription)")
+            } else {
+                print("Sign in successful!")
+            }
+        }
+    }
     
 }
 

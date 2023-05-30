@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import Firebase
 
+
+// TODO: RAPIHIN CODE NYA, YANG GAKEPAKE DI TAKE OUT, ATAU KALAU MASIH KEPAKE DIRAPIHIN, BIKIN HELPER / ATAU APA KEK JANGAN DI RUJAK DISINI SEMUA
 struct MultiWheelPicker: UIViewRepresentable {
     var selections: Binding<[Double]>
     let data: [[Double]]
@@ -81,3 +83,17 @@ class FirebaseManager {
    
     }
 
+
+
+class RegisterViewModel: ObservableObject {
+    
+//    func register() {
+//        authManager.registerUser(email: email, password: password) { (result, error) in
+//            if let error = error {
+//                print("Registration failed: \(error.localizedDescription)")
+//            } else {
+//                print("Registration successful!")
+//            }
+//        }
+//    }
+}
