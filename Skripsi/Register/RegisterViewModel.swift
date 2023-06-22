@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 import FirebaseAuth
-
+import Firebase
 
 
 let authManager = AuthManager()
@@ -88,25 +88,63 @@ class FirebaseManager {
     }
 
 
-class RegisterViewModel: ObservableObject
-{
+class RegisterViewModel: ObservableObject {
+    
     let authManager = AuthManager()
     
+    struct User
+    {
+        let username: String
+        let email: String
+        let password: String
+    }
+    
+    @Published var username = ""
     @Published var email = ""
     @Published var password = ""
-    @Published var FullName = ""
+    @Published var confirmPassword = ""
+    
+    private var db = Firestore.firestore()
     
     func register() {
-        authManager.registerUser(email: email, password: password, fullName: FullName) { (result, error) in
+        guard isInputValid else { return }
+        
+        let user = User(username: username, email: email, password: password)
+        
+        //Data user once saved sends it directly to firebase
+        
+        db.collection("users").addDocument(data: [
+            "username": user.username,
+            "email": user.email,
+            "password": user.password
+        ]) { error in
             if let error = error {
-                print("Registration failed: \(error.localizedDescription)")
+                print("Error adding document: \(error)")
             } else {
-                print("Registration successful!")
+                print("User registered successfully!")
             }
         }
     }
+    
+    private var isInputValid: Bool {
+        // Perform input validation here
+        // You can add your own validation rules
+        
+        // Check if all fields are filled
+        guard !username.isEmpty, !email.isEmpty, !password.isEmpty, !confirmPassword.isEmpty else {
+            return false
+        }
+        
+        // Check if passwords match
+        guard password == confirmPassword else {
+            return false
+        }
+        
+        // You can add more validation rules here, like email format validation
+        
+        return true
+    }
 }
-
 
 
 

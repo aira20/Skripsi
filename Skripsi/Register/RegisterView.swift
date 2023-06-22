@@ -16,10 +16,11 @@ struct RegisterView: View {
     @StateObject private var viewModel = RegisterViewModel()
     
     
-    //====== For Credentials ======//
-    @State private var FullName = ""
-    @State private var email = ""
-    @State private var password = ""
+//    
+//    //====== For Credentials ======//
+//    @State private var FullName = ""
+//    @State private var email = ""
+//    @State private var password = ""
     
     //====== For Password eye button ======//
     @State var visible = false
@@ -41,16 +42,15 @@ struct RegisterView: View {
             VStack() {
 
                 VStack(alignment: .leading, spacing: 15) {
-                    Group
-                    {
+                    Group {
                         Text("Full Name")
                             .font(.system(size: 16))
                         
-                        TextField("", text: self.$FullName)
+                        TextField("", text: $viewModel.username)
                             .padding()
                             .border(Color(hex: "F0BB62"))
                             .cornerRadius(50.0)
-                            
+                        
                         Text("Email")
                             .font(.system(size: 16))
                         
@@ -60,78 +60,50 @@ struct RegisterView: View {
                             .cornerRadius(50.0)
                     }
                     
-                    
-                    Group
-                    {
+                    Group {
                         Text("Password")
                             .font(.system(size: 16))
                         
-                    ZStack(alignment: .trailing)
-                        {
-                            Group{
-                                
-                                if isSecured
-                                {
-                                    SecureField("", text: self.$password)
-                                        .padding()
-                                        .border(Color(hex: "F0BB62"))
-                                        .cornerRadius(50.0)
-                                }
-                                else
-                                {
-                                    TextField("", text: self.$password)
-                                        .padding()
-                                        .border(Color(hex: "F0BB62"))
-                                        .cornerRadius(50.0)
-                
-                                }
-                                
+                        ZStack(alignment: .trailing) {
+                            if isSecured {
+                                SecureField("", text: self.$password)
+                            } else {
+                                TextField("", text: self.$password)
                             }
+                            
                             Button(action: {
-                                            isSecured.toggle()
-                                        }) {
-                                            Image(systemName: self.isSecured ? "eye.slash" : "eye")
-                                                .accentColor(.gray)
-                                        }
-                           
+                                isSecured.toggle()
+                            }) {
+                                Image(systemName: self.isSecured ? "eye.slash" : "eye")
+                                    .accentColor(.gray)
+                            }
                         }
+                        .padding()
+                        .border(Color(hex: "F0BB62"))
+                        .cornerRadius(50.0)
                         
                         Text("Confirm Password")
                             .font(.system(size: 16))
                         
-                    ZStack(alignment: .trailing)
-                        {
-                            Group{
-                                
-                                if isSecured
-                                {
-                                    SecureField("", text: self.$password)
-                                        .padding()
-                                        .border(Color(hex: "F0BB62"))
-                                        .cornerRadius(50.0)
-                
-                                }
-                                else
-                                {
-                                    TextField("", text: self.$password)
-                                        .padding()
-                                        .border(Color(hex: "F0BB62"))
-                                        .cornerRadius(50.0)
-                
-                                }
-                                
+                        ZStack(alignment: .trailing) {
+                            if isSecured {
+                                SecureField("", text: self.$password)
+                            } else {
+                                TextField("", text: self.$password)
                             }
+                            
                             Button(action: {
-                                            isSecured.toggle()
-                                        }) {
-                                            Image(systemName: self.isSecured ? "eye.slash" : "eye")
-                                                .accentColor(.gray)
-                                        }
-                           
+                                isSecured.toggle()
+                            }) {
+                                Image(systemName: self.isSecured ? "eye.slash" : "eye")
+                                    .accentColor(.gray)
+                            }
                         }
-       
-       
+                        .padding()
+                        .border(Color(hex: "F0BB62"))
+                        .cornerRadius(50.0)
                     }
+                }
                     
 //
 //                    Group
@@ -182,24 +154,7 @@ struct RegisterView: View {
             }
         }
     }
-    
-    
-    //Function Register Email Fullname and Password
-    
-//    private func register() {
-//        authManager.registerUser(email: email, FullName: FullName, password: password)() { result in
-//            switch result {
-//            case .success:
-//                // Registration successful
-//                print("Registration successful")
-//                // Perform additional actions or navigate to the next view
-//            case .failure(let error):
-//                // Registration failed
-//                print("Registration failed: \(error.localizedDescription)")
-//            }
-//        }
-//    }
-}
+
     
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {

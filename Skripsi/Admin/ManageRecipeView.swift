@@ -10,7 +10,7 @@ import SwiftUI
 struct ManageRecipeView: View {
     @State private var searchText = ""
     @State private var users = [
-            "Jack", "Aria", "Test", "Shilo", "Jelek", "Babi"
+            "Martabak", "Kikil", "Test", "Chicken", "Zebra", "Babi"
         ]
     
     var body: some View {
