@@ -7,10 +7,14 @@
 
 import Foundation
 import SwiftUI
-import Firebase
+import FirebaseAuth
 
 
-// TODO: RAPIHIN CODE NYA, YANG GAKEPAKE DI TAKE OUT, ATAU KALAU MASIH KEPAKE DIRAPIHIN, BIKIN HELPER / ATAU APA KEK JANGAN DI RUJAK DISINI SEMUA
+
+let authManager = AuthManager()
+
+//TODO: DON'T FORGET TO GET BACK TO THIS PROBLEM, NUMBER WHEEL PICKER
+
 struct MultiWheelPicker: UIViewRepresentable {
     var selections: Binding<[Double]>
     let data: [[Double]]
@@ -84,16 +88,25 @@ class FirebaseManager {
     }
 
 
-
-class RegisterViewModel: ObservableObject {
+class RegisterViewModel: ObservableObject
+{
+    let authManager = AuthManager()
     
-//    func register() {
-//        authManager.registerUser(email: email, password: password) { (result, error) in
-//            if let error = error {
-//                print("Registration failed: \(error.localizedDescription)")
-//            } else {
-//                print("Registration successful!")
-//            }
-//        }
-//    }
+    @Published var email = ""
+    @Published var password = ""
+    @Published var FullName = ""
+    
+    func register() {
+        authManager.registerUser(email: email, password: password, fullName: FullName) { (result, error) in
+            if let error = error {
+                print("Registration failed: \(error.localizedDescription)")
+            } else {
+                print("Registration successful!")
+            }
+        }
+    }
 }
+
+
+
+

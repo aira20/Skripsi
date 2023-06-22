@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    
+    @StateObject private var viewModel = PictureVIewModel()
+    
     var body: some View {
+        
+        
+        
+        
         ZStack
         {
 //            Color(hex: "FFF9F0").edgesIgnoringSafeArea(.all)
             //Color of background still not complete
-            
-            
+         
             NavigationView
             {
                 
@@ -60,12 +66,7 @@ struct WelcomeView: View {
             }
             
             .padding()
-        }
-        
-        
-            
-            
-          
+        }    
         }
         
     }

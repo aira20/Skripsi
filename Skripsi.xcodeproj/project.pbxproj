@@ -41,6 +41,10 @@
 		02BB62752A21C1D7009408FB /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 02BB62742A21C1D7009408FB /* FirebaseStorageCombine-Community */; };
 		02BB627D2A2263FE009408FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02BB627C2A2263FE009408FB /* GoogleService-Info.plist */; };
 		02BB62832A25FA3C009408FB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB62822A25FA3C009408FB /* LoginViewModel.swift */; };
+		02BB62852A29C731009408FB /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB62842A29C731009408FB /* AdminView.swift */; };
+		02BB62882A29C862009408FB /* AdminViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB62872A29C862009408FB /* AdminViewModel.swift */; };
+		02BB628A2A2F23E5009408FB /* ManageAccView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB62892A2F23E5009408FB /* ManageAccView.swift */; };
+		02BB628D2A360EE4009408FB /* ManageRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB628C2A360EE4009408FB /* ManageRecipeView.swift */; };
 		02E90DB42A0DEF6500706F80 /* SkripsiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DB32A0DEF6500706F80 /* SkripsiApp.swift */; };
 		02E90DB62A0DEF6500706F80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DB52A0DEF6500706F80 /* ContentView.swift */; };
 		02E90DB82A0DEF6700706F80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02E90DB72A0DEF6700706F80 /* Assets.xcassets */; };
@@ -94,6 +98,10 @@
 		02BB61C22A20A8BF009408FB /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		02BB627C2A2263FE009408FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02BB62822A25FA3C009408FB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		02BB62842A29C731009408FB /* AdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
+		02BB62872A29C862009408FB /* AdminViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewModel.swift; sourceTree = "<group>"; };
+		02BB62892A2F23E5009408FB /* ManageAccView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageAccView.swift; sourceTree = "<group>"; };
+		02BB628C2A360EE4009408FB /* ManageRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRecipeView.swift; sourceTree = "<group>"; };
 		02E90DB02A0DEF6500706F80 /* Skripsi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skripsi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02E90DB32A0DEF6500706F80 /* SkripsiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkripsiApp.swift; sourceTree = "<group>"; };
 		02E90DB52A0DEF6500706F80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -204,6 +212,17 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		02BB62862A29C739009408FB /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				02BB62842A29C731009408FB /* AdminView.swift */,
+				02BB62892A2F23E5009408FB /* ManageAccView.swift */,
+				02BB628C2A360EE4009408FB /* ManageRecipeView.swift */,
+				02BB62872A29C862009408FB /* AdminViewModel.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
 		02E90DA72A0DEF6500706F80 = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				02BB627C2A2263FE009408FB /* GoogleService-Info.plist */,
+				02BB62862A29C739009408FB /* Admin */,
 				026C87B22A1F33AE00B6E8B1 /* Welcome */,
 				026C87AF2A1F312000B6E8B1 /* Register */,
 				026C87AC2A1F30EA00B6E8B1 /* Login */,
@@ -503,6 +523,7 @@
 				8E4A738E2A1CB39D009BB040 /* SearchTabItemView.swift in Sources */,
 				026C87B82A1F341500B6E8B1 /* WelcomeViewModel.swift in Sources */,
 				8E4A73902A1D146A009BB040 /* SearchTabItemViewModel.swift in Sources */,
+				02BB628A2A2F23E5009408FB /* ManageAccView.swift in Sources */,
 				8E115FCF2A1BACE60052C16A /* SeeMoreMealCurrentView.swift in Sources */,
 				8E932EE32A1DB01500DCA67C /* MealItemView.swift in Sources */,
 				02E90DC02A0DEF6700706F80 /* Skripsi.xcdatamodeld in Sources */,
@@ -516,11 +537,14 @@
 				026C87AE2A1F30FE00B6E8B1 /* LoginView.swift in Sources */,
 				8EDED53F2A1BBA1800DC8C6A /* MainTabConfig.swift in Sources */,
 				026C87B42A1F33B900B6E8B1 /* WelcomeView.swift in Sources */,
+				02BB62852A29C731009408FB /* AdminView.swift in Sources */,
 				02BB61C32A20A8BF009408FB /* RegisterViewModel.swift in Sources */,
 				8E4A73942A1D2A55009BB040 /* MealPlanItem.swift in Sources */,
 				8E932EED2A1E3DAB00DCA67C /* ButtonView.swift in Sources */,
+				02BB628D2A360EE4009408FB /* ManageRecipeView.swift in Sources */,
 				8E115FC52A1A57F50052C16A /* Color.swift in Sources */,
 				8E932EEA2A1E3D6200DCA67C /* ProfileTabItemView.swift in Sources */,
+				02BB62882A29C862009408FB /* AdminViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

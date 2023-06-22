@@ -2,7 +2,7 @@
 //  seeMoreMealCurrentView.swift
 //  Skripsi
 //
-//  Created by Mac-albert on 22/05/23.
+//  Created by Aria on 22/05/23.
 //
 
 import SwiftUI

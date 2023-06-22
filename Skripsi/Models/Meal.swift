@@ -2,7 +2,7 @@
 //  Meal.swift
 //  Skripsi
 //
-//  Created by Mac-albert on 21/05/23.
+//  Created by Aria Rifqi on 21/05/23.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  User.swift
 //  Skripsi
 //
-//  Created by Mac-albert on 30/05/23.
+//  Created by Aria Rifqi on 30/05/23.
 //
 
 import Foundation

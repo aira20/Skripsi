@@ -6,16 +6,17 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import Firebase
 
 struct LoginView: View {
-    
-    @State private var email = ""
-    @State private var password = ""
+
+    @StateObject private var viewModel = LoginViewModel()
     @State var visible = false
     @State private var isSecured : Bool=true
-    
+
     var authManager = AuthManager()
-    
+
     var body: some View {
         ZStack
         {
@@ -27,7 +28,7 @@ struct LoginView: View {
                     Text("Email")
                         .font(.system(size: 16))
                     
-                    TextField("", text: self.$email)
+                    TextField("", text: $viewModel.email)
                         .padding()
                         .border(Color(hex: "F0BB62"))
                         .cornerRadius(50.0)
@@ -41,27 +42,26 @@ struct LoginView: View {
                             
                             if isSecured
                             {
-                                SecureField("", text: self.$password)
+                                SecureField("", text: $viewModel.password)
                                     .padding()
                                     .border(Color(hex: "F0BB62"))
                                     .cornerRadius(50.0)
                             }
                             else
                             {
-                                TextField("", text: self.$password)
+                                TextField("", text: $viewModel.password)
                                     .padding()
                                     .border(Color(hex: "F0BB62"))
                                     .cornerRadius(50.0)
                             }
                             
                         }
-                        Button(action: {
-                                        isSecured.toggle()
-                                    }) {
-                                        Image(systemName: self.isSecured ? "eye.slash" : "eye")
-                                            .accentColor(.gray)
-                                    }
-                       
+                Button(action: {
+                                isSecured.toggle()
+                            }) {
+                                Image(systemName: self.isSecured ? "eye.slash" : "eye")
+                                    .accentColor(.gray)
+                            }
                     }
                 
                     HStack
@@ -79,7 +79,7 @@ struct LoginView: View {
                     
                     
                     Button(action: {
-                        signIn()
+                        viewModel.signIn()
                     }) {
                         Text("Sign in")
                             .padding()
@@ -106,17 +106,7 @@ struct LoginView: View {
             }
         }
     }
-//    TODO: GABOLE ADA FUNCTION LOGIC DI VIEW, PINDAHIN KE VIEW MODEL 
-    func signIn() {
-        authManager.signIn(email: email, password: password) { (result, error) in
-            if let error = error {
-                print("Sign in failed: \(error.localizedDescription)")
-            } else {
-                print("Sign in successful!")
-            }
-        }
-    }
-    
+
 }
 
 struct LoginView_Previews: PreviewProvider {

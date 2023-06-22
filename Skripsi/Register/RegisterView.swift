@@ -10,8 +10,11 @@ import Firebase
 import FirebaseAuth
 
 struct RegisterView: View {
+    
     private let firebaseManager = FirebaseManager()
-    let authManager = AuthManager()
+    
+    @StateObject private var viewModel = RegisterViewModel()
+    
     
     //====== For Credentials ======//
     @State private var FullName = ""
@@ -147,26 +150,35 @@ struct RegisterView: View {
 //                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
 //
 //
-                        
                     //Sign Up Button
                     
-                    Button(action: register) {
-                        Text("Sign Up").padding()
-                    }
-                    .frame(maxWidth: .infinity)
-                    .background(Color(hex: "519259"))
-                    .foregroundColor(.white)
-                    .cornerRadius(50.0)
-                    .padding(.bottom,15)
+                    Button(action: {
+                                // Button action
+                                print("Button tapped")
+                            }) {
+                                Image("imageName")
+                                    .resizable()
+                                    .frame(width: 200, height: 200)
+                            }
+                    
+                    Button(action: {
+                        viewModel.register()
+                    }, label: {
+                        Text("Sign Up")
+                    })
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color(hex: "519259"))
+                        .foregroundColor(.white)
+                        .cornerRadius(50.0)
+                        .padding(.bottom,15)
+                   
                     
                     Spacer()
                   
                 }
                 .padding([.leading, .trailing], 27.5)
-                
-               
-                
-                
+   
             }
         }
     }
@@ -187,18 +199,6 @@ struct RegisterView: View {
 //            }
 //        }
 //    }
-    
-//    TODO: GABOLE ADA FUNCTION LOGIC DI VIEW, PINDAHIN KE VIEW MODEL 
-    func register() {
-        authManager.registerUser(email: email, password: password, fullName: FullName) { (result, error) in
-            if let error = error {
-                print("Registration failed: \(error.localizedDescription)")
-            } else {
-                print("Registration successful!")
-            }
-        }
-    }
-    
 }
     
 struct RegisterView_Previews: PreviewProvider {
