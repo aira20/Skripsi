@@ -16,6 +16,9 @@
 		02E90DCA2A0DEF6700706F80 /* SkripsiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DC92A0DEF6700706F80 /* SkripsiTests.swift */; };
 		02E90DD42A0DEF6700706F80 /* SkripsiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DD32A0DEF6700706F80 /* SkripsiUITests.swift */; };
 		02E90DD62A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DD52A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift */; };
+		8E0907F52A446F38008C9615 /* GroceryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0907F42A446F38008C9615 /* GroceryListView.swift */; };
+		8E0907F72A448DA8008C9615 /* PersonalRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0907F62A448DA8008C9615 /* PersonalRecipeView.swift */; };
+		8E0907F92A449339008C9615 /* AddPersonalRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0907F82A449339008C9615 /* AddPersonalRecipeView.swift */; };
 		8E115FBF2A1A2C6D0052C16A /* MealTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FBE2A1A2C6D0052C16A /* MealTabItemView.swift */; };
 		8E115FC52A1A57F50052C16A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FC42A1A57F50052C16A /* Color.swift */; };
 		8E115FC72A1A6CFE0052C16A /* MealTabItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FC62A1A6CFE0052C16A /* MealTabItemViewModel.swift */; };
@@ -63,6 +66,9 @@
 		02E90DCF2A0DEF6700706F80 /* SkripsiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkripsiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02E90DD32A0DEF6700706F80 /* SkripsiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkripsiUITests.swift; sourceTree = "<group>"; };
 		02E90DD52A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkripsiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8E0907F42A446F38008C9615 /* GroceryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListView.swift; sourceTree = "<group>"; };
+		8E0907F62A448DA8008C9615 /* PersonalRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalRecipeView.swift; sourceTree = "<group>"; };
+		8E0907F82A449339008C9615 /* AddPersonalRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonalRecipeView.swift; sourceTree = "<group>"; };
 		8E115FBE2A1A2C6D0052C16A /* MealTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTabItemView.swift; sourceTree = "<group>"; };
 		8E115FC42A1A57F50052C16A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Skripsi/Color.swift; sourceTree = SOURCE_ROOT; };
 		8E115FC62A1A6CFE0052C16A /* MealTabItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTabItemViewModel.swift; sourceTree = "<group>"; };
@@ -214,6 +220,9 @@
 			isa = PBXGroup;
 			children = (
 				8E932EE92A1E3D6200DCA67C /* ProfileTabItemView.swift */,
+				8E0907F42A446F38008C9615 /* GroceryListView.swift */,
+				8E0907F62A448DA8008C9615 /* PersonalRecipeView.swift */,
+				8E0907F82A449339008C9615 /* AddPersonalRecipeView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -360,16 +369,19 @@
 				8E4A73922A1D1F13009BB040 /* AutomatedOverlayView.swift in Sources */,
 				8E115FC72A1A6CFE0052C16A /* MealTabItemViewModel.swift in Sources */,
 				8E4A738E2A1CB39D009BB040 /* SearchTabItemView.swift in Sources */,
+				8E0907F92A449339008C9615 /* AddPersonalRecipeView.swift in Sources */,
 				8E4A73902A1D146A009BB040 /* SearchTabItemViewModel.swift in Sources */,
 				8E115FCF2A1BACE60052C16A /* SeeMoreMealCurrentView.swift in Sources */,
 				8E932EE32A1DB01500DCA67C /* MealItemView.swift in Sources */,
 				02E90DC02A0DEF6700706F80 /* Skripsi.xcdatamodeld in Sources */,
 				02E90DB62A0DEF6500706F80 /* ContentView.swift in Sources */,
 				8E115FCA2A1A6D5D0052C16A /* Meal.swift in Sources */,
+				8E0907F72A448DA8008C9615 /* PersonalRecipeView.swift in Sources */,
 				02E90DB42A0DEF6500706F80 /* SkripsiApp.swift in Sources */,
 				8E932EE52A1DB2E300DCA67C /* AutomatedOverlayTimesView.swift in Sources */,
 				8E932EE12A1DAE7100DCA67C /* AutomatedOverlayMealPlanView.swift in Sources */,
 				8E115FBF2A1A2C6D0052C16A /* MealTabItemView.swift in Sources */,
+				8E0907F52A446F38008C9615 /* GroceryListView.swift in Sources */,
 				8EDED53F2A1BBA1800DC8C6A /* MainTabConfig.swift in Sources */,
 				8E4A73942A1D2A55009BB040 /* MealPlanItem.swift in Sources */,
 				8E932EED2A1E3DAB00DCA67C /* ButtonView.swift in Sources */,

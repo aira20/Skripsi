@@ -141,7 +141,5 @@ struct MealTabItemView: View {
 struct MealView_Previews: PreviewProvider {
     static var previews: some View {
         MealTabItemView()
-//            .previewDevice(PreviewDevice(rawValue: "iPhone SE(3rd generation"))
-//            .previewDisplayName("iPhone SE")
     }
 }

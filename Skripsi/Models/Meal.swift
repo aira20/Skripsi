@@ -17,7 +17,7 @@ class Meal: Decodable{
     var steps: [String]
 }
 
-class Ingredient: Decodable{
+struct Ingredient: Decodable{
     var ingredientsName: String
     var ingredientsQuantity: String
 }
