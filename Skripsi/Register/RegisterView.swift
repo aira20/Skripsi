@@ -16,7 +16,7 @@ struct RegisterView: View {
     @StateObject private var viewModel = RegisterViewModel()
     
     
-//    
+//
 //    //====== For Credentials ======//
 //    @State private var FullName = ""
 //    @State private var email = ""
@@ -27,11 +27,11 @@ struct RegisterView: View {
     @State private var isSecured : Bool=true
     
     //====== For Number Picker ======//
-    @State private var selections1: [Double] = [0, 0]
-    private let data1: [[Double]] = [
-            Array(stride(from: 0, through: 24, by: 1)),
-            Array(stride(from: 0, through: 60, by: 1))
-        ]
+//    @State private var selections1: [Double] = [0, 0]
+//    private let data1: [[Double]] = [
+//            Array(stride(from: 0, through: 24, by: 1)),
+//            Array(stride(from: 0, through: 60, by: 1))
+//        ]
     
     
     var body: some View {
@@ -54,7 +54,7 @@ struct RegisterView: View {
                         Text("Email")
                             .font(.system(size: 16))
                         
-                        TextField("", text: self.$email)
+                        TextField("", text: $viewModel.email)
                             .padding()
                             .border(Color(hex: "F0BB62"))
                             .cornerRadius(50.0)
@@ -66,9 +66,9 @@ struct RegisterView: View {
                         
                         ZStack(alignment: .trailing) {
                             if isSecured {
-                                SecureField("", text: self.$password)
+                                SecureField("", text: $viewModel.password)
                             } else {
-                                TextField("", text: self.$password)
+                                TextField("", text: $viewModel.password)
                             }
                             
                             Button(action: {
@@ -87,9 +87,9 @@ struct RegisterView: View {
                         
                         ZStack(alignment: .trailing) {
                             if isSecured {
-                                SecureField("", text: self.$password)
+                                SecureField("", text: $viewModel.confirmPassword)
                             } else {
-                                TextField("", text: self.$password)
+                                TextField("", text: $viewModel.password)
                             }
                             
                             Button(action: {

@@ -127,8 +127,6 @@ class RegisterViewModel: ObservableObject {
     }
     
     private var isInputValid: Bool {
-        // Perform input validation here
-        // You can add your own validation rules
         
         // Check if all fields are filled
         guard !username.isEmpty, !email.isEmpty, !password.isEmpty, !confirmPassword.isEmpty else {
@@ -139,8 +137,7 @@ class RegisterViewModel: ObservableObject {
         guard password == confirmPassword else {
             return false
         }
-        
-        // You can add more validation rules here, like email format validation
+ 
         
         return true
     }
