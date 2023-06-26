@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PersonalRecipeView: View {
     @State var searchBarText = ""
+    @StateObject private var viewModel = PersonalRecipeViewModel()
     var items: [String] = ["Item 1", "Item 2", "Item 3"]
     
     var body: some View {
@@ -35,20 +36,18 @@ struct PersonalRecipeView: View {
                 }
             }
             LazyVStack {
-                ForEach(1...4, id: \.self) { item in
+                ForEach(viewModel.meals, id: \.mealName) { item in
                     NavigationLink {
-                        EmptyView()
+                        RecipeDetailView(meal: Meal.preview)
                     } label: {
                         HStack{
-                            Text("Recipe's Name")
+                            Text(item.mealName)
                             Spacer()
                             Image(systemName: "chevron.right")
                         }.foregroundColor(Color(hex: "#1D4536"))
                             .padding(8)
                         Divider()
                     }
-
-                    
                 }
             }
             Spacer()
