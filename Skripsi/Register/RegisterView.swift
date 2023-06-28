@@ -11,28 +11,9 @@ import FirebaseAuth
 
 struct RegisterView: View {
     
-    private let firebaseManager = FirebaseManager()
-    
     @StateObject private var viewModel = RegisterViewModel()
-    
-    
-//
-//    //====== For Credentials ======//
-//    @State private var FullName = ""
-//    @State private var email = ""
-//    @State private var password = ""
-    
-    //====== For Password eye button ======//
     @State var visible = false
-    @State private var isSecured : Bool=true
-    
-    //====== For Number Picker ======//
-//    @State private var selections1: [Double] = [0, 0]
-//    private let data1: [[Double]] = [
-//            Array(stride(from: 0, through: 24, by: 1)),
-//            Array(stride(from: 0, through: 60, by: 1))
-//        ]
-    
+    @State private var isSecured : Bool = true
     
     var body: some View {
         
@@ -46,7 +27,7 @@ struct RegisterView: View {
                         Text("Full Name")
                             .font(.system(size: 16))
                         
-                        TextField("", text: $viewModel.username)
+                        TextField("", text: $viewModel.fullName)
                             .padding()
                             .border(Color(hex: "F0BB62"))
                             .cornerRadius(50.0)
@@ -104,46 +85,17 @@ struct RegisterView: View {
                         .cornerRadius(50.0)
                     }
                 }
-                    
-//
-//                    Group
-//                    {
-//                        Text("How much time do you need to prepare your food?")
-//                            .font(.system(size: 16))
-//                    }
-//
-//                            VStack {
-//                                HStack{
-//                                    MultiWheelPicker(selections: self.$selections1, data: data1)
-//                                        .frame(width: 150)
-//                                }
-//                            }
-//                            .padding(.bottom)
-//                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-//
-//
-                    //Sign Up Button
-                    
-                    Button(action: {
-                                // Button action
-                                print("Button tapped")
-                            }) {
-                                Image("imageName")
-                                    .resizable()
-                                    .frame(width: 200, height: 200)
-                            }
-                    
-                    Button(action: {
+                Button(action: {
                         viewModel.register()
-                    }, label: {
-                        Text("Sign Up")
-                    })
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color(hex: "519259"))
-                        .foregroundColor(.white)
-                        .cornerRadius(50.0)
-                        .padding(.bottom,15)
+                }, label: {
+                    Text("Sign Up")
+                })
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color(hex: "519259"))
+                    .foregroundColor(.white)
+                    .cornerRadius(50.0)
+                    .padding(.bottom,15)
                    
                     
                     Spacer()

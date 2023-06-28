@@ -15,8 +15,6 @@ struct LoginView: View {
     @State var visible = false
     @State private var isSecured : Bool=true
 
-    var authManager = AuthManager()
-
     var body: some View {
         ZStack
         {
