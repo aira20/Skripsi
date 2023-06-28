@@ -9,81 +9,80 @@ import SwiftUI
 
 struct ManageAccView: View {
     @State private var searchText = ""
-    @State private var users = [
-            "Jack", "Aria", "Test", "Shilo", "Jelek"
-        ]
-    
+    @ObservedObject private var viewModel = AdminViewModel()
+
     var body: some View {
-        NavigationView {
-                    VStack {
-                            
-                            SearchBar(text: $searchText)
-                        
-                        List {
-                            ForEach(filteredUsers, id: \.self) { user in
-                                Text(user)
-                            }
-                            .onDelete(perform: delete)
-                            
+        VStack {
+            Text("User Lists")
+                .font(.title)
+                .padding()
+
+            searchAcc(text: $searchText)
+                .padding(.horizontal)
+
+            let sortedUsers = viewModel.filteredUsers(searchText: searchText).sorted(by: { $0.username < $1.username })
+            let sections = Dictionary(grouping: sortedUsers) { String($0.username.prefix(1)) }
+            
+            List {
+                ForEach(Array(sections.keys).sorted(), id: \.self) { key in
+                    Section(header: Text(key).font(.headline)) {
+                        ForEach(sections[key]!, id: \.id) { user in
+                            UserRow(user: user)
                         }
                     }
-            
-                        .navigationBarTitle("User List", displayMode: .inline)
-                    
                 }
-            }
-            
-            private var filteredUsers: [String] {
-                if searchText.isEmpty
-                {
-                    return users.sorted()
-                }
-                else
-                {
-                    return users.filter
-                    {
-                        $0.localizedCaseInsensitiveContains(searchText)
-                        
-                    }
-                    .sorted()
-                }
-            }
-            
-            private func delete(at offsets: IndexSet)
-        {
-                users.remove(atOffsets: offsets)
+                .onDelete(perform: viewModel.deleteUsers)
             }
         }
+    }
+}
+struct UserRow: View {
+    let user: UserInfo
 
-        struct SearchBar: View {
-            @Binding var text: String
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(user.username)
+                .font(.headline)
+            Text(user.email)
+                .font(.subheadline)
+        }
+       
+    }
+}
+
+
+struct searchAcc: View {
+    @Binding var text: String
+
+    var body: some View {
+        HStack {
             
-            var body: some View
-            {
-                HStack
-                {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(.gray)
-                     
-                    TextField("Search", text: $text)
-                        .padding(.horizontal)
-                    
-                    Button(action:
-                    {
-                        text = ""
-                    })
-                    {
-                        Image(systemName: "xmark.circle.fill")
+            TextField("Search", text: $text)
+                .padding(7)
+                .background(Color(.systemGray6))
+                .cornerRadius(8)
+                .padding(.horizontal, 8)
+                .overlay(
+                    HStack {
+                        Image(systemName: "magnifyingglass")
                             .foregroundColor(.gray)
+                            .padding(.leading, 8)
+                        Spacer()
                     }
-                    .padding(.trailing)
-                    .opacity(text.isEmpty ? 0 : 1)
+                )
+
+            if !text.isEmpty {
+                Button(action: {
+                    text = ""
+                }) {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(.gray)
+                        .padding(.trailing, 8)
                 }
-                .padding()
-                
             }
         }
-
+    }
+}
 
 struct ManageAccView_Previews: PreviewProvider {
     static var previews: some View {

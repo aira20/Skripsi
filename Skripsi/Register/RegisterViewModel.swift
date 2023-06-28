@@ -170,12 +170,12 @@ class RegisterViewModel: ObservableObject {
     
     private var isInputValid: Bool {
         
-        //Check if all fields are filled
+        // Check if all fields are filled
         guard !username.isEmpty, !email.isEmpty, !password.isEmpty, !confirmPassword.isEmpty else {
             return false
         }
         
-        //Check if passwords match
+        // Check if passwords match
         guard password == confirmPassword else {
             return false
         }

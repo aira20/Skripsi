@@ -86,6 +86,8 @@ struct RegisterView: View {
                         .padding()
                         .border(Color(hex: "F0BB62"))
                         .cornerRadius(50.0)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
                         
                         Text("Confirm Password")
                                         .font(.system(size: 16))
@@ -107,6 +109,8 @@ struct RegisterView: View {
                         .padding()
                         .border(Color(hex: "F0BB62"))
                         .cornerRadius(50.0)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
                     }
                 }
                     
