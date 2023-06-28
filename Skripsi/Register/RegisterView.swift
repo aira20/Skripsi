@@ -15,12 +15,7 @@ struct RegisterView: View {
     
     @StateObject private var viewModel = RegisterViewModel()
     
-    
-//
-//    //====== For Credentials ======//
-//    @State private var FullName = ""
-//    @State private var email = ""
-//    @State private var password = ""
+
     
     //====== For Password eye button ======//
     @State var visible = false

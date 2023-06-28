@@ -29,9 +29,12 @@ struct ManageAccView: View {
                         ForEach(sections[key]!, id: \.id) { user in
                             UserRow(user: user)
                         }
+                        .onDelete { indices in
+                            let user = sections[key]![indices.first!]
+                            viewModel.deleteUser(user)
+                        }
                     }
                 }
-                .onDelete(perform: viewModel.deleteUsers)
             }
         }
     }
