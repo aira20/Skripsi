@@ -111,8 +111,30 @@ class RegisterViewModel: ObservableObject {
         
         let user = User(username: username, email: email, password: password)
         
-        //Data user once saved sends it directly to firebase
-        
+        // Check if the email already exists in the Firestore collection
+        db.collection("users").whereField("email", isEqualTo: user.email).getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error checking email existence: \(error)")
+                return
+            }
+            
+            guard let documents = querySnapshot?.documents else {
+                // Email doesn't exist, proceed with registration
+                self.registerUser(user)
+                return
+            }
+            
+            if documents.isEmpty {
+                // Email doesn't exist, proceed with registration
+                self.registerUser(user)
+            } else {
+                // Email already exists
+                print("An account with this email already exists.")
+            }
+        }
+    }
+
+    private func registerUser(_ user: User) {
         db.collection("users").addDocument(data: [
             "username": user.username,
             "email": user.email,
@@ -125,18 +147,43 @@ class RegisterViewModel: ObservableObject {
             }
         }
     }
+    func singIn(completion: @escaping (Bool) -> Void) {
+            Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+                if let error = error {
+                    print("Error logging in: \(error)")
+                    completion(false)
+                } else {
+                    print("User logged in successfully!")
+                    completion(true)
+                }
+            }
+        }
+    
+    //TEMPLATE EMAIL FORMAT SO USERS SO THEY INSERT THE CORRECT FORMAT WHEN ENTERING THEIR EMAIL
+    
+    private func isValidEmail(_ email: String) -> Bool {
+        // Regular expression pattern for email validation
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        return emailPredicate.evaluate(with: email)
+    }
     
     private var isInputValid: Bool {
         
-        // Check if all fields are filled
+        //Check if all fields are filled
         guard !username.isEmpty, !email.isEmpty, !password.isEmpty, !confirmPassword.isEmpty else {
             return false
         }
         
-        // Check if passwords match
+        //Check if passwords match
         guard password == confirmPassword else {
             return false
         }
+        
+        //Check if email is in the correct format
+        guard isValidEmail(email) else {
+                return false
+            }
  
         
         return true

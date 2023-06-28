@@ -32,6 +32,8 @@ struct LoginView: View {
                         .padding()
                         .border(Color(hex: "F0BB62"))
                         .cornerRadius(50.0)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
                     
                     Text("Password")
                         .font(.system(size: 16))
@@ -79,8 +81,14 @@ struct LoginView: View {
                     
                     
                     Button(action: {
-                        viewModel.signIn()
-                    }) {
+                        viewModel.signIn { success in
+                            if success {
+                                // Handle successful sign-in
+                            } else {
+                                // Handle sign-in failure
+                            }
+                        }
+                    }){
                         Text("Sign in")
                             .padding()
                     }
@@ -93,7 +101,9 @@ struct LoginView: View {
                     Text("Don't have an Account?")
                         .font(.system(size: 14))
                         .frame(maxWidth: .infinity, alignment: .center)
-                    Button(action: {})
+                    Button(action: {
+                        RegisterView()
+                    })
                     {
                         Text("Create Account")
                             .frame(maxWidth: .infinity, alignment:.center)

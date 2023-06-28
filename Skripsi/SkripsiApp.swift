@@ -21,7 +21,7 @@ struct SkripsiApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RegisterView()
+            LoginView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

@@ -24,7 +24,8 @@ struct RegisterView: View {
     
     //====== For Password eye button ======//
     @State var visible = false
-    @State private var isSecured : Bool=true
+    @State private var isPasswordSecured = true
+    @State private var isConfirmPasswordSecured = true
     
     //====== For Number Picker ======//
 //    @State private var selections1: [Double] = [0, 0]
@@ -50,6 +51,8 @@ struct RegisterView: View {
                             .padding()
                             .border(Color(hex: "F0BB62"))
                             .cornerRadius(50.0)
+                            .autocapitalization(.none)
+                            .disableAutocorrection(true)
                         
                         Text("Email")
                             .font(.system(size: 16))
@@ -58,6 +61,8 @@ struct RegisterView: View {
                             .padding()
                             .border(Color(hex: "F0BB62"))
                             .cornerRadius(50.0)
+                            .autocapitalization(.none)
+                            .disableAutocorrection(true)
                     }
                     
                     Group {
@@ -65,37 +70,37 @@ struct RegisterView: View {
                             .font(.system(size: 16))
                         
                         ZStack(alignment: .trailing) {
-                            if isSecured {
-                                SecureField("", text: $viewModel.password)
-                            } else {
-                                TextField("", text: $viewModel.password)
+                                if isPasswordSecured {
+                                    SecureField("", text: $viewModel.password)
+                                } else {
+                                    TextField("", text: $viewModel.password)
+                                }
+                                
+                                Button(action: {
+                                    isPasswordSecured.toggle()
+                                }) {
+                                    Image(systemName: isPasswordSecured ? "eye.slash" : "eye")
+                                        .accentColor(.gray)
+                                }
                             }
-                            
-                            Button(action: {
-                                isSecured.toggle()
-                            }) {
-                                Image(systemName: self.isSecured ? "eye.slash" : "eye")
-                                    .accentColor(.gray)
-                            }
-                        }
                         .padding()
                         .border(Color(hex: "F0BB62"))
                         .cornerRadius(50.0)
                         
                         Text("Confirm Password")
-                            .font(.system(size: 16))
-                        
+                                        .font(.system(size: 16))
+                                    
                         ZStack(alignment: .trailing) {
-                            if isSecured {
+                            if isConfirmPasswordSecured {
                                 SecureField("", text: $viewModel.confirmPassword)
                             } else {
-                                TextField("", text: $viewModel.password)
+                                TextField("", text: $viewModel.confirmPassword)
                             }
                             
                             Button(action: {
-                                isSecured.toggle()
+                                isConfirmPasswordSecured.toggle()
                             }) {
-                                Image(systemName: self.isSecured ? "eye.slash" : "eye")
+                                Image(systemName: isConfirmPasswordSecured ? "eye.slash" : "eye")
                                     .accentColor(.gray)
                             }
                         }
