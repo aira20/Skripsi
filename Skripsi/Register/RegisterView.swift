@@ -11,24 +11,11 @@ import FirebaseAuth
 
 struct RegisterView: View {
     
-    private let firebaseManager = FirebaseManager()
-    
     @StateObject private var viewModel = RegisterViewModel()
     
-
-    
-    //====== For Password eye button ======//
     @State var visible = false
     @State private var isPasswordSecured = true
     @State private var isConfirmPasswordSecured = true
-    
-    //====== For Number Picker ======//
-//    @State private var selections1: [Double] = [0, 0]
-//    private let data1: [[Double]] = [
-//            Array(stride(from: 0, through: 24, by: 1)),
-//            Array(stride(from: 0, through: 60, by: 1))
-//        ]
-    
     
     var body: some View {
         
@@ -108,26 +95,6 @@ struct RegisterView: View {
                         .disableAutocorrection(true)
                     }
                 }
-                    
-//
-//                    Group
-//                    {
-//                        Text("How much time do you need to prepare your food?")
-//                            .font(.system(size: 16))
-//                    }
-//
-//                            VStack {
-//                                HStack{
-//                                    MultiWheelPicker(selections: self.$selections1, data: data1)
-//                                        .frame(width: 150)
-//                                }
-//                            }
-//                            .padding(.bottom)
-//                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-//
-//
-                    //Sign Up Button
-                    
                     Button(action: {
                                 // Button action
                                 print("Button tapped")

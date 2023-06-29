@@ -28,9 +28,9 @@ class AuthManager {
             }
             self.db.collection("users").addDocument(data: [:])
             
-            let userData = User(id: userId, name: fullName, time: nil, frequency: nil)
+            let userData = User(id: userId, name: fullName, password: password, email: email, accountCreated: Date(), time: nil, frequency: nil)
 
-            do {
+            do{
                 try self.db.collection("users").document(userId).setData(from: userData) { error in
                     if let error = error {
                         completion(nil, error)
