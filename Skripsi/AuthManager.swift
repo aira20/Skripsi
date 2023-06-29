@@ -26,7 +26,6 @@ class AuthManager {
                 completion(nil, NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "User ID is missing"]))
                 return
             }
-            self.db.collection("users").addDocument(data: [:])
             
             let userData = User(id: userId, name: fullName, password: password, email: email, accountCreated: Date(), time: nil, frequency: nil)
 
