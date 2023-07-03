@@ -14,6 +14,7 @@ class LoginViewModel: ObservableObject {
     
     @Published var email = ""
     @Published var password = ""
+    @Published var isAdmin = false
 
     private var db = Firestore.firestore()
     

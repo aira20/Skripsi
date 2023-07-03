@@ -15,6 +15,7 @@ struct LoginView: View {
     @State var visible = false
     @State private var isSecured : Bool=true
 
+
     var authManager = AuthManager()
 
     var body: some View {
@@ -83,12 +84,16 @@ struct LoginView: View {
                     Button(action: {
                         viewModel.signIn { success in
                             if success {
-                                // Handle successful sign-in
+                                if viewModel.isAdmin {
+                                    //TODO: Redirect to Admin Page
+                                } else {
+                                    //TODO: Redirect to User Page
+                                }
                             } else {
-                                // Handle sign-in failure
+                                //TODO: Handle sign-in failure
                             }
                         }
-                    }){
+                    }) {
                         Text("Sign in")
                             .padding()
                     }
@@ -97,6 +102,7 @@ struct LoginView: View {
                     .foregroundColor(.white)
                     .cornerRadius(50.0)
                     .padding(.bottom,15)
+                                        
                     
                     Text("Don't have an Account?")
                         .font(.system(size: 14))
