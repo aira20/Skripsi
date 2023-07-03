@@ -13,6 +13,18 @@ struct AutomatedOverlayTimesView: View {
     @Binding var isModalTimes: Bool
     @State private var selectedOption = 0
     
+    @StateObject private var viewModel: AutomatedOverlayTimesViewModel
+    
+    init(context: AutomatedMealViewModel,
+         isOverlayView: Binding<Bool>,
+         isModalMealPlan: Binding<Bool>,
+         isModalTimes: Binding<Bool>) {
+        _viewModel = StateObject(wrappedValue: AutomatedOverlayTimesViewModel(context: context))
+        self._isOverlayView = isOverlayView
+        self._isModalMealPlan = isModalMealPlan
+        self._isModalTimes = isModalTimes
+    }
+    
     var body: some View {
         VStack(alignment: .center, spacing: 16){
             VStack(spacing: 16){

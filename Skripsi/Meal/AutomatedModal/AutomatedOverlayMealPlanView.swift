@@ -12,6 +12,18 @@ struct AutomatedOverlayMealPlanView: View {
     @Binding var isModalMealPlan: Bool
     @Binding var isModalTimes: Bool
     
+    @StateObject private var viewModel: AutomatedOverlayMealPlanViewModel
+    
+    init(context: AutomatedMealViewModel,
+         isOverlayView: Binding<Bool>,
+         isModalMealPlan: Binding<Bool>,
+         isModalTimes: Binding<Bool>) {
+        _viewModel = StateObject(wrappedValue: AutomatedOverlayMealPlanViewModel(context: context))
+        self._isOverlayView = isOverlayView
+        self._isModalMealPlan = isModalMealPlan
+        self._isModalTimes = isModalTimes
+    }
+    
     var body: some View {
         VStack(alignment: .center, spacing: 16){
             VStack(spacing: 16){
@@ -26,18 +38,15 @@ struct AutomatedOverlayMealPlanView: View {
             }.padding(.bottom, 40)
             
             HStack{
-                MealItemView(bestTimeConsume: .breakfast, image: "heart.fill", mealName: "Roti Lapis", mealDescription: "Roti dengan Sayur-sayuran")
-                    .frame(maxWidth: .infinity, alignment: .center)
-                MealItemView(bestTimeConsume: .lunch, image: "sparkles.square.filled.on.square", mealName: "Roti Lapis", mealDescription: "Roti dengan Sayur-sayuran")
-                    .frame(maxWidth: .infinity, alignment: .center)
-                MealItemView(bestTimeConsume: .dinner, image: "figure.walk.circle", mealName: "Roti Lapis", mealDescription: "Roti dengan Sayur-sayuran")
-                    .frame(maxWidth: .infinity, alignment: .center)
+                ForEach(viewModel.randomRecipes ?? [Meal.babyPotatoAndBroccoli, Meal.eggplantAndLentilsBowl, Meal.mealSoup], id: \.mealName) { meal in
+                    MealItemView(bestTimeConsume: meal.mealDay, image: meal.image, mealName: meal.mealName, mealDescription: meal.mealDescription)
+                }
             }
             .padding(.vertical, 40.0)
             .frame(width: .infinity)
             
             Button {
-                
+                viewModel.randomMealFromRecipes()
             } label: {
                 HStack{
                     Image(systemName: "arrow.clockwise")
@@ -58,6 +67,7 @@ struct AutomatedOverlayMealPlanView: View {
                 .foregroundColor(Color(hex: "#519259"))
             }
         }
+        .onAppear(perform: viewModel.randomMealFromRecipes)
         .sheet(isPresented: $isModalTimes) {
             AutomatedOverlayTimesView(isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan, isModalTimes: $isModalTimes)
         }

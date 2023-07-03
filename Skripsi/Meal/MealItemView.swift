@@ -18,7 +18,7 @@ struct MealItemView: View {
         VStack(alignment: .center) {
             Text(bestTimeConsume.rawValue)
                 .font(.headline)
-            Image(systemName: image)
+            Image(image)
                 .resizable()
                 .frame(width: 75, height: 75)
             Text(mealName)

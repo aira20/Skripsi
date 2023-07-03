@@ -38,6 +38,11 @@
 		8E932EE52A1DB2E300DCA67C /* AutomatedOverlayTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E932EE42A1DB2E300DCA67C /* AutomatedOverlayTimesView.swift */; };
 		8E932EEA2A1E3D6200DCA67C /* ProfileTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E932EE92A1E3D6200DCA67C /* ProfileTabItemView.swift */; };
 		8E932EED2A1E3DAB00DCA67C /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E932EEC2A1E3DAB00DCA67C /* ButtonView.swift */; };
+		8EC1E88F2A532D5E0047AB52 /* AutomatedOverlayMealPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC1E88E2A532D5E0047AB52 /* AutomatedOverlayMealPlanViewModel.swift */; };
+		8EC1E8912A532E0E0047AB52 /* Meal+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC1E8902A532E0E0047AB52 /* Meal+Extension.swift */; };
+		8EC1E8932A5337CB0047AB52 /* AutomatedMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC1E8922A5337CB0047AB52 /* AutomatedMealViewModel.swift */; };
+		8EC1E8952A5346C30047AB52 /* AutomatedOverlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC1E8942A5346C30047AB52 /* AutomatedOverlayViewModel.swift */; };
+		8EC1E8982A53493C0047AB52 /* AutomatedOverlayTimesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC1E8972A53493C0047AB52 /* AutomatedOverlayTimesViewModel.swift */; };
 		8EDED53F2A1BBA1800DC8C6A /* MainTabConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDED53E2A1BBA1800DC8C6A /* MainTabConfig.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +98,11 @@
 		8E932EE42A1DB2E300DCA67C /* AutomatedOverlayTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatedOverlayTimesView.swift; sourceTree = "<group>"; };
 		8E932EE92A1E3D6200DCA67C /* ProfileTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabItemView.swift; sourceTree = "<group>"; };
 		8E932EEC2A1E3DAB00DCA67C /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		8EC1E88E2A532D5E0047AB52 /* AutomatedOverlayMealPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatedOverlayMealPlanViewModel.swift; sourceTree = "<group>"; };
+		8EC1E8902A532E0E0047AB52 /* Meal+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Meal+Extension.swift"; sourceTree = "<group>"; };
+		8EC1E8922A5337CB0047AB52 /* AutomatedMealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatedMealViewModel.swift; sourceTree = "<group>"; };
+		8EC1E8942A5346C30047AB52 /* AutomatedOverlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatedOverlayViewModel.swift; sourceTree = "<group>"; };
+		8EC1E8972A53493C0047AB52 /* AutomatedOverlayTimesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatedOverlayTimesViewModel.swift; sourceTree = "<group>"; };
 		8EDED53E2A1BBA1800DC8C6A /* MainTabConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,14 +208,12 @@
 		8E115FBD2A1A2C540052C16A /* Meal */ = {
 			isa = PBXGroup;
 			children = (
+				8EC1E8962A5348BF0047AB52 /* AutomatedModal */,
 				8E115FBE2A1A2C6D0052C16A /* MealTabItemView.swift */,
 				8E115FC62A1A6CFE0052C16A /* MealTabItemViewModel.swift */,
 				8E115FCE2A1BACE60052C16A /* SeeMoreMealCurrentView.swift */,
-				8E4A73912A1D1F13009BB040 /* AutomatedOverlayView.swift */,
 				8E4A73932A1D2A55009BB040 /* MealPlanItem.swift */,
-				8E932EE02A1DAE7100DCA67C /* AutomatedOverlayMealPlanView.swift */,
 				8E932EE22A1DB01500DCA67C /* MealItemView.swift */,
-				8E932EE42A1DB2E300DCA67C /* AutomatedOverlayTimesView.swift */,
 				8E0907FF2A4870F1008C9615 /* RecipeDetailView.swift */,
 				8E0908032A49D6CD008C9615 /* RecipeDetailViewModel.swift */,
 			);
@@ -224,6 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				8E115FC92A1A6D5D0052C16A /* Meal.swift */,
+				8EC1E8902A532E0E0047AB52 /* Meal+Extension.swift */,
+				8EC1E8922A5337CB0047AB52 /* AutomatedMealViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,6 +266,19 @@
 				8E0907FD2A481479008C9615 /* SearchBarViewElement.swift */,
 			);
 			path = ReusableComponent;
+			sourceTree = "<group>";
+		};
+		8EC1E8962A5348BF0047AB52 /* AutomatedModal */ = {
+			isa = PBXGroup;
+			children = (
+				8EC1E88E2A532D5E0047AB52 /* AutomatedOverlayMealPlanViewModel.swift */,
+				8EC1E8942A5346C30047AB52 /* AutomatedOverlayViewModel.swift */,
+				8E932EE42A1DB2E300DCA67C /* AutomatedOverlayTimesView.swift */,
+				8E932EE02A1DAE7100DCA67C /* AutomatedOverlayMealPlanView.swift */,
+				8E4A73912A1D1F13009BB040 /* AutomatedOverlayView.swift */,
+				8EC1E8972A53493C0047AB52 /* AutomatedOverlayTimesViewModel.swift */,
+			);
+			path = AutomatedModal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +414,8 @@
 				02E90DBD2A0DEF6700706F80 /* Persistence.swift in Sources */,
 				8E4A73922A1D1F13009BB040 /* AutomatedOverlayView.swift in Sources */,
 				8E115FC72A1A6CFE0052C16A /* MealTabItemViewModel.swift in Sources */,
+				8EC1E8982A53493C0047AB52 /* AutomatedOverlayTimesViewModel.swift in Sources */,
+				8EC1E8912A532E0E0047AB52 /* Meal+Extension.swift in Sources */,
 				8E4A738E2A1CB39D009BB040 /* SearchTabItemView.swift in Sources */,
 				8E0907F92A449339008C9615 /* AddPersonalRecipeView.swift in Sources */,
 				8E0907FE2A481479008C9615 /* SearchBarViewElement.swift in Sources */,
@@ -405,7 +430,9 @@
 				8E0908042A49D6CD008C9615 /* RecipeDetailViewModel.swift in Sources */,
 				02E90DB42A0DEF6500706F80 /* SkripsiApp.swift in Sources */,
 				8E932EE52A1DB2E300DCA67C /* AutomatedOverlayTimesView.swift in Sources */,
+				8EC1E8932A5337CB0047AB52 /* AutomatedMealViewModel.swift in Sources */,
 				8E932EE12A1DAE7100DCA67C /* AutomatedOverlayMealPlanView.swift in Sources */,
+				8EC1E88F2A532D5E0047AB52 /* AutomatedOverlayMealPlanViewModel.swift in Sources */,
 				8E0908002A4870F1008C9615 /* RecipeDetailView.swift in Sources */,
 				8E115FBF2A1A2C6D0052C16A /* MealTabItemView.swift in Sources */,
 				8E0907FC2A46A201008C9615 /* ManageAccountView.swift in Sources */,
@@ -413,6 +440,7 @@
 				8EDED53F2A1BBA1800DC8C6A /* MainTabConfig.swift in Sources */,
 				8E4A73942A1D2A55009BB040 /* MealPlanItem.swift in Sources */,
 				8E932EED2A1E3DAB00DCA67C /* ButtonView.swift in Sources */,
+				8EC1E8952A5346C30047AB52 /* AutomatedOverlayViewModel.swift in Sources */,
 				8E115FC52A1A57F50052C16A /* Color.swift in Sources */,
 				8E932EEA2A1E3D6200DCA67C /* ProfileTabItemView.swift in Sources */,
 			);

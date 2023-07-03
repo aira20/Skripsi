@@ -14,6 +14,18 @@ struct AutomatedOverlayView: View {
     @Binding var isModalMealPlan: Bool
     @Binding var isModalTimes: Bool
     
+    @StateObject private var viewModel: AutomatedOverlayViewModel
+    
+    init(context: AutomatedMealViewModel,
+         isOverlayView: Binding<Bool>,
+         isModalMealPlan: Binding<Bool>,
+         isModalTimes: Binding<Bool>) {
+        _viewModel = StateObject(wrappedValue: AutomatedOverlayViewModel(context: context))
+        self._isOverlayView = isOverlayView
+        self._isModalMealPlan = isModalMealPlan
+        self._isModalTimes = isModalTimes
+    }
+    
     var body: some View {
         VStack(alignment: .center, spacing: 16){
             Text("How much your available time to prepare your food?")
@@ -64,7 +76,7 @@ struct AutomatedOverlayView: View {
             }
         }
         .sheet(isPresented: $isModalMealPlan) {
-            AutomatedOverlayMealPlanView(isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan, isModalTimes: $isModalTimes)
+            AutomatedOverlayMealPlanView(context: <#AutomatedOverlayViewModel#>, isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan, isModalTimes: $isModalTimes)
         }
         .foregroundColor(Color(hex: "#1D4536"))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
