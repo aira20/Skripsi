@@ -10,3 +10,8 @@ import Foundation
 class AutomatedMealViewModel: ObservableObject{
     
 }
+
+extension AutomatedMealViewModel{
+    static let preview: AutomatedMealViewModel = AutomatedMealViewModel()
+
+}

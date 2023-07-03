@@ -56,7 +56,7 @@ struct MealTabItemView: View {
                     }
                 }
                 .sheet(isPresented: $isOverlayView) {
-                    AutomatedOverlayView(isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan, isModalTimes: $isModalTimes)
+                    AutomatedOverlayView(context: AutomatedMealViewModel.preview, isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan, isModalTimes: $isModalTimes)
                 }
         }
     }

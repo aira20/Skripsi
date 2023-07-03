@@ -69,7 +69,7 @@ struct AutomatedOverlayMealPlanView: View {
         }
         .onAppear(perform: viewModel.randomMealFromRecipes)
         .sheet(isPresented: $isModalTimes) {
-            AutomatedOverlayTimesView(isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan, isModalTimes: $isModalTimes)
+            AutomatedOverlayTimesView(context: AutomatedMealViewModel.preview, isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan, isModalTimes: $isModalTimes)
         }
         .foregroundColor(Color(hex: "#1D4536"))
         .frame(maxWidth: .infinity, maxHeight: .infinity)

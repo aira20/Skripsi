@@ -76,7 +76,7 @@ struct AutomatedOverlayView: View {
             }
         }
         .sheet(isPresented: $isModalMealPlan) {
-            AutomatedOverlayMealPlanView(context: <#AutomatedOverlayViewModel#>, isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan, isModalTimes: $isModalTimes)
+            AutomatedOverlayMealPlanView(context: AutomatedMealViewModel.preview, isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan, isModalTimes: $isModalTimes)
         }
         .foregroundColor(Color(hex: "#1D4536"))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
