@@ -35,10 +35,14 @@ struct ManageAccView: View {
                         }
                     }
                 }
+                .onDelete { indexSet in
+                    viewModel.deleteUsers(at: indexSet)
+                }
             }
         }
     }
 }
+
 struct UserRow: View {
     let user: UserInfo
 
@@ -49,17 +53,14 @@ struct UserRow: View {
             Text(user.email)
                 .font(.subheadline)
         }
-       
     }
 }
-
 
 struct searchAcc: View {
     @Binding var text: String
 
     var body: some View {
         HStack {
-            
             TextField("Search", text: $text)
                 .padding(7)
                 .background(Color(.systemGray6))
