@@ -38,7 +38,7 @@ struct AutomatedOverlayMealPlanView: View {
             }.padding(.bottom, 40)
             
             HStack{
-                ForEach(viewModel.randomRecipes ?? [Meal.babyPotatoAndBroccoli, Meal.eggplantAndLentilsBowl, Meal.mealSoup], id: \.mealName) { meal in
+                ForEach(viewModel.randomRecipes , id: \.mealName) { meal in
                     MealItemView(bestTimeConsume: meal.mealDay, image: meal.image, mealName: meal.mealName, mealDescription: meal.mealDescription)
                 }
             }

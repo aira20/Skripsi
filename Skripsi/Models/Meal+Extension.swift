@@ -475,6 +475,417 @@ extension Meal {
         ]
     )
     
+    static let ayamWoku: Meal = Meal(
+            mealName: "Ayam Woku",
+            image: "ayam_woku",
+            mealDescription: "Ayam woku pedas dengan rempah khas Manado",
+            mealDay: .dinner,
+            mainIngredients: [
+                Ingredient(ingredientsName: "Ayam potong", ingredientsQuantity: "1 ekor"),
+                Ingredient(ingredientsName: "Bawang merah", ingredientsQuantity: "5 siung"),
+                Ingredient(ingredientsName: "Bawang putih", ingredientsQuantity: "3 siung"),
+                Ingredient(ingredientsName: "Cabe merah besar", ingredientsQuantity: "5 buah"),
+                Ingredient(ingredientsName: "Cabe rawit merah", ingredientsQuantity: "10 buah"),
+                Ingredient(ingredientsName: "Kunyit", ingredientsQuantity: "1 ruas jari"),
+                Ingredient(ingredientsName: "Jahe", ingredientsQuantity: "1 ruas jari"),
+                Ingredient(ingredientsName: "Serai", ingredientsQuantity: "2 batang"),
+                Ingredient(ingredientsName: "Daun jeruk", ingredientsQuantity: "5 lembar"),
+                Ingredient(ingredientsName: "Air", ingredientsQuantity: "500 ml"),
+                Ingredient(ingredientsName: "Minyak goreng", ingredientsQuantity: "2 sendok makan"),
+                Ingredient(ingredientsName: "Garam", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Gula", ingredientsQuantity: "secukupnya")
+            ],
+            complementaryIngredients: [
+                Ingredient(ingredientsName: "Nasi putih", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Kerupuk", ingredientsQuantity: "secukupnya")
+            ],
+            utensils: [
+                Utensil(untensilName: "Wajan"),
+                Utensil(untensilName: "Panci"),
+                Utensil(untensilName: "Pisau"),
+                Utensil(untensilName: "Tungku api")
+            ],
+            steps: [
+                "Haluskan bawang merah, bawang putih, cabe merah besar, cabe rawit merah, kunyit, dan jahe",
+                "Panaskan minyak goreng dalam wajan",
+                "Tumis bumbu halus, serai, dan daun jeruk hingga harum",
+                "Masukkan potongan ayam, aduk rata",
+                "Tambahkan air, garam, dan gula",
+                "Masak ayam hingga empuk dan bumbu meresap",
+                "Sajikan ayam woku panas dengan nasi putih dan kerupuk"
+            ]
+        )
+
+        static let ayamGeprek: Meal = Meal(
+            mealName: "Ayam Geprek",
+            image: "ayam_geprek",
+            mealDescription: "Ayam goreng tepung disiram sambal pedas",
+            mealDay: .lunch,
+            mainIngredients: [
+                Ingredient(ingredientsName: "Ayam fillet", ingredientsQuantity: "2 potong"),
+                Ingredient(ingredientsName: "Tepung terigu", ingredientsQuantity: "1/2 cangkir"),
+                Ingredient(ingredientsName: "Baking powder", ingredientsQuantity: "1/4 sendok teh"),
+                Ingredient(ingredientsName: "Air es", ingredientsQuantity: "100 ml"),
+                Ingredient(ingredientsName: "Minyak goreng", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Garam", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Lada bubuk", ingredientsQuantity: "secukupnya")
+            ],
+            complementaryIngredients: [
+                Ingredient(ingredientsName: "Nasi putih", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Sambal terasi", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Lalapan", ingredientsQuantity: "secukupnya")
+            ],
+            utensils: [
+                Utensil(untensilName: "Wajan"),
+                Utensil(untensilName: "Mangkuk"),
+                Utensil(untensilName: "Sutil"),
+                Utensil(untensilName: "Pisau")
+            ],
+            steps: [
+                "Campurkan tepung terigu, baking powder, garam, dan lada bubuk dalam mangkuk",
+                "Tambahkan air es sedikit-sedikit sambil aduk hingga membentuk adonan berbutir",
+                "Panaskan minyak dalam wajan",
+                "Celupkan potongan ayam ke dalam adonan tepung, lalu goreng hingga kuning kecokelatan dan matang",
+                "Angkat ayam geprek dan tiriskan",
+                "Geprek ayam dengan menggunakan ujung sutil atau beliung hingga daging ayam sedikit pipih",
+                "Sajikan ayam geprek panas dengan nasi putih, sambal terasi, dan lalapan"
+            ]
+        )
+
+        static let sotoAyam: Meal = Meal(
+            mealName: "Soto Ayam",
+            image: "soto_ayam",
+            mealDescription: "Sup ayam dengan kuah bening dan rempah khas",
+            mealDay: .lunch,
+            mainIngredients: [
+                Ingredient(ingredientsName: "Ayam potong", ingredientsQuantity: "1 ekor"),
+                Ingredient(ingredientsName: "Bawang putih", ingredientsQuantity: "3 siung"),
+                Ingredient(ingredientsName: "Bawang merah", ingredientsQuantity: "3 siung"),
+                Ingredient(ingredientsName: "Serai", ingredientsQuantity: "2 batang"),
+                Ingredient(ingredientsName: "Jahe", ingredientsQuantity: "1 ruas jari"),
+                Ingredient(ingredientsName: "Daun jeruk", ingredientsQuantity: "5 lembar"),
+                Ingredient(ingredientsName: "Daun bawang", ingredientsQuantity: "1 batang"),
+                Ingredient(ingredientsName: "Ketumbar bubuk", ingredientsQuantity: "1 sendok teh"),
+                Ingredient(ingredientsName: "Air", ingredientsQuantity: "1,5 liter"),
+                Ingredient(ingredientsName: "Minyak goreng", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Garam", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Lada bubuk", ingredientsQuantity: "secukupnya")
+            ],
+            complementaryIngredients: [
+                Ingredient(ingredientsName: "Mie soun", ingredientsQuantity: "100 gram"),
+                Ingredient(ingredientsName: "Telur rebus", ingredientsQuantity: "2 butir"),
+                Ingredient(ingredientsName: "Bawang merah goreng", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Daun seledri", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Kerupuk", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Jeruk nipis", ingredientsQuantity: "secukupnya")
+            ],
+
+
+            utensils: [
+                Utensil(untensilName: "Panci"),
+                Utensil(untensilName: "Pisau"),
+                Utensil(untensilName: "Sendok"),
+                Utensil(untensilName: "Garpu")
+            ],
+            steps: [
+                "Rebus ayam dalam panci dengan air, bawang putih, bawang merah, serai, jahe, dan daun jeruk hingga ayam matang",
+                "Angkat ayam dan suwir-suwir dagingnya, sisihkan",
+                "Saring kaldu ayam dan masukkan kembali dalam panci",
+                "Tambahkan ketumbar bubuk, garam, dan lada bubuk, aduk rata",
+                "Panaskan minyak goreng dalam wajan, tumis bawang merah goreng hingga harum",
+                "Masukkan tumisan bawang merah goreng ke dalam kaldu ayam, aduk rata",
+                "Rebus mie soun dalam air panas hingga lunak, tiriskan",
+                "Siapkan mangkuk, masukkan suwiran ayam, mie soun, dan telur rebus",
+                "Tuang kuah soto ayam ke dalam mangkuk",
+                "Sajikan soto ayam panas dengan bawang merah goreng, daun seledri, kerupuk, dan perasan jeruk nipis"
+            ]
+        )
+
+        static let capcayAyam: Meal = Meal(
+            mealName: "Capcay Ayam",
+            image: "capcay_ayam",
+            mealDescription: "Sayur tumis dengan berbagai macam sayuran dan daging ayam",
+            mealDay: .dinner,
+            mainIngredients: [
+                Ingredient(ingredientsName: "Ayam fillet", ingredientsQuantity: "200 gram"),
+                Ingredient(ingredientsName: "Wortel", ingredientsQuantity: "1 buah"),
+                Ingredient(ingredientsName: "Kembang kol", ingredientsQuantity: "100 gram"),
+                Ingredient(ingredientsName: "Buncis", ingredientsQuantity: "100 gram"),
+                Ingredient(ingredientsName: "Sawi hijau", ingredientsQuantity: "100 gram"),
+                Ingredient(ingredientsName: "Jamur kuping", ingredientsQuantity: "50 gram"),
+                Ingredient(ingredientsName: "Bawang putih", ingredientsQuantity: "3 siung"),
+                Ingredient(ingredientsName: "Bawang merah", ingredientsQuantity: "3 siung"),
+                Ingredient(ingredientsName: "Kecap manis", ingredientsQuantity: "2 sendok makan"),
+                Ingredient(ingredientsName: "Air", ingredientsQuantity: "200 ml"),
+                Ingredient(ingredientsName: "Minyak goreng", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Garam", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Lada bubuk", ingredientsQuantity: "secukupnya")
+            ],
+            complementaryIngredients: [
+                Ingredient(ingredientsName: "Nasi putih", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Kerupuk", ingredientsQuantity: "secukupnya")
+            ],
+            utensils: [
+                Utensil(untensilName: "Wajan"),
+                Utensil(untensilName: "Pisau"),
+                Utensil(untensilName: "Sendok"),
+                Utensil(untensilName: "Garpu")
+            ],
+            steps: [
+                "Potong daging ayam fillet menjadi dadu kecil",
+                "Panaskan minyak goreng dalam wajan",
+                "Tumis bawang putih dan bawang merah hingga harum",
+                "Masukkan daging ayam, aduk hingga berubah warna",
+                "Tambahkan wortel, kembang kol, buncis, dan jamur kuping, aduk rata",
+                "Tuangkan air dan kecap manis, masak hingga sayuran matang",
+                "Tambahkan garam dan lada bubuk, aduk rata",
+                "Sajikan capcay ayam panas dengan nasi putih dan kerupuk"
+            ]
+        )
+
+        static let semurAyam: Meal = Meal(
+            mealName: "Semur Ayam",
+            image: "String",
+            mealDescription: "Ayam dengan bumbu semur manis dan kental",
+            mealDay: .dinner,
+            mainIngredients: [
+                Ingredient(ingredientsName: "Ayam potong", ingredientsQuantity: "1 ekor"),
+                Ingredient(ingredientsName: "Bawang putih", ingredientsQuantity: "3 siung"),
+                Ingredient(ingredientsName: "Bawang merah", ingredientsQuantity: "3 siung"),
+                Ingredient(ingredientsName: "Kecap manis", ingredientsQuantity: "2 sendok makan"),
+                Ingredient(ingredientsName: "Kecap asin", ingredientsQuantity: "1 sendok makan"),
+                Ingredient(ingredientsName: "Air", ingredientsQuantity: "300 ml"),
+                Ingredient(ingredientsName: "Gula merah", ingredientsQuantity: "50 gram"),
+                Ingredient(ingredientsName: "Ketumbar bubuk", ingredientsQuantity: "1 sendok teh"),
+                Ingredient(ingredientsName: "Cengkeh", ingredientsQuantity: "3 butir"),
+                Ingredient(ingredientsName: "Kayu manis", ingredientsQuantity: "1 batang"),
+                Ingredient(ingredientsName: "Minyak goreng", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Garam", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Lada bubuk", ingredientsQuantity: "secukupnya")
+            ],
+            complementaryIngredients: [
+                Ingredient(ingredientsName: "Nasi putih", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Kerupuk", ingredientsQuantity: "secukupnya")
+            ],
+            utensils: [
+                Utensil(untensilName: "Wajan"),
+                Utensil(untensilName: "Pisau"),
+                Utensil(untensilName: "Sendok"),
+                Utensil(untensilName: "Garpu")
+            ],
+            steps: [
+                "Panaskan minyak goreng dalam wajan",
+                "Tumis bawang putih dan bawang merah hingga harum",
+                "Masukkan potongan ayam, aduk hingga berubah warna",
+                "Tambahkan kecap manis, kecap asin, air, gula merah, ketumbar bubuk, cengkeh, dan kayu manis, aduk rata",
+                "Masak ayam hingga empuk dan bumbu meresap",
+                "Tambahkan garam dan lada bubuk, aduk rata",
+                "Sajikan semur ayam panas dengan nasi putih dan kerupuk"
+            ]
+        )
+
+        static let guleAyam: Meal = Meal(
+            mealName: "Gule Ayam",
+            image: <#String#>,
+            mealDescription: "Ayam dengan kuah gurih kental berbumbu rempah",
+            mealDay: .dinner,
+            mainIngredients: [
+                Ingredient(ingredientsName: "Ayam potong", ingredientsQuantity: "1 ekor"),
+                Ingredient(ingredientsName: "Bawang putih", ingredientsQuantity: "3 siung"),
+                Ingredient(ingredientsName: "Bawang merah", ingredientsQuantity: "3 siung"),
+                Ingredient(ingredientsName: "Serai", ingredientsQuantity: "2 batang"),
+                Ingredient(ingredientsName: "Jahe", ingredientsQuantity: "1 ruas jari"),
+                Ingredient(ingredientsName: "Kemiri", ingredientsQuantity: "3 butir"),
+                Ingredient(ingredientsName: "Kunyit bubuk", ingredientsQuantity: "1 sendok teh"),
+                Ingredient(ingredientsName: "Air", ingredientsQuantity: "500 ml"),
+                Ingredient(ingredientsName: "Santan", ingredientsQuantity: "200 ml"),
+                Ingredient(ingredientsName: "Minyak goreng", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Garam", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Lada bubuk", ingredientsQuantity: "secukupnya")
+            ],
+            complementaryIngredients: [
+                Ingredient(ingredientsName: "Nasi putih", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Kerupuk", ingredientsQuantity: "secukupnya")
+            ],
+            utensils: [
+                Utensil(untensilName: "Panci"),
+                Utensil(untensilName: "Pisau"),
+                Utensil(untensilName: "Sendok"),
+                Utensil(untensilName: "Garpu")
+            ],
+            steps: [
+                "Panaskan minyak goreng dalam panci",
+                "Tumis bawang putih, bawang merah, serai, dan jahe hingga harum",
+                "Tambahkan kemiri dan kunyit bubuk, aduk rata",
+                "Masukkan potongan ayam, aduk hingga berubah warna",
+                "Tuangkan air dan santan, masak hingga ayam empuk dan kuah mengental",
+                "Tambahkan garam dan lada bubuk, aduk rata",
+                "Sajikan gule ayam panas dengan nasi putih dan kerupuk"
+            ]
+        )
+
+        static let beefTeriyaki: Meal = Meal(
+            mealName: "Beef Teriyaki",
+            image: <#String#>,
+            mealDescription: "Daging sapi panggang dengan saus teriyaki manis",
+            mealDay: .dinner,
+            mainIngredients: [
+                Ingredient(ingredientsName: "Daging sapi", ingredientsQuantity: "200 gram"),
+                Ingredient(ingredientsName: "Saus teriyaki", ingredientsQuantity: "3 sendok makan"),
+                Ingredient(ingredientsName: "Kecap manis", ingredientsQuantity: "2 sendok makan"),
+                Ingredient(ingredientsName: "Bawang putih", ingredientsQuantity: "2 siung"),
+                Ingredient(ingredientsName: "Jahe", ingredientsQuantity: "1 ruas jari"),
+                Ingredient(ingredientsName: "Gula", ingredientsQuantity: "1 sendok teh"),
+                Ingredient(ingredientsName: "Air", ingredientsQuantity: "100 ml"),
+                Ingredient(ingredientsName: "Minyak goreng", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Garam", ingredientsQuantity:
+
+     "secukupnya"),
+                Ingredient(ingredientsName: "Lada bubuk", ingredientsQuantity: "secukupnya")
+            ],
+            complementaryIngredients: [
+                Ingredient(ingredientsName: "Nasi putih", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Sayuran tumis", ingredientsQuantity: "secukupnya")
+            ],
+            utensils: [
+                Utensil(untensilName: "Wajan"),
+                Utensil(untensilName: "Pisau"),
+                Utensil(untensilName: "Sendok"),
+                Utensil(untensilName: "Garpu")
+            ],
+            steps: [
+                "Potong daging sapi menjadi tipis",
+                "Campur saus teriyaki, kecap manis, bawang putih, jahe, gula, air, garam, dan lada bubuk dalam wajan",
+                "Panaskan wajan dengan minyak goreng",
+                "Masukkan potongan daging sapi ke dalam wajan, masak hingga matang dan saus meresap",
+                "Sajikan beef teriyaki panas dengan nasi putih dan sayuran tumis"
+            ]
+        )
+
+        static let tongsengSapi: Meal = Meal(
+            mealName: "Tongseng Sapi",
+            image: <#String#>,
+            mealDescription: "Daging sapi dengan kuah santan kental berbumbu rempah",
+            mealDay: .dinner,
+            mainIngredients: [
+                Ingredient(ingredientsName: "Daging sapi", ingredientsQuantity: "200 gram"),
+                Ingredient(ingredientsName: "Santan", ingredientsQuantity: "200 ml"),
+                Ingredient(ingredientsName: "Bawang putih", ingredientsQuantity: "3 siung"),
+                Ingredient(ingredientsName: "Bawang merah", ingredientsQuantity: "3 siung"),
+                Ingredient(ingredientsName: "Serai", ingredientsQuantity: "1 batang"),
+                Ingredient(ingredientsName: "Jahe", ingredientsQuantity: "1 ruas jari"),
+                Ingredient(ingredientsName: "Kemiri", ingredientsQuantity: "3 butir"),
+                Ingredient(ingredientsName: "Kunyit bubuk", ingredientsQuantity: "1 sendok teh"),
+                Ingredient(ingredientsName: "Kecap manis", ingredientsQuantity: "2 sendok makan"),
+                Ingredient(ingredientsName: "Air", ingredientsQuantity: "200 ml"),
+                Ingredient(ingredientsName: "Minyak goreng", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Garam", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Lada bubuk", ingredientsQuantity: "secukupnya")
+            ],
+            complementaryIngredients: [
+                Ingredient(ingredientsName: "Nasi putih", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Kerupuk", ingredientsQuantity: "secukupnya")
+            ],
+            utensils: [
+                Utensil(untensilName: "Panci"),
+                Utensil(untensilName: "Pisau"),
+                Utensil(untensilName: "Sendok"),
+                Utensil(untensilName: "Garpu")
+            ],
+            steps: [
+                "Potong daging sapi menjadi dadu kecil",
+                "Tumis bawang putih, bawang merah, serai, dan jahe hingga harum",
+                "Tambahkan kemiri dan kunyit bubuk, aduk rata",
+                "Masukkan potongan daging sapi, aduk hingga berubah warna",
+                "Tuangkan santan, kecap manis, dan air, masak hingga daging empuk dan kuah mengental",
+                "Tambahkan garam dan lada bubuk, aduk rata",
+                "Sajikan tongseng sapi panas dengan nasi putih dan kerupuk"
+            ]
+        )
+
+        static let baksoSapi: Meal = Meal(
+            mealName: "Bakso Sapi",
+            image: <#String#>,
+            mealDescription: "Bakso sapi dengan kuah bening dan mie",
+            mealDay: .dinner,
+            mainIngredients: [
+                Ingredient(ingredientsName: "Daging sapi giling", ingredientsQuantity: "200 gram"),
+                Ingredient(ingredientsName: "Tepung sagu", ingredientsQuantity: "3 sendok makan"),
+                Ingredient(ingredientsName: "Bawang putih", ingredientsQuantity: "3 siung"),
+                Ingredient(ingredientsName: "Bawang merah", ingredientsQuantity: "3 siung"),
+                Ingredient(ingredientsName: "Telur", ingredientsQuantity: "1 butir"),
+                Ingredient(ingredientsName: "Garam", ingredientsQuantity: "1 sendok teh"),
+                Ingredient(ingredientsName: "Lada bubuk", ingredientsQuantity: "1/2 sendok teh"),
+                Ingredient(ingredientsName: "Air", ingredientsQuantity: "500 ml"),
+                Ingredient(ingredientsName: "Mie", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Daun bawang", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Bawang goreng", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Minyak goreng", ingredientsQuantity: "secukupnya")
+            ],
+            complementaryIngredients: [
+                Ingredient(ingredientsName: "Kuah bakso", ingredientsQuantity: "secukupnya")
+            ],
+            utensils: [
+                Utensil(untensilName: "Panci"),
+                Utensil(untensilName: "Mangkuk"),
+                Utensil(untensilName: "Garpu"),
+                Utensil(untensilName: "Pisau")
+            ],
+            steps: [
+                "Campur daging sapi giling, tepung sagu, bawang putih, bawang merah, telur, garam, dan lada bubuk dalam mangkuk",
+                "Aduk rata hingga adonan bisa dipulung",
+                "Bentuk adonan menjadi bulatan-bulatan kecil",
+                "Didihkan air dalam panci",
+                "Rebus bakso sapi hingga mengapung dan matang",
+                "Angkat bakso sapi, tiriskan",
+                "Panaskan minyak goreng dalam wajan",
+                "Goreng bakso sapi hingga kecokelatan",
+                "Rebus mie hingga matang, tiriskan",
+                "Sajikan bakso sapi dengan mie, kuah bakso, daun bawang, dan bawang goreng"
+            ]
+        )
+
+        static let bistikRoladeSapi: Meal = Meal(
+            mealName: "Bistik Rolade Sapi",
+            image: <#String#>,
+            mealDescription: "Daging sapi dengan isian wortel dan kentang",
+            mealDay: .dinner,
+            mainIngredients: [
+                Ingredient(ingredientsName: "Daging sapi iris tipis", ingredientsQuantity: "200 gram"),
+                Ingredient(ingredientsName: "Wortel", ingredientsQuantity: "1 buah"),
+                Ingredient(ingredientsName: "Kentang", ingredientsQuantity: "1 buah"),
+                Ingredient(ingredientsName: "Bawang putih", ingredientsQuantity: "2 siung"),
+                Ingredient(ingredientsName: "Merica bubuk", ingredientsQuantity: "1/2 sendok teh"),
+                Ingredient(ingredientsName: "Garam", ingredientsQuantity: "1/2 sendok teh"),
+                Ingredient(ingredientsName: "Daun bawang", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Air", ingredientsQuantity: "100 ml"),
+                Ingredient(ingredientsName: "Minyak goreng", ingredientsQuantity: "secukupnya")
+            ],
+            complementaryIngredients: [
+                Ingredient(ingredientsName: "Nasi putih", ingredientsQuantity: "secukupnya"),
+                Ingredient(ingredientsName: "Sayuran tumis", ingredientsQuantity: "secukupnya")
+            ],
+            utensils: [
+                Utensil(untensilName: "Pisau"),
+                Utensil(untensilName: "Gunting"),
+                Utensil(untensilName: "Tusuk gigi"),
+                Utensil(untensilName: "Wajan"),
+                Utensil(untensilName: "Sendok"),
+                Utensil(untensilName: "Garpu")
+            ],
+            steps: [
+                "Potong wortel dan kentang menjadi bentuk serut",
+                "Gulung daging sapi dengan isian wortel dan kentang",
+                "Tusuk bagian ujung rolade dengan tusuk gigi untuk menjaga bentuknya",
+                "Panaskan minyak goreng dalam wajan",
+                "Tumis bawang putih hingga harum",
+                "Tambahkan rolade sapi, masak hingga daging matang dan bumbu meresap",
+                "Tambahkan merica bubuk, garam, dan air, aduk rata",
+                "Masak hingga air menyusut dan mengental",
+                "Sajikan bistik rolade sapi panas dengan nasi putih dan sayuran tumis"
+            ]
+        )
+    
     static let recipes: [Meal] = [
         salad,
         babyPotatoAndBroccoli,

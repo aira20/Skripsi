@@ -70,7 +70,7 @@ struct MealTabItemView: View {
     }
     
     func mealPlanItem(backgroundColor: Color, image: String, description: String, titleItem: String, geo: GeometryProxy) -> some View{
-        // TODO: need refactor this shit
+        // TODO: need refactor this
         ZStack{
             if titleItem == "Personalized"{
                 NavigationLink(destination: SeeMoreMealCurrentView()){
