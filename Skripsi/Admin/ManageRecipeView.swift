@@ -12,22 +12,22 @@ struct ManageRecipeView: View {
         
         @State private var searchText = ""
         
-        var segmentedContacts: [String: [String]] {
-            var segmentedContacts = [String: [String]]()
+        var segmentedRecipes: [String: [String]] {
+            var segmentedRecipes = [String: [String]]()
             
-            for contact in recipes {
-                let firstLetter = String(contact.prefix(1)).uppercased()
-                if segmentedContacts[firstLetter] == nil {
-                    segmentedContacts[firstLetter] = [contact]
+            for recipe in recipes {
+                let firstLetter = String(recipe.prefix(1)).uppercased()
+                if segmentedRecipes[firstLetter] == nil {
+                    segmentedRecipes[firstLetter] = [recipe]
                 } else {
-                    segmentedContacts[firstLetter]?.append(contact)
+                    segmentedRecipes[firstLetter]?.append(recipe)
                 }
             }
             
-            return segmentedContacts
+            return segmentedRecipes
         }
         
-        var filteredContacts: [String] {
+        var filteredRecipes: [String] {
             if searchText.isEmpty {
                 return recipes
             } else {
@@ -35,17 +35,17 @@ struct ManageRecipeView: View {
             }
         }
         
-        var filteredSegmentedContacts: [String: [String]] {
-            var filteredSegmentedContacts = [String: [String]]()
+        var filteredSegmentedRecipes: [String: [String]] {
+            var filteredSegmentedRecipes = [String: [String]]()
 
-            for (key, contacts) in segmentedContacts {
-                let filteredContacts = contacts.filter { $0.localizedCaseInsensitiveContains(searchText) }
-                if !filteredContacts.isEmpty {
-                    filteredSegmentedContacts[key] = filteredContacts
+            for (key, contacts) in segmentedRecipes {
+                let filteredRecipes = contacts.filter { $0.localizedCaseInsensitiveContains(searchText) }
+                if !filteredRecipes.isEmpty {
+                    filteredSegmentedRecipes[key] = filteredRecipes
                 }
             }
 
-            return filteredSegmentedContacts
+            return filteredSegmentedRecipes
         }
         
         var body: some View {
@@ -94,18 +94,18 @@ struct ManageRecipeView: View {
                 .padding(8)
                 List {
                     if searchText.isEmpty {
-                        ForEach(segmentedContacts.keys.sorted(), id: \.self) { key in
+                        ForEach(segmentedRecipes.keys.sorted(), id: \.self) { key in
                             Section(header: Text(key)) {
-                                ForEach(segmentedContacts[key]!.filter { filteredContacts.contains($0) }, id: \.self) { contact in
-                                    Text(contact)
+                                ForEach(segmentedRecipes[key]!.filter { filteredRecipes.contains($0) }, id: \.self) { recipe in
+                                    Text(recipe)
                                 }
                             }
                         }
                     } else {
-                        ForEach(filteredSegmentedContacts.keys.sorted(), id: \.self) { key in
+                        ForEach(filteredSegmentedRecipes.keys.sorted(), id: \.self) { key in
                             Section(header: Text(key)) {
-                                ForEach(segmentedContacts[key]!.filter { filteredContacts.contains($0) }, id: \.self) { contact in
-                                    Text(contact)
+                                ForEach(segmentedRecipes[key]!.filter { filteredRecipes.contains($0) }, id: \.self) { recipe in
+                                    Text(recipe)
                                 }
                             }
                         }
