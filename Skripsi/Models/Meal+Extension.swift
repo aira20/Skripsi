@@ -645,7 +645,7 @@ extension Meal {
 
         static let semurAyam: Meal = Meal(
             mealName: "Semur Ayam",
-            image: "String",
+            image: "semur_ayam",
             mealDescription: "Ayam dengan bumbu semur manis dan kental",
             mealDay: .dinner,
             mainIngredients: [
@@ -686,7 +686,7 @@ extension Meal {
 
         static let guleAyam: Meal = Meal(
             mealName: "Gule Ayam",
-            image: <#String#>,
+            image: "gule_ayam",
             mealDescription: "Ayam dengan kuah gurih kental berbumbu rempah",
             mealDay: .dinner,
             mainIngredients: [
@@ -726,7 +726,7 @@ extension Meal {
 
         static let beefTeriyaki: Meal = Meal(
             mealName: "Beef Teriyaki",
-            image: <#String#>,
+            image: "beef_teriyaki",
             mealDescription: "Daging sapi panggang dengan saus teriyaki manis",
             mealDay: .dinner,
             mainIngredients: [
@@ -764,7 +764,7 @@ extension Meal {
 
         static let tongsengSapi: Meal = Meal(
             mealName: "Tongseng Sapi",
-            image: <#String#>,
+            image: "tongseng_sapi",
             mealDescription: "Daging sapi dengan kuah santan kental berbumbu rempah",
             mealDay: .dinner,
             mainIngredients: [
@@ -805,7 +805,7 @@ extension Meal {
 
         static let baksoSapi: Meal = Meal(
             mealName: "Bakso Sapi",
-            image: <#String#>,
+            image: "bakso_sapi",
             mealDescription: "Bakso sapi dengan kuah bening dan mie",
             mealDay: .dinner,
             mainIngredients: [
@@ -847,7 +847,7 @@ extension Meal {
 
         static let bistikRoladeSapi: Meal = Meal(
             mealName: "Bistik Rolade Sapi",
-            image: <#String#>,
+            image: "bistik_rolade_sapi",
             mealDescription: "Daging sapi dengan isian wortel dan kentang",
             mealDay: .dinner,
             mainIngredients: [
