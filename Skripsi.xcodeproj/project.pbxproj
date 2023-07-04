@@ -11,6 +11,8 @@
 		026C87B12A1F312F00B6E8B1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C87B02A1F312F00B6E8B1 /* RegisterView.swift */; };
 		026C87B42A1F33B900B6E8B1 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C87B32A1F33B900B6E8B1 /* WelcomeView.swift */; };
 		026C87B82A1F341500B6E8B1 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C87B72A1F341500B6E8B1 /* WelcomeViewModel.swift */; };
+		0272A59A2A537D5400D7C01D /* AdminRecipePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272A5992A537D5400D7C01D /* AdminRecipePageView.swift */; };
+		0272A59C2A537D6000D7C01D /* AdminAddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272A59B2A537D6000D7C01D /* AdminAddRecipeView.swift */; };
 		02BB61C32A20A8BF009408FB /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB61C22A20A8BF009408FB /* RegisterViewModel.swift */; };
 		02BB62412A21C1D7009408FB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 02BB62402A21C1D7009408FB /* FirebaseAnalytics */; };
 		02BB62432A21C1D7009408FB /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 02BB62422A21C1D7009408FB /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -95,6 +97,8 @@
 		026C87B02A1F312F00B6E8B1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		026C87B32A1F33B900B6E8B1 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		026C87B72A1F341500B6E8B1 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		0272A5992A537D5400D7C01D /* AdminRecipePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminRecipePageView.swift; sourceTree = "<group>"; };
+		0272A59B2A537D6000D7C01D /* AdminAddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAddRecipeView.swift; sourceTree = "<group>"; };
 		02BB61C22A20A8BF009408FB /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		02BB627C2A2263FE009408FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02BB62822A25FA3C009408FB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -219,6 +223,8 @@
 				02BB62892A2F23E5009408FB /* ManageAccView.swift */,
 				02BB628C2A360EE4009408FB /* ManageRecipeView.swift */,
 				02BB62872A29C862009408FB /* AdminViewModel.swift */,
+				0272A5992A537D5400D7C01D /* AdminRecipePageView.swift */,
+				0272A59B2A537D6000D7C01D /* AdminAddRecipeView.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -527,6 +533,7 @@
 				8E115FCF2A1BACE60052C16A /* SeeMoreMealCurrentView.swift in Sources */,
 				8E932EE32A1DB01500DCA67C /* MealItemView.swift in Sources */,
 				02E90DC02A0DEF6700706F80 /* Skripsi.xcdatamodeld in Sources */,
+				0272A59A2A537D5400D7C01D /* AdminRecipePageView.swift in Sources */,
 				02E90DB62A0DEF6500706F80 /* ContentView.swift in Sources */,
 				8E115FCA2A1A6D5D0052C16A /* Meal.swift in Sources */,
 				02E90DB42A0DEF6500706F80 /* SkripsiApp.swift in Sources */,
@@ -542,6 +549,7 @@
 				8E4A73942A1D2A55009BB040 /* MealPlanItem.swift in Sources */,
 				8E932EED2A1E3DAB00DCA67C /* ButtonView.swift in Sources */,
 				02BB628D2A360EE4009408FB /* ManageRecipeView.swift in Sources */,
+				0272A59C2A537D6000D7C01D /* AdminAddRecipeView.swift in Sources */,
 				8E115FC52A1A57F50052C16A /* Color.swift in Sources */,
 				8E932EEA2A1E3D6200DCA67C /* ProfileTabItemView.swift in Sources */,
 				02BB62882A29C862009408FB /* AdminViewModel.swift in Sources */,

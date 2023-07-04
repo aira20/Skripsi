@@ -21,7 +21,7 @@ struct ManageAccView: View {
                 .padding(.horizontal)
 
             let sortedUsers = viewModel.filteredUsers(searchText: searchText).sorted(by: { $0.username < $1.username })
-            let sections = Dictionary(grouping: sortedUsers) { String($0.username.prefix(1)) }
+            let sections = Dictionary(grouping: sortedUsers) { String($0.username.prefix(1)).uppercased() }
             
             List {
                 ForEach(Array(sections.keys).sorted(), id: \.self) { key in
@@ -34,9 +34,6 @@ struct ManageAccView: View {
                             viewModel.deleteUser(user)
                         }
                     }
-                }
-                .onDelete { indexSet in
-                    viewModel.deleteUsers(at: indexSet)
                 }
             }
         }
