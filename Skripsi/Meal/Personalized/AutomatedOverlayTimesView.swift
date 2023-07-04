@@ -8,20 +8,16 @@
 import SwiftUI
 
 struct AutomatedOverlayTimesView: View {
-    @Binding var isOverlayView: Bool
-    @Binding var isModalMealPlan: Bool
+    @EnvironmentObject var navigationStatus: NavigationStatus
+    
     @Binding var isModalTimes: Bool
     @State private var selectedOption = 0
     
     @StateObject private var viewModel: AutomatedOverlayTimesViewModel
     
-    init(context: AutomatedMealViewModel,
-         isOverlayView: Binding<Bool>,
-         isModalMealPlan: Binding<Bool>,
+    init(context: ContextMealViewModel,
          isModalTimes: Binding<Bool>) {
         _viewModel = StateObject(wrappedValue: AutomatedOverlayTimesViewModel(context: context))
-        self._isOverlayView = isOverlayView
-        self._isModalMealPlan = isModalMealPlan
         self._isModalTimes = isModalTimes
     }
     
@@ -38,7 +34,7 @@ struct AutomatedOverlayTimesView: View {
                     .font(.subheadline)
             }
             Picker(selection: $selectedOption, label: Text("Options")) {
-                ForEach(0..<10) { index in
+                ForEach(1..<8) { index in
                     HStack{
                         Text("\(index)")
                         Text("Times")
@@ -48,20 +44,26 @@ struct AutomatedOverlayTimesView: View {
             }
             .pickerStyle(.wheel)
             
-            HStack{
-                Spacer()
-                Button {
-                    isOverlayView = false
-                    isModalMealPlan = false
-                    isModalTimes = false
-                } label: {
-                    HStack{
-                        Text("Generate")
-                        Image(systemName: "chevron.right")
-                    }
-                }
-                .foregroundColor(Color(hex: "#519259"))
+            
+            Button(action: {
+                navigationStatus.isPersonalizedShow = true
+                navigationStatus.isModalTimesShow = false
+                viewModel.context.dayTimes = selectedOption + 1
+                print(viewModel.context.dayTimes)
+            }) {
+               HStack {
+                   Spacer()
+                   Text("Generate")
+                   Image(systemName: "chevron.right")
+               }
+               .foregroundColor(Color(hex: "#519259"))
             }
+            .buttonStyle(PlainButtonStyle())
+            
+        }
+        .fullScreenCover(isPresented: $navigationStatus.isPersonalizedShow) {
+            PersonalizedView(context: ContextMealViewModel.preview)
+                .environmentObject(navigationStatus)
         }
         .foregroundColor(Color(hex: "#1D4536"))
         .frame(maxWidth: .infinity, maxHeight: .infinity)

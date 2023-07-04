@@ -13,6 +13,7 @@ struct Meal: Codable{
 //    @DocumentID var id: String!
     var mealName: String
     var image: String
+    var time: Int
     var mealDescription: String
     var mealDay: Status
     var mainIngredients: [Ingredient]

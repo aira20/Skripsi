@@ -11,6 +11,7 @@ extension Meal {
     static let preview: Meal = Meal(
         mealName: "Chicken Parmesan",
         image: "baby_potato_and_broccoli",
+        time: 30,
         mealDescription: "Delicious chicken parmesan with pasta",
         mealDay: .dinner,
         mainIngredients: [
@@ -49,6 +50,7 @@ extension Meal {
     static let preview1: Meal = Meal(
         mealName: "Nasi Goreng",
         image: "baby_potato_and_broccoli",
+        time: 20,
         mealDescription: "Nasi goreng adalah sejenis makanan yang terbuat dari bahan-bahan nasi dan bumbu-bumbu yang diolah dengan cara digoreng",
         mealDay: .dinner,
         mainIngredients: [
@@ -83,6 +85,7 @@ extension Meal {
     static let preview2: Meal = Meal(
         mealName: "Spaghetti Carbonara",
         image: "baby_potato_and_broccoli",
+        time: 35,
         mealDescription: "Spaghetti carbonara adalah hidangan pasta yang terbuat dari spaghetti, telur, keju parmesan, bacon, dan lada hitam",
         mealDay: .dinner,
         mainIngredients: [
@@ -119,6 +122,7 @@ extension Meal {
     static let salad: Meal = Meal(
         mealName: "Salad",
         image: "salad",
+        time: 15,
         mealDescription: "Salad segar dan sehat.",
         mealDay: .lunch,
         mainIngredients: [
@@ -152,6 +156,7 @@ extension Meal {
     static let babyPotatoAndBroccoli: Meal = Meal(
         mealName: "Baby Potato and Broccoli",
         image: "baby_potato_and_broccoli",
+        time: 20,
         mealDescription: "Masakan lezat dan sehat dengan kentang dan brokoli.",
         mealDay: .dinner,
         mainIngredients: [
@@ -184,6 +189,7 @@ extension Meal {
     static let eggplantAndLentilsBowl: Meal = Meal(
         mealName: "Eggplant and Lentils Bowl",
         image: "eggplant_and_lentils_bowl",
+        time: 20,
         mealDescription: "Bowl yang lezat dan kaya rasa dengan terong panggang dan lentil.",
         mealDay: .lunch,
         mainIngredients: [
@@ -220,6 +226,7 @@ extension Meal {
     static let garlicShimejiSalad: Meal = Meal(
         mealName: "Garlic Shimeji Salad",
         image: "garlic_shimeji_salad",
+        time: 15,
         mealDescription: "Salad lezat dengan jamur shimeji yang diolah dengan bawang putih.",
         mealDay: .lunch,
         mainIngredients: [
@@ -259,6 +266,7 @@ extension Meal {
     static let ginsengKailan: Meal = Meal(
         mealName: "Ginseng Kailan",
         image: "ginseng_kailan",
+        time: 15,
         mealDescription: "Kailan yang lezat dengan tambahan ginseng.",
         mealDay: .dinner,
         mainIngredients: [
@@ -293,6 +301,7 @@ extension Meal {
     static let grilledChicken: Meal = Meal(
         mealName: "Grilled Chicken",
         image: "grilled_chicken",
+        time: 20,
         mealDescription: "Ayam panggang yang lezat dan bergizi.",
         mealDay: .dinner,
         mainIngredients: [
@@ -330,6 +339,7 @@ extension Meal {
     static let prawnAndShiratakiNoodleSalad: Meal = Meal(
         mealName: "Prawn and Shirataki Noodle Salad",
         image: "prawn_and_shirataki_noodle_salad",
+        time: 15,
         mealDescription: "Salad segar dengan udang dan mie shirataki.",
         mealDay: .lunch,
         mainIngredients: [
@@ -367,6 +377,7 @@ extension Meal {
     static let quinoaAndOatPorridge: Meal = Meal(
         mealName: "Quinoa and Oat Porridge",
         image: "quinoa_and_oat_porridge",
+        time: 25,
         mealDescription: "Bubur bergizi dengan kombinasi quinoa dan oat.",
         mealDay: .breakfast,
         mainIngredients: [
@@ -400,6 +411,7 @@ extension Meal {
     static let mealSoup: Meal = Meal(
         mealName: "Sup Sehat",
         image: "miso_soup",
+        time: 20,
         mealDescription: "Sup yang sehat dan menghangatkan.",
         mealDay: .dinner,
         mainIngredients: [
@@ -442,6 +454,7 @@ extension Meal {
     static let spicyTempehBowl: Meal = Meal(
         mealName: "Spicy Tempeh Bowl",
         image: "spicy_tempeh_bowl",
+        time: 15,
         mealDescription: "Bowl gurih dengan tempeh pedas.",
         mealDay: .lunch,
         mainIngredients: [
@@ -478,8 +491,9 @@ extension Meal {
     static let ayamWoku: Meal = Meal(
             mealName: "Ayam Woku",
             image: "ayam_woku",
+            time: 20,
             mealDescription: "Ayam woku pedas dengan rempah khas Manado",
-            mealDay: .dinner,
+            mealDay: .breakfast,
             mainIngredients: [
                 Ingredient(ingredientsName: "Ayam potong", ingredientsQuantity: "1 ekor"),
                 Ingredient(ingredientsName: "Bawang merah", ingredientsQuantity: "5 siung"),
@@ -519,6 +533,7 @@ extension Meal {
         static let ayamGeprek: Meal = Meal(
             mealName: "Ayam Geprek",
             image: "ayam_geprek",
+            time: 15,
             mealDescription: "Ayam goreng tepung disiram sambal pedas",
             mealDay: .lunch,
             mainIngredients: [
@@ -555,6 +570,7 @@ extension Meal {
         static let sotoAyam: Meal = Meal(
             mealName: "Soto Ayam",
             image: "soto_ayam",
+            time: 20,
             mealDescription: "Sup ayam dengan kuah bening dan rempah khas",
             mealDay: .lunch,
             mainIngredients: [
@@ -604,6 +620,7 @@ extension Meal {
         static let capcayAyam: Meal = Meal(
             mealName: "Capcay Ayam",
             image: "capcay_ayam",
+            time: 20,
             mealDescription: "Sayur tumis dengan berbagai macam sayuran dan daging ayam",
             mealDay: .dinner,
             mainIngredients: [
@@ -646,8 +663,9 @@ extension Meal {
         static let semurAyam: Meal = Meal(
             mealName: "Semur Ayam",
             image: "semur_ayam",
+            time: 20,
             mealDescription: "Ayam dengan bumbu semur manis dan kental",
-            mealDay: .dinner,
+            mealDay: .breakfast,
             mainIngredients: [
                 Ingredient(ingredientsName: "Ayam potong", ingredientsQuantity: "1 ekor"),
                 Ingredient(ingredientsName: "Bawang putih", ingredientsQuantity: "3 siung"),
@@ -687,8 +705,9 @@ extension Meal {
         static let guleAyam: Meal = Meal(
             mealName: "Gule Ayam",
             image: "gule_ayam",
+            time: 30,
             mealDescription: "Ayam dengan kuah gurih kental berbumbu rempah",
-            mealDay: .dinner,
+            mealDay: .breakfast,
             mainIngredients: [
                 Ingredient(ingredientsName: "Ayam potong", ingredientsQuantity: "1 ekor"),
                 Ingredient(ingredientsName: "Bawang putih", ingredientsQuantity: "3 siung"),
@@ -727,6 +746,7 @@ extension Meal {
         static let beefTeriyaki: Meal = Meal(
             mealName: "Beef Teriyaki",
             image: "beef_teriyaki",
+            time: 15,
             mealDescription: "Daging sapi panggang dengan saus teriyaki manis",
             mealDay: .dinner,
             mainIngredients: [
@@ -738,9 +758,7 @@ extension Meal {
                 Ingredient(ingredientsName: "Gula", ingredientsQuantity: "1 sendok teh"),
                 Ingredient(ingredientsName: "Air", ingredientsQuantity: "100 ml"),
                 Ingredient(ingredientsName: "Minyak goreng", ingredientsQuantity: "secukupnya"),
-                Ingredient(ingredientsName: "Garam", ingredientsQuantity:
-
-     "secukupnya"),
+                Ingredient(ingredientsName: "Garam", ingredientsQuantity:"secukupnya"),
                 Ingredient(ingredientsName: "Lada bubuk", ingredientsQuantity: "secukupnya")
             ],
             complementaryIngredients: [
@@ -765,8 +783,9 @@ extension Meal {
         static let tongsengSapi: Meal = Meal(
             mealName: "Tongseng Sapi",
             image: "tongseng_sapi",
+            time: 30,
             mealDescription: "Daging sapi dengan kuah santan kental berbumbu rempah",
-            mealDay: .dinner,
+            mealDay: .breakfast,
             mainIngredients: [
                 Ingredient(ingredientsName: "Daging sapi", ingredientsQuantity: "200 gram"),
                 Ingredient(ingredientsName: "Santan", ingredientsQuantity: "200 ml"),
@@ -806,8 +825,9 @@ extension Meal {
         static let baksoSapi: Meal = Meal(
             mealName: "Bakso Sapi",
             image: "bakso_sapi",
+            time: 30,
             mealDescription: "Bakso sapi dengan kuah bening dan mie",
-            mealDay: .dinner,
+            mealDay: .breakfast,
             mainIngredients: [
                 Ingredient(ingredientsName: "Daging sapi giling", ingredientsQuantity: "200 gram"),
                 Ingredient(ingredientsName: "Tepung sagu", ingredientsQuantity: "3 sendok makan"),
@@ -848,6 +868,7 @@ extension Meal {
         static let bistikRoladeSapi: Meal = Meal(
             mealName: "Bistik Rolade Sapi",
             image: "bistik_rolade_sapi",
+            time: 30,
             mealDescription: "Daging sapi dengan isian wortel dan kentang",
             mealDay: .dinner,
             mainIngredients: [
@@ -896,6 +917,16 @@ extension Meal {
         prawnAndShiratakiNoodleSalad,
         quinoaAndOatPorridge,
         mealSoup,
-        spicyTempehBowl
+        spicyTempehBowl,
+        bistikRoladeSapi,
+        baksoSapi,
+        tongsengSapi,
+        beefTeriyaki,
+        guleAyam,
+        semurAyam,
+        capcayAyam,
+        sotoAyam,
+        ayamGeprek,
+        ayamWoku
     ]
 }

@@ -12,18 +12,15 @@ struct AutomatedOverlayView: View {
     @State private var selectedMinute = 0
     @Binding var isOverlayView: Bool
     @Binding var isModalMealPlan: Bool
-    @Binding var isModalTimes: Bool
     
     @StateObject private var viewModel: AutomatedOverlayViewModel
     
-    init(context: AutomatedMealViewModel,
+    init(context: ContextMealViewModel,
          isOverlayView: Binding<Bool>,
-         isModalMealPlan: Binding<Bool>,
-         isModalTimes: Binding<Bool>) {
+         isModalMealPlan: Binding<Bool>) {
         _viewModel = StateObject(wrappedValue: AutomatedOverlayViewModel(context: context))
         self._isOverlayView = isOverlayView
         self._isModalMealPlan = isModalMealPlan
-        self._isModalTimes = isModalTimes
     }
     
     var body: some View {
@@ -65,7 +62,9 @@ struct AutomatedOverlayView: View {
             HStack{
                 Spacer()
                 Button {
+                    viewModel.context.timeCommitment = (selectedHour * 60) + selectedMinute
                     isModalMealPlan = true
+                    print("time: \(viewModel.context.timeCommitment)")
                 } label: {
                     HStack{
                         Text("Generate")
@@ -76,7 +75,7 @@ struct AutomatedOverlayView: View {
             }
         }
         .sheet(isPresented: $isModalMealPlan) {
-            AutomatedOverlayMealPlanView(context: AutomatedMealViewModel.preview, isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan, isModalTimes: $isModalTimes)
+            AutomatedOverlayMealPlanView(context: ContextMealViewModel.preview, isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan)
         }
         .foregroundColor(Color(hex: "#1D4536"))
         .frame(maxWidth: .infinity, maxHeight: .infinity)

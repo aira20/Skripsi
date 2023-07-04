@@ -8,9 +8,9 @@
 import Foundation
 
 class AutomatedOverlayViewModel: ObservableObject{
-    @Published var context: AutomatedMealViewModel
+    @Published var context: ContextMealViewModel
     
-    init(context: AutomatedMealViewModel) {
+    init(context: ContextMealViewModel) {
         self.context = context
         
     }

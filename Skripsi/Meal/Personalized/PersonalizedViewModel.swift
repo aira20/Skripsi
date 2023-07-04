@@ -1,25 +1,22 @@
 //
-//  AutomatedOverlayMealPlanViewModel.swift
+//  PersonalizedViewModel.swift
 //  Skripsi
 //
-//  Created by Mac-albert on 03/07/23.
+//  Created by Mac-albert on 04/07/23.
 //
 
 import Foundation
 
-class AutomatedOverlayMealPlanViewModel: ObservableObject{
+class PersonalizedViewModel: ObservableObject{
     @Published var recipes: [Meal] = Meal.recipes
-    @Published var randomRecipes: [Meal] = []
     @Published var context: ContextMealViewModel
     
     init(context: ContextMealViewModel) {
         self.context = context
-        randomMealFromRecipes()
-        
     }
     
-    func randomMealFromRecipes() {
-        self.randomRecipes = []
+    func randomMealFromRecipes() -> [Meal]{
+        var randomRecipes: [Meal] = []
         
         var breakfastRecipes: [Meal] = []
         var lunchRecipes: [Meal] = []
@@ -27,15 +24,13 @@ class AutomatedOverlayMealPlanViewModel: ObservableObject{
         
         // Memisahkan resep berdasarkan mealDay
         for recipe in Meal.recipes {
-            if recipe.time <= context.timeCommitment {
-                switch recipe.mealDay {
-                case .breakfast:
-                    breakfastRecipes.append(recipe)
-                case .lunch:
-                    lunchRecipes.append(recipe)
-                case .dinner:
-                    dinnerRecipes.append(recipe)
-                }
+            switch recipe.mealDay {
+            case .breakfast:
+                breakfastRecipes.append(recipe)
+            case .lunch:
+                lunchRecipes.append(recipe)
+            case .dinner:
+                dinnerRecipes.append(recipe)
             }
         }
         
@@ -50,5 +45,7 @@ class AutomatedOverlayMealPlanViewModel: ObservableObject{
         if let randomDinner = dinnerRecipes.randomElement() {
             randomRecipes.append(randomDinner)
         }
+        
+        return randomRecipes
     }
 }

@@ -13,16 +13,20 @@ struct MealItemView: View {
     let image: String
     let mealName: String
     let mealDescription: String
+    var isMealStatusPresent: Bool = true
     
     var body: some View {
         VStack(alignment: .center) {
-            Text(bestTimeConsume.rawValue)
-                .font(.headline)
+            if isMealStatusPresent {
+                Text(bestTimeConsume.rawValue)
+                    .font(.headline)
+            }
             Image(image)
                 .resizable()
                 .frame(width: 75, height: 75)
             Text(mealName)
                 .font(.subheadline)
+                .lineLimit(1)
             Text(mealDescription)
                 .font(.caption)
                 .lineLimit(2)

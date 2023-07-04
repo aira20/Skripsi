@@ -14,6 +14,7 @@ struct SkripsiApp: App {
     var body: some Scene {
         WindowGroup {
             MealTabItemView()
+                .environmentObject(NavigationStatus())
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

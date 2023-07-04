@@ -10,18 +10,15 @@ import SwiftUI
 struct AutomatedOverlayMealPlanView: View {
     @Binding var isOverlayView: Bool
     @Binding var isModalMealPlan: Bool
-    @Binding var isModalTimes: Bool
     
     @StateObject private var viewModel: AutomatedOverlayMealPlanViewModel
     
-    init(context: AutomatedMealViewModel,
+    init(context: ContextMealViewModel,
          isOverlayView: Binding<Bool>,
-         isModalMealPlan: Binding<Bool>,
-         isModalTimes: Binding<Bool>) {
+         isModalMealPlan: Binding<Bool>) {
         _viewModel = StateObject(wrappedValue: AutomatedOverlayMealPlanViewModel(context: context))
         self._isOverlayView = isOverlayView
         self._isModalMealPlan = isModalMealPlan
-        self._isModalTimes = isModalTimes
     }
     
     var body: some View {
@@ -39,7 +36,7 @@ struct AutomatedOverlayMealPlanView: View {
             
             HStack{
                 ForEach(viewModel.randomRecipes , id: \.mealName) { meal in
-                    MealItemView(bestTimeConsume: meal.mealDay, image: meal.image, mealName: meal.mealName, mealDescription: meal.mealDescription)
+                    MealItemView(bestTimeConsume: meal.mealDay, image: meal.image, mealName: meal.mealName, mealDescription: meal.mealDescription, isMealStatusPresent: false)
                 }
             }
             .padding(.vertical, 40.0)
@@ -57,7 +54,8 @@ struct AutomatedOverlayMealPlanView: View {
             HStack{
                 Spacer()
                 Button {
-                    isModalTimes = true
+                    isOverlayView = false
+                    isModalMealPlan = false
                 } label: {
                     HStack{
                         Text("Generate")
@@ -68,9 +66,9 @@ struct AutomatedOverlayMealPlanView: View {
             }
         }
         .onAppear(perform: viewModel.randomMealFromRecipes)
-        .sheet(isPresented: $isModalTimes) {
-            AutomatedOverlayTimesView(context: AutomatedMealViewModel.preview, isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan, isModalTimes: $isModalTimes)
-        }
+//        .sheet(isPresented: $isModalTimes) {
+//            AutomatedOverlayTimesView(context: ContextMealViewModel.preview, isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan, isModalTimes: $isModalTimes)
+//        }
         .foregroundColor(Color(hex: "#1D4536"))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(24)

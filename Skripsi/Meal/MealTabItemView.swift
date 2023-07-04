@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct MealTabItemView: View {
-    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var navigationStatus: NavigationStatus
+    
     @State private var isOverlayView = false
+    @State private var isPersonalizedView = false
     @State private var isModalMealPlan = false
     @State private var isModalTimes = false
     
@@ -30,7 +32,7 @@ struct MealTabItemView: View {
                         HStack{
                             Text("Choosen Meal Plan").font(.headline)
                             Spacer()
-                            NavigationLink(destination: SeeMoreMealCurrentView()){
+                            NavigationLink(destination: PersonalizedView(context: ContextMealViewModel.preview)){
                                 Text("See more")
                                     .font(.subheadline)
                                     .foregroundColor(Color(hex: "#519259"))
@@ -39,7 +41,10 @@ struct MealTabItemView: View {
     //                    viewModel.choosenMealPlanSection(geo: geo)
                     }
                     Spacer()
-                    
+                    NavigationLink(destination: PersonalizedView(context: ContextMealViewModel.preview), isActive: $isModalTimes) {
+                        EmptyView()
+                    }
+                    .hidden()
                 }
                 .frame(width: geo.size.width, height: geo.size.height)
             }.padding(16)
@@ -56,8 +61,13 @@ struct MealTabItemView: View {
                     }
                 }
                 .sheet(isPresented: $isOverlayView) {
-                    AutomatedOverlayView(context: AutomatedMealViewModel.preview, isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan, isModalTimes: $isModalTimes)
+                    AutomatedOverlayView(context: ContextMealViewModel.preview, isOverlayView: $isOverlayView, isModalMealPlan: $isModalMealPlan)
                 }
+                .sheet(isPresented: $isPersonalizedView) {
+                    AutomatedOverlayTimesView(context: ContextMealViewModel.preview, isModalTimes: $isPersonalizedView)
+                        .environmentObject(navigationStatus)
+                }
+
         }
     }
     
@@ -73,7 +83,9 @@ struct MealTabItemView: View {
         // TODO: need refactor this
         ZStack{
             if titleItem == "Personalized"{
-                NavigationLink(destination: SeeMoreMealCurrentView()){
+                Button {
+                    isPersonalizedView = true
+                } label: {
                     Rectangle()
                         .foregroundColor(backgroundColor)
                         .cornerRadius(16)
