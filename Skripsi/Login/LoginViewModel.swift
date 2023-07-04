@@ -18,17 +18,16 @@ class LoginViewModel: ObservableObject {
     private var db = Firestore.firestore()
     
     func signIn(completion: @escaping (Bool) -> Void) {
-            Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-                if let error = error {
-                    print("Error logging in: \(error)")
-                    completion(false)
-                } else {
-                    print("User logged in successfully!")
-                    completion(true)
-                }
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if let error = error {
+                print("Error logging in: \(error)")
+                completion(false)
+            } else {
+                print("User logged in successfully!")
+                completion(true)
             }
         }
-    
+    }
 }
 
 

@@ -222,9 +222,9 @@
 				02BB62842A29C731009408FB /* AdminView.swift */,
 				02BB62892A2F23E5009408FB /* ManageAccView.swift */,
 				02BB628C2A360EE4009408FB /* ManageRecipeView.swift */,
-				02BB62872A29C862009408FB /* AdminViewModel.swift */,
 				0272A5992A537D5400D7C01D /* AdminRecipePageView.swift */,
 				0272A59B2A537D6000D7C01D /* AdminAddRecipeView.swift */,
+				02BB62872A29C862009408FB /* AdminViewModel.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
