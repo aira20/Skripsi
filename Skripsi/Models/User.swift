@@ -16,4 +16,5 @@ struct User: Codable{
     var accountCreated: Date?
     var time: Int?
     var frequency: Int?
+    var isAdmin = false
 }

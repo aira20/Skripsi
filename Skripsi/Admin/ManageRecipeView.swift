@@ -139,13 +139,11 @@ struct ManageRecipeView: View {
                                 HStack(spacing: 2) {
                                     Image(systemName: "chevron.backward")
                                         .foregroundColor(Color(.green))
-
-                                    
-                                }
-                            })
-                        )
+                    }
+                })
+            )
         }
-        }
+    }
     
 
 struct ManageRecipeView_Previews: PreviewProvider {
