@@ -28,7 +28,7 @@ struct AdminView: View {
                         
                 }
                 
-                NavigationLink(destination: LoginView())
+                NavigationLink(destination: ManageRecipeView())
                 {
                     Image("recipeadm")
                         .resizable()
