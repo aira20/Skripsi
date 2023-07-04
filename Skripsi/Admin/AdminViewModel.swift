@@ -60,15 +60,16 @@ class AdminViewModel: ObservableObject {
             }
         }
         
-        func filteredUsers(searchText: String) -> [UserInfo] {
-            if searchText.isEmpty {
-                return users
-            } else {
-                return users.filter { user in
-                    user.username.localizedCaseInsensitiveContains(searchText)
-                }
+    func filteredUsers(searchText: String) -> [UserInfo] {
+        if searchText.isEmpty {
+            return users
+        } else {
+            return users.filter { user in
+                user.username.localizedCaseInsensitiveContains(searchText)
+                || user.email.localizedCaseInsensitiveContains(searchText)
             }
         }
+    }
         
         
     }

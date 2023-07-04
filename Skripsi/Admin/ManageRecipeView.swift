@@ -37,7 +37,7 @@ struct ManageRecipeView: View {
         }
         
         var filteredSegmentedRecipes: [String: [String]] {
-            var filteredSegmentedRecipes = [String: [String]]()
+        var filteredSegmentedRecipes = [String: [String]]()
 
             for (key, contacts) in segmentedRecipes {
                 let filteredRecipes = contacts.filter { $0.localizedCaseInsensitiveContains(searchText) }
