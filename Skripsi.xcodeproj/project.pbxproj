@@ -11,6 +11,7 @@
 		026C87B12A1F312F00B6E8B1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C87B02A1F312F00B6E8B1 /* RegisterView.swift */; };
 		026C87B42A1F33B900B6E8B1 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C87B32A1F33B900B6E8B1 /* WelcomeView.swift */; };
 		026C87B82A1F341500B6E8B1 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C87B72A1F341500B6E8B1 /* WelcomeViewModel.swift */; };
+		0272A59C2A537D6000D7C01D /* AdminAddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272A59B2A537D6000D7C01D /* AdminAddRecipeView.swift */; };
 		02BB61C32A20A8BF009408FB /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB61C22A20A8BF009408FB /* RegisterViewModel.swift */; };
 		02BB62412A21C1D7009408FB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 02BB62402A21C1D7009408FB /* FirebaseAnalytics */; };
 		02BB62432A21C1D7009408FB /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 02BB62422A21C1D7009408FB /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -54,6 +55,7 @@
 		02E90DCA2A0DEF6700706F80 /* SkripsiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DC92A0DEF6700706F80 /* SkripsiTests.swift */; };
 		02E90DD42A0DEF6700706F80 /* SkripsiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DD32A0DEF6700706F80 /* SkripsiUITests.swift */; };
 		02E90DD62A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E90DD52A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift */; };
+		4D7A8A842A542D4700A26299 /* DestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A8A832A542D4700A26299 /* DestinationView.swift */; };
 		8E115FBF2A1A2C6D0052C16A /* MealTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FBE2A1A2C6D0052C16A /* MealTabItemView.swift */; };
 		8E115FC52A1A57F50052C16A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FC42A1A57F50052C16A /* Color.swift */; };
 		8E115FC72A1A6CFE0052C16A /* MealTabItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E115FC62A1A6CFE0052C16A /* MealTabItemViewModel.swift */; };
@@ -91,10 +93,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0206EDF82A54A146004A9593 /* Skripsi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Skripsi.entitlements; sourceTree = "<group>"; };
+		0206EDF92A54A42C004A9593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		026C87AD2A1F30FE00B6E8B1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		026C87B02A1F312F00B6E8B1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		026C87B32A1F33B900B6E8B1 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		026C87B72A1F341500B6E8B1 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		0272A5992A537D5400D7C01D /* AdminRecipePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminRecipePageView.swift; sourceTree = "<group>"; };
+		0272A59B2A537D6000D7C01D /* AdminAddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAddRecipeView.swift; sourceTree = "<group>"; };
 		02BB61C22A20A8BF009408FB /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		02BB627C2A2263FE009408FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02BB62822A25FA3C009408FB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 		02E90DCF2A0DEF6700706F80 /* SkripsiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkripsiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02E90DD32A0DEF6700706F80 /* SkripsiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkripsiUITests.swift; sourceTree = "<group>"; };
 		02E90DD52A0DEF6700706F80 /* SkripsiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkripsiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4D7A8A832A542D4700A26299 /* DestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
 		8E115FBE2A1A2C6D0052C16A /* MealTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTabItemView.swift; sourceTree = "<group>"; };
 		8E115FC42A1A57F50052C16A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Skripsi/Color.swift; sourceTree = SOURCE_ROOT; };
 		8E115FC62A1A6CFE0052C16A /* MealTabItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTabItemViewModel.swift; sourceTree = "<group>"; };
@@ -218,7 +225,10 @@
 				02BB62842A29C731009408FB /* AdminView.swift */,
 				02BB62892A2F23E5009408FB /* ManageAccView.swift */,
 				02BB628C2A360EE4009408FB /* ManageRecipeView.swift */,
+				0272A5992A537D5400D7C01D /* AdminRecipePageView.swift */,
+				0272A59B2A537D6000D7C01D /* AdminAddRecipeView.swift */,
 				02BB62872A29C862009408FB /* AdminViewModel.swift */,
+				4D7A8A832A542D4700A26299 /* DestinationView.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -246,6 +256,8 @@
 		02E90DB22A0DEF6500706F80 /* Skripsi */ = {
 			isa = PBXGroup;
 			children = (
+				0206EDF92A54A42C004A9593 /* Info.plist */,
+				0206EDF82A54A146004A9593 /* Skripsi.entitlements */,
 				02BB627C2A2263FE009408FB /* GoogleService-Info.plist */,
 				02BB62862A29C739009408FB /* Admin */,
 				026C87B22A1F33AE00B6E8B1 /* Welcome */,
@@ -527,6 +539,7 @@
 				8E115FCF2A1BACE60052C16A /* SeeMoreMealCurrentView.swift in Sources */,
 				8E932EE32A1DB01500DCA67C /* MealItemView.swift in Sources */,
 				02E90DC02A0DEF6700706F80 /* Skripsi.xcdatamodeld in Sources */,
+				4D7A8A842A542D4700A26299 /* DestinationView.swift in Sources */,
 				02E90DB62A0DEF6500706F80 /* ContentView.swift in Sources */,
 				8E115FCA2A1A6D5D0052C16A /* Meal.swift in Sources */,
 				02E90DB42A0DEF6500706F80 /* SkripsiApp.swift in Sources */,
@@ -542,6 +555,7 @@
 				8E4A73942A1D2A55009BB040 /* MealPlanItem.swift in Sources */,
 				8E932EED2A1E3DAB00DCA67C /* ButtonView.swift in Sources */,
 				02BB628D2A360EE4009408FB /* ManageRecipeView.swift in Sources */,
+				0272A59C2A537D6000D7C01D /* AdminAddRecipeView.swift in Sources */,
 				8E115FC52A1A57F50052C16A /* Color.swift in Sources */,
 				8E932EEA2A1E3D6200DCA67C /* ProfileTabItemView.swift in Sources */,
 				02BB62882A29C862009408FB /* AdminViewModel.swift in Sources */,
@@ -700,12 +714,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Skripsi/Skripsi.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Skripsi/Preview Content\"";
 				DEVELOPMENT_TEAM = ACV2U485KM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Skripsi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -729,12 +745,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Skripsi/Skripsi.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Skripsi/Preview Content\"";
 				DEVELOPMENT_TEAM = ACV2U485KM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Skripsi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

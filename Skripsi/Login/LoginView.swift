@@ -15,7 +15,6 @@ struct LoginView: View {
     @State var visible = false
     @State private var isSecured : Bool=true
 
-
     var authManager = AuthManager()
 
     var body: some View {
@@ -85,16 +84,12 @@ struct LoginView: View {
                         Button(action: {
                             viewModel.signIn { success in
                                 if success {
-                                    if viewModel.isAdmin {
-                                        //TODO: Redirect to Admin Page
-                                    } else {
-                                        //TODO: Redirect to User Page
-                                    }
+                                    // Handle successful sign-in
                                 } else {
-                                    //TODO: Handle sign-in failure
+                                    // Handle sign-in failure
                                 }
                             }
-                        }) {
+                        }){
                             Text("Sign in")
                                 .padding()
                         }
@@ -103,14 +98,13 @@ struct LoginView: View {
                         .foregroundColor(.white)
                         .cornerRadius(50.0)
                         .padding(.bottom,15)
-                                            
+                        
                         Text("Don't have an Account?")
                             .font(.system(size: 14))
                             .frame(maxWidth: .infinity, alignment: .center)
                         
                         NavigationLink(destination: RegisterView())
                         {
-                            
                             Text("Create Account")
                                 .frame(maxWidth: .infinity, alignment:.center)
                                 .font(.system(size:15))
@@ -122,7 +116,7 @@ struct LoginView: View {
                 }
             }
         }
-       
+        
     }
 
 }

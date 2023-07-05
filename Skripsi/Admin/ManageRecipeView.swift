@@ -8,81 +8,143 @@
 import SwiftUI
 
 struct ManageRecipeView: View {
-    @State private var searchText = ""
-    @State private var users = [
-            "Martabak", "Kikil", "Test", "Chicken", "Zebra", "Babi"
-        ]
-    
-    var body: some View {
-        NavigationView {
-                    VStack {
-                            
-                            recipeSearch(text: $searchText)
-                        
-                        List {
-                            ForEach(filteredUsers, id: \.self) { user in
-                                Text(user)
+    let recipes = ["Apple Pie", "Asparagus", "Beef Steak", "Chicken Soup", "Salad", "Drumsticks", "Egg Roll", "French Fries", "Gingerbread", "Hamburger"]
+        
+        @State private var searchText = ""
+    @Environment(\.presentationMode) var presentationMode
+        
+        var segmentedRecipes: [String: [String]] {
+            var segmentedRecipes = [String: [String]]()
+            
+            for recipe in recipes {
+                let firstLetter = String(recipe.prefix(1)).uppercased()
+                if segmentedRecipes[firstLetter] == nil {
+                    segmentedRecipes[firstLetter] = [recipe]
+                } else {
+                    segmentedRecipes[firstLetter]?.append(recipe)
+                }
+            }
+            
+            return segmentedRecipes
+        }
+        
+        var filteredRecipes: [String] {
+            if searchText.isEmpty {
+                return recipes
+            } else {
+                return recipes.filter { $0.localizedCaseInsensitiveContains(searchText) }
+            }
+        }
+        
+        var filteredSegmentedRecipes: [String: [String]] {
+        var filteredSegmentedRecipes = [String: [String]]()
+
+            for (key, contacts) in segmentedRecipes {
+                let filteredRecipes = contacts.filter { $0.localizedCaseInsensitiveContains(searchText) }
+                if !filteredRecipes.isEmpty {
+                    filteredSegmentedRecipes[key] = filteredRecipes
+                }
+            }
+
+            return filteredSegmentedRecipes
+        }
+        
+        var body: some View {
+            
+            VStack{
+//                HStack{
+//                    Button(action: {
+//                        // Action
+//                    }) {
+//                        Image(systemName: "chevron.left")
+//                            .foregroundColor(Color.green)
+//                            .padding()
+//                    }
+//                    Spacer()
+//                    Text("Recipe Lists")
+//                        .font(.title2)
+//                        .padding()
+//                    Spacer()
+//                    Button(action: {
+//                        // Action
+//                    }) {
+//                        Image(systemName: "plus")
+//                            .foregroundColor(Color.green)
+//                            .padding()
+//                    }
+//                }
+//
+//                HStack {
+//                    TextField("Find User", text: $searchText)
+//                        .padding(.vertical, 8)
+//                        .padding(.leading, 36)
+//                        .background(Color(.systemGray6))
+//                        .cornerRadius(8)
+//                        .overlay(
+//                            Image(systemName: "magnifyingglass")
+//                                .foregroundColor(.gray)
+//                                .padding(.leading, 8)
+//                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading),
+//                            alignment: .leading
+//                                        )
+//                    Button(action: {
+//                        searchText = ""
+//                    }) {
+//                        Image(systemName: "xmark.circle.fill")
+//                            .foregroundColor(.gray)
+//                            .padding(.horizontal, 8)
+//                    }
+//                }
+//                .padding(8)
+                List {
+                    if searchText.isEmpty {
+                        ForEach(segmentedRecipes.keys.sorted(), id: \.self) { key in
+                            Section(header: Text(key)) {
+                                ForEach(segmentedRecipes[key]!.filter { filteredRecipes.contains($0) }, id: \.self) { recipe in
+                                    NavigationLink(destination: DestinationView()) {
+                                        Text(recipe)
+                                    }
+                                    
+                                }
+                                
                             }
-                            .onDelete(perform: delete)
-                            
+                        }
+                    } else {
+                        ForEach(filteredSegmentedRecipes.keys.sorted(), id: \.self) { key in
+                            Section(header: Text(key)) {
+                                ForEach(segmentedRecipes[key]!.filter { filteredRecipes.contains($0) }, id: \.self) { recipe in
+                                    NavigationLink(destination: DestinationView()) {
+                                        Text(recipe)
+                                    }
+                                }
+                            }
                         }
                     }
-            
-                        .navigationBarTitle("User List", displayMode: .inline)
-                    
+                }
+                .listStyle(GroupedListStyle())
+                .searchable(text: $searchText)
+            }
+            .navigationTitle(Text("Recipe List"))
+            .toolbar{
+                Button(action: {
+                    print("Add")
+                }){
+                    Image(systemName: "plus")
+                        .foregroundColor(.green)
                 }
             }
-            
-            private var filteredUsers: [String] {
-                if searchText.isEmpty
-                {
-                    return users.sorted()
-                }
-                else
-                {
-                    return users.filter
-                    {
-                        $0.localizedCaseInsensitiveContains(searchText)
-                        
+            .navigationBarBackButtonHidden()
+            .navigationBarItems(
+                leading: Button(action: {  presentationMode.wrappedValue.dismiss() }, label: {
+                                HStack(spacing: 2) {
+                                    Image(systemName: "chevron.backward")
+                                        .foregroundColor(Color(.green))
                     }
-                    .sorted()
-                }
-            }
-            
-            private func delete(at offsets: IndexSet)
-        {
-                users.remove(atOffsets: offsets)
-            }
+                })
+            )
         }
-
-        struct recipeSearch: View {
-            @Binding var text: String
-            
-            var body: some View
-            {
-                HStack
-                {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(.gray)
-                     
-                    TextField("Search", text: $text)
-                        .padding(.horizontal)
-                    
-                    Button(action:
-                    {
-                        text = ""
-                    })
-                    {
-                        Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(.gray)
-                    }
-                    .padding(.trailing)
-                    .opacity(text.isEmpty ? 0 : 1)
-                }
-                .padding()
-                
-            }
-        }
+    }
+    
 
 struct ManageRecipeView_Previews: PreviewProvider {
     static var previews: some View {

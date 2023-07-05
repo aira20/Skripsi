@@ -19,7 +19,7 @@ struct AdminView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundColor(Color(hex: "1D4536"))
                     
-                NavigationLink(destination: RegisterView())
+                NavigationLink(destination:ManageAccView())
                 {
                     Image("accadm")
                         .resizable()
@@ -28,7 +28,7 @@ struct AdminView: View {
                         
                 }
                 
-                NavigationLink(destination: LoginView())
+                NavigationLink(destination: ManageRecipeView())
                 {
                     Image("recipeadm")
                         .resizable()
