@@ -49,6 +49,9 @@ struct LoginView: View {
                                         .padding()
                                         .border(Color(hex: "F0BB62"))
                                         .cornerRadius(50.0)
+                                        .autocapitalization(.none)
+                                        .disableAutocorrection(true)
+                                    
                                 }
                                 else
                                 {
@@ -56,6 +59,9 @@ struct LoginView: View {
                                         .padding()
                                         .border(Color(hex: "F0BB62"))
                                         .cornerRadius(50.0)
+                                        .autocapitalization(.none)
+                                        .disableAutocorrection(true)
+                                    
                                 }
                                 
                             }
@@ -81,18 +87,24 @@ struct LoginView: View {
                         
                         
                         
-                        Button(action: {
-                            viewModel.signIn { success in
-                                if success {
-                                    // Handle successful sign-in
-                                } else {
-                                    // Handle sign-in failure
+            Button(action: {
+                        viewModel.signIn { isAdmin in
+                            if isAdmin {
+                                // Navigate to AdminView
+                                NavigationLink(destination: AdminView()) {
+                                    EmptyView()
+                                }
+                            } else {
+                                // Navigate to MealTabItemView
+                                NavigationLink(destination: MealTabItemView()) {
+                                    EmptyView()
                                 }
                             }
-                        }){
-                            Text("Sign in")
-                                .padding()
                         }
+                    }) {
+                        Text("Sign in")
+                            .padding()
+                    }
                         .frame(maxWidth: .infinity)
                         .background(Color(hex: "519259"))
                         .foregroundColor(.white)

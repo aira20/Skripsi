@@ -102,7 +102,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
         print(userInfo)
         
-        completionHandler([.alert, .sound])
+        if #available(iOS 14.0, *) {
+            completionHandler([.list, .banner, .sound])
+        } else {
+            completionHandler([.alert, .sound])
+        }
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
