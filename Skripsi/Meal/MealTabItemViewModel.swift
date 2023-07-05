@@ -2,7 +2,7 @@
 //  MealViewModel.swift
 //  Skripsi
 //
-//  Created by Mac-albert on 21/05/23.
+//  Created by Aria on 21/05/23.
 //
 
 import Foundation

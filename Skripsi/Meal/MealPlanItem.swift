@@ -2,7 +2,7 @@
 //  MealPlanItem.swift
 //  Skripsi
 //
-//  Created by Mac-albert on 24/05/23.
+//  Created by Aria on 24/05/23.
 //
 
 import Foundation

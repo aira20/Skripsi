@@ -2,7 +2,7 @@
 //  MainTabConfig.swift
 //  Skripsi
 //
-//  Created by Mac-albert on 22/05/23.
+//  Created by Aria Rifqi on 22/05/23.
 //
 
 import SwiftUI

@@ -6,40 +6,67 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import Firebase
 
 struct LoginView: View {
-    
-    @State private var email = ""
-    @State private var password = ""
-    
+
+    @StateObject private var viewModel = LoginViewModel()
+    @State var visible = false
+    @State private var isSecured : Bool=true
+
+
+    var authManager = AuthManager()
+
     var body: some View {
         ZStack
         {
             Color(hex: "FFF9F0").edgesIgnoringSafeArea(.all)
             VStack() {
-//                Text("Login")
-//                    .padding(.bottom, 30)
+
                 VStack(alignment: .leading, spacing: 15) {
                     
-                    Text("Username")
+                    Text("Email")
                         .font(.system(size: 16))
                     
-                    TextField("", text: self.$email)
+                    TextField("", text: $viewModel.email)
                         .padding()
                         .border(Color(hex: "F0BB62"))
                         .cornerRadius(50.0)
-                        
-//                        .background(.white)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
                     
                     Text("Password")
                         .font(.system(size: 16))
                     
-                    SecureField("", text: self.$password)
-                        .padding()
-                        .border(Color(hex: "F0BB62"))
-                        .cornerRadius(50.0)
-//                        .background(.white)
-                    
+                    ZStack(alignment: .trailing)
+                    {
+                        Group{
+                            
+                            if isSecured
+                            {
+                                SecureField("", text: $viewModel.password)
+                                    .padding()
+                                    .border(Color(hex: "F0BB62"))
+                                    .cornerRadius(50.0)
+                            }
+                            else
+                            {
+                                TextField("", text: $viewModel.password)
+                                    .padding()
+                                    .border(Color(hex: "F0BB62"))
+                                    .cornerRadius(50.0)
+                            }
+                            
+                        }
+                Button(action: {
+                                isSecured.toggle()
+                            }) {
+                                Image(systemName: self.isSecured ? "eye.slash" : "eye")
+                                    .accentColor(.gray)
+                            }
+                    }
+                
                     HStack
                     {
                         Spacer()
@@ -54,19 +81,35 @@ struct LoginView: View {
                     
                     
                     
-                    Button(action: { }) {
-                        Text("Sign in").padding()
+                    Button(action: {
+                        viewModel.signIn { success in
+                            if success {
+                                if viewModel.isAdmin {
+                                    //TODO: Redirect to Admin Page
+                                } else {
+                                    //TODO: Redirect to User Page
+                                }
+                            } else {
+                                //TODO: Handle sign-in failure
+                            }
+                        }
+                    }) {
+                        Text("Sign in")
+                            .padding()
                     }
                     .frame(maxWidth: .infinity)
                     .background(Color(hex: "519259"))
                     .foregroundColor(.white)
                     .cornerRadius(50.0)
                     .padding(.bottom,15)
+                                        
                     
                     Text("Don't have an Account?")
                         .font(.system(size: 14))
                         .frame(maxWidth: .infinity, alignment: .center)
-                    Button(action: {})
+                    Button(action: {
+                        RegisterView()
+                    })
                     {
                         Text("Create Account")
                             .frame(maxWidth: .infinity, alignment:.center)
@@ -74,18 +117,12 @@ struct LoginView: View {
                     }
                     
                     Spacer()
-                    
-                  
-                        
-                    
-                }.padding([.leading, .trailing], 27.5)
-                
-               
-                
-                
+                }
+                .padding([.leading, .trailing], 27.5)
             }
         }
     }
+
 }
 
 struct LoginView_Previews: PreviewProvider {

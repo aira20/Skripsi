@@ -8,4 +8,9 @@
 import Foundation
 import SwiftUI
 
-let logo = Image("logo.png")
+// TODO: BIKIN CLASS VIEWMODEL SAMA EXTENSIONNYA KALO EMANG PERLU, KALO DI TULIS DISINI JADINYA VARIABLE GLOBAL
+class PictureVIewModel :ObservableObject
+{
+    let logo = Image("logo.png")
+}
+
