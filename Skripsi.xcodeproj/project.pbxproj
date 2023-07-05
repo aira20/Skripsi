@@ -11,7 +11,6 @@
 		026C87B12A1F312F00B6E8B1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C87B02A1F312F00B6E8B1 /* RegisterView.swift */; };
 		026C87B42A1F33B900B6E8B1 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C87B32A1F33B900B6E8B1 /* WelcomeView.swift */; };
 		026C87B82A1F341500B6E8B1 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C87B72A1F341500B6E8B1 /* WelcomeViewModel.swift */; };
-		0272A59A2A537D5400D7C01D /* AdminRecipePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272A5992A537D5400D7C01D /* AdminRecipePageView.swift */; };
 		0272A59C2A537D6000D7C01D /* AdminAddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272A59B2A537D6000D7C01D /* AdminAddRecipeView.swift */; };
 		02BB61C32A20A8BF009408FB /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB61C22A20A8BF009408FB /* RegisterViewModel.swift */; };
 		02BB62412A21C1D7009408FB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 02BB62402A21C1D7009408FB /* FirebaseAnalytics */; };
@@ -94,6 +93,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0206EDF82A54A146004A9593 /* Skripsi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Skripsi.entitlements; sourceTree = "<group>"; };
+		0206EDF92A54A42C004A9593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		026C87AD2A1F30FE00B6E8B1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		026C87B02A1F312F00B6E8B1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		026C87B32A1F33B900B6E8B1 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -255,6 +256,8 @@
 		02E90DB22A0DEF6500706F80 /* Skripsi */ = {
 			isa = PBXGroup;
 			children = (
+				0206EDF92A54A42C004A9593 /* Info.plist */,
+				0206EDF82A54A146004A9593 /* Skripsi.entitlements */,
 				02BB627C2A2263FE009408FB /* GoogleService-Info.plist */,
 				02BB62862A29C739009408FB /* Admin */,
 				026C87B22A1F33AE00B6E8B1 /* Welcome */,
@@ -711,12 +714,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Skripsi/Skripsi.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Skripsi/Preview Content\"";
 				DEVELOPMENT_TEAM = ACV2U485KM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Skripsi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -740,12 +745,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Skripsi/Skripsi.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Skripsi/Preview Content\"";
 				DEVELOPMENT_TEAM = ACV2U485KM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Skripsi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
