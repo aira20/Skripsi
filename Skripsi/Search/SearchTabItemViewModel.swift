@@ -2,7 +2,7 @@
 //  SearchTabItemViewModel.swift
 //  Skripsi
 //
-//  Created by Mac-albert on 23/05/23.
+//  Created by Aria Rifqi on 23/05/23.
 //
 
 import Foundation
